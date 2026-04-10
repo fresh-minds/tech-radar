@@ -1,6 +1,6 @@
 {
   "title": "FreshMinds Tech Radar",
-  "date": "2026.03",
+  "date": "2026.04",
   "quadrants": [
     "Languages & Frameworks",
     "Platforms",
@@ -39,7 +39,7 @@
     {
       "label": "Next.js",
       "quadrant": "Languages & Frameworks",
-      "ring": "Trial",
+      "ring": "Adopt",
       "moved": 1,
       "description": "Evaluating for our web applications. Server components and app router show promise."
     },
@@ -137,7 +137,7 @@
     {
       "label": "Claude Code",
       "quadrant": "Tools",
-      "ring": "Trial",
+      "ring": "Adopt",
       "moved": 2,
       "description": "AI-powered coding assistant. Evaluating for developer productivity."
     },
