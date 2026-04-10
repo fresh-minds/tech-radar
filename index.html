@@ -143,7 +143,6 @@
   FreshMinds Tech Radar &middot; Based on <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
 </footer>
 
-<script src="radar-data.js"></script>
 <script>
   const RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
   const QUADRANT_NAMES = [
@@ -153,8 +152,9 @@
     "Techniques"
   ];
 
-  {
-    const data = RADAR_DATA;
+  fetch("radar-data.json")
+    .then(response => response.json())
+    .then(data => {
       document.getElementById("radar-edition").textContent = "Edition " + data.date;
 
       const quadrantMap = {};
@@ -195,7 +195,7 @@
         ],
         entries: entries
       });
-  }
+    });
 </script>
 
 </body>

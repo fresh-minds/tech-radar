@@ -182,9 +182,6 @@ const output = {
 
 fs.writeFileSync(outputPath, JSON.stringify(output, null, 2) + "\n");
 
-const jsOutputPath = path.join(__dirname, "..", "radar-data.js");
-fs.writeFileSync(jsOutputPath, "const RADAR_DATA = " + JSON.stringify(output, null, 2) + ";\n");
-
 console.log(`Imported ${entries.length} entries from ${path.basename(csvPath)}`);
 console.log(`Written to ${outputPath}`);
 console.log(`Written to ${jsOutputPath}`);
