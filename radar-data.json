@@ -1,0 +1,194 @@
+{
+  "title": "FreshMinds Tech Radar",
+  "date": "2026.03",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
+  "entries": [
+    {
+      "label": "Kotlin",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our primary backend language. Mature ecosystem, excellent Java interop, and strong team expertise."
+    },
+    {
+      "label": "Scala",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": -1,
+      "description": "Too complex for enterprise. Lack of up to date tooling."
+    },
+    {
+      "label": "Spring Boot",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Standard framework for building backend services. Well-understood by the team."
+    },
+    {
+      "label": "TypeScript",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Default language for all frontend and Node.js work. Type safety prevents entire classes of bugs."
+    },
+    {
+      "label": "Next.js",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Evaluating for our web applications. Server components and app router show promise."
+    },
+    {
+      "label": "React",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our standard frontend library. Large ecosystem and strong community."
+    },
+    {
+      "label": "Flutter",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Cross-platform mobile development. Evaluating for our mobile applications."
+    },
+    {
+      "label": "Rust",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Exploring for performance-critical services. Memory safety without garbage collection."
+    },
+    {
+      "label": "PostgreSQL",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our default relational database. Reliable, feature-rich, and well-supported."
+    },
+    {
+      "label": "Supabase",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Backend-as-a-service built on PostgreSQL. Evaluating for rapid prototyping and smaller projects."
+    },
+    {
+      "label": "AWS",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Primary cloud provider. Well-established infrastructure and team knowledge."
+    },
+    {
+      "label": "Kubernetes",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Container orchestration standard. Running all production workloads."
+    },
+    {
+      "label": "GitHub Actions",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our CI/CD platform. Integrated with our GitHub workflow."
+    },
+    {
+      "label": "Kafka",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Event streaming platform. Evaluating for event-driven architectures."
+    },
+    {
+      "label": "Docker",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Standard containerization tool across all projects."
+    },
+    {
+      "label": "Datadog",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Evaluating as our unified observability platform."
+    },
+    {
+      "label": "Sentry",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Error tracking and performance monitoring across all applications."
+    },
+    {
+      "label": "Terraform",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Infrastructure as code. All cloud resources managed through Terraform."
+    },
+    {
+      "label": "Claude Code",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "AI-powered coding assistant. Evaluating for developer productivity."
+    },
+    {
+      "label": "SonarQube",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Static code analysis. Exploring for code quality enforcement in CI."
+    },
+    {
+      "label": "Trunk-Based Development",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Short-lived feature branches merged frequently. Reduces integration pain."
+    },
+    {
+      "label": "Event Sourcing",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Exploring for audit-heavy domains. Powerful but adds complexity."
+    },
+    {
+      "label": "Micro Frontends",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Too much operational overhead for our team size. Monolithic frontend preferred for now."
+    },
+    {
+      "label": "API-First Design",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Design APIs before implementation using OpenAPI specs. Enables parallel frontend/backend work."
+    },
+    {
+      "label": "Architecture Decision Records",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Lightweight documentation of significant technical decisions. Building the habit across teams."
+    },
+    {
+      "label": "Platform Engineering",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Internal developer platform to reduce cognitive load. Exploring what this means for our scale."
+    }
+  ]
+}

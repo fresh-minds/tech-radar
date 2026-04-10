@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshMinds Tech Radar</title>
+  <link rel="icon" href="https://freshminds.nl/uploads/freshminds/userfiles/images/setup/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #121212;
+    }
+
+    /* ── Header ── */
+    .radar-header {
+      background: #131413;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .radar-header img {
+      height: 40px;
+      width: auto;
+    }
+    .radar-header h1 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .radar-header .edition {
+      color: #d1d1ff;
+      font-size: 0.85rem;
+      font-weight: 400;
+      margin-left: auto;
+    }
+
+    /* ── Legend ── */
+    #radar-description {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 40px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    #radar-description h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #131413;
+    }
+    .ring-legend {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin: 0 0 8px;
+    }
+    .ring-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #545454;
+    }
+    .ring-legend-item strong {
+      color: #131413;
+    }
+    .ring-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .movement-legend {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 8px 0 0;
+      font-size: 12px;
+      color: #c8c8c8;
+    }
+
+    /* ── Radar container ── */
+    .radar-container {
+      max-width: 1450px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    /* ── Footer ── */
+    .radar-footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #c8c8c8;
+      border-top: 1px solid #f1f1f1;
+      margin-top: 16px;
+    }
+    .radar-footer a {
+      color: #2f45c2;
+      text-decoration: none;
+    }
+  </style>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://zalando.github.io/tech-radar/release/radar-0.12.js"></script>
+</head>
+<body>
+
+<header class="radar-header">
+  <img src="https://freshminds.nl/uploads/freshminds/userfiles/images/setup/icon.png" alt="FreshMinds" />
+  <h1>Tech Radar</h1>
+  <span class="edition" id="radar-edition"></span>
+</header>
+
+<div id="radar-description">
+  <h3>How to read the radar</h3>
+  <div class="ring-legend">
+    <span class="ring-legend-item"><span class="ring-dot" style="background: #2f45c2"></span> <strong>Adopt</strong> — proven, use by default</span>
+    <span class="ring-legend-item"><span class="ring-dot" style="background: #198754"></span> <strong>Trial</strong> — ready for non-critical use</span>
+    <span class="ring-legend-item"><span class="ring-dot" style="background: #d1d1ff"></span> <strong>Assess</strong> — worth exploring</span>
+    <span class="ring-legend-item"><span class="ring-dot" style="background: #f1134d"></span> <strong>Hold</strong> — proceed with caution</span>
+  </div>
+  <div class="movement-legend">
+    <span>&#9650; Moved in/up &nbsp;&nbsp; &#9660; Moved out/down &nbsp;&nbsp; &#9679; No change &nbsp;&nbsp; &#9733; New</span>
+  </div>
+</div>
+
+<div class="radar-container">
+  <svg id="radar"></svg>
+</div>
+
+<footer class="radar-footer">
+  FreshMinds Tech Radar &middot; Based on <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
+</footer>
+
+<script src="radar-data.js"></script>
+<script>
+  const RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
+  const QUADRANT_NAMES = [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ];
+
+  {
+    const data = RADAR_DATA;
+      document.getElementById("radar-edition").textContent = "Edition " + data.date;
+
+      const quadrantMap = {};
+      data.quadrants.forEach((name, index) => { quadrantMap[name] = index; });
+
+      const entries = data.entries.map(entry => ({
+        label: entry.label,
+        quadrant: quadrantMap[entry.quadrant],
+        ring: RING_MAP[entry.ring],
+        moved: entry.moved,
+        link: entry.link || "",
+        active: true
+      }));
+
+      radar_visualization({
+        svg_id: "radar",
+        width: 1450,
+        height: 1000,
+        colors: {
+          background: "#fff",
+          grid: "#d1d1ff",
+          inactive: "#c8c8c8"
+        },
+        title: "",
+        print_layout: true,
+        links_in_new_tabs: true,
+        quadrants: [
+          { name: QUADRANT_NAMES[0] },
+          { name: QUADRANT_NAMES[1] },
+          { name: QUADRANT_NAMES[2] },
+          { name: QUADRANT_NAMES[3] }
+        ],
+        rings: [
+          { name: "Adopt",  color: "#2f45c2" },
+          { name: "Trial",  color: "#198754" },
+          { name: "Assess", color: "#d1d1ff" },
+          { name: "Hold",   color: "#f1134d" }
+        ],
+        entries: entries
+      });
+  }
+</script>
+
+</body>
+</html>

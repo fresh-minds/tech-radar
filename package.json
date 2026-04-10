@@ -1,0 +1,14 @@
+{
+  "name": "freshminds-tech-radar",
+  "version": "1.0.0",
+  "description": "FreshMinds Technology Radar",
+  "scripts": {
+    "dev": "npx http-server . -p 8080 -o",
+    "build": "node scripts/validate.js",
+    "export-csv": "node scripts/export-csv.js > radar-entries.csv",
+    "import-csv": "node scripts/import-csv.js radar-entries.csv && node scripts/validate.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
