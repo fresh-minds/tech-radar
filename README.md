@@ -24,7 +24,7 @@ The radar visualizes technologies across four quadrants (Languages & Frameworks,
 
 ```
 radar-data.json          # Radar entries (the source of truth)
-index.html               # Radar visualization (auto-generated from radar-data.json)
+index.html               # Radar visualization (reads radar-data.json at runtime)
 scripts/validate.js      # Validates radar-data.json
 .github/workflows/       # CI: validation on PRs, deploy on merge
 ```
