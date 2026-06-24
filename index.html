@@ -235,6 +235,83 @@
         ],
         entries: entries
       });
+
+      // ── Tooltip logic ──
+      const RING_COLORS = {
+        "Adopt": "#2f45c2",
+        "Trial": "#198754",
+        "Assess": "#6b6b9e",
+        "Hold": "#f1134d"
+      };
+
+      const tooltip = document.getElementById("radar-tooltip");
+      const radarContainer = document.querySelector(".radar-container");
+
+      function showTooltip(blipEl) {
+        const d = d3.select(blipEl).datum();
+        if (!d || !d.description) return;
+
+        const ringColor = RING_COLORS[d.ringName] || "#545454";
+        tooltip.innerHTML =
+          '<p class="radar-tooltip__name">' + d.label + '</p>' +
+          '<p class="radar-tooltip__meta" style="color:' + ringColor + '">' +
+            d.ringName + ' &middot; ' + d.quadrantName +
+          '</p>' +
+          '<p class="radar-tooltip__desc">' + d.description + '</p>';
+
+        positionTooltip(blipEl);
+        tooltip.classList.add("visible");
+      }
+
+      function hideTooltip() {
+        tooltip.classList.remove("visible");
+      }
+
+      function positionTooltip(blipEl) {
+        const blipRect = blipEl.getBoundingClientRect();
+        const containerRect = radarContainer.getBoundingClientRect();
+
+        // Temporarily make tooltip measurable
+        tooltip.style.visibility = "hidden";
+        tooltip.style.display = "block";
+        tooltip.style.opacity = "0";
+        const tooltipRect = tooltip.getBoundingClientRect();
+        tooltip.style.visibility = "";
+        tooltip.style.display = "";
+        tooltip.style.opacity = "";
+
+        const offsetY = 12;
+        let top = blipRect.top - containerRect.top - tooltipRect.height - offsetY;
+        let left = blipRect.left - containerRect.left + (blipRect.width / 2) - (tooltipRect.width / 2);
+
+        // Flip below if too close to top
+        if (top < 0) {
+          top = blipRect.bottom - containerRect.top + offsetY;
+        }
+
+        // Clamp horizontally within container
+        if (left < 0) left = 4;
+        if (left + tooltipRect.width > containerRect.width) {
+          left = containerRect.width - tooltipRect.width - 4;
+        }
+
+        tooltip.style.top = top + "px";
+        tooltip.style.left = left + "px";
+      }
+
+      // Attach to blips
+      var blips = document.querySelectorAll("#radar .blip");
+      blips.forEach(function(blip) {
+        blip.addEventListener("mouseenter", function() {
+          showTooltip(this);
+        });
+        blip.addEventListener("mouseleave", function() {
+          hideTooltip();
+        });
+      });
+
+      // Hide on resize to prevent stale positioning
+      window.addEventListener("resize", hideTooltip);
     });
 </script>
 
