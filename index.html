@@ -203,7 +203,10 @@
         ring: RING_MAP[entry.ring],
         moved: entry.moved,
         link: entry.link || "",
-        active: true
+        active: true,
+        description: entry.description || "",
+        ringName: entry.ring,
+        quadrantName: entry.quadrant
       }));
 
       radar_visualization({
