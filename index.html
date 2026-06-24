@@ -128,6 +128,7 @@
     }
     .radar-tooltip.visible {
       opacity: 1;
+      pointer-events: auto;
     }
     .radar-tooltip__name {
       font-size: 14px;
@@ -265,6 +266,7 @@
 
       function hideTooltip() {
         tooltip.classList.remove("visible");
+        tooltip.dataset.currentBlip = "";
       }
 
       function positionTooltip(blipEl) {
@@ -299,16 +301,45 @@
         tooltip.style.left = left + "px";
       }
 
-      // Attach to blips
+      // Detect touch device
+      var isTouch = window.matchMedia("(pointer: coarse)").matches;
+
       var blips = document.querySelectorAll("#radar .blip");
-      blips.forEach(function(blip) {
-        blip.addEventListener("mouseenter", function() {
-          showTooltip(this);
+
+      if (isTouch) {
+        // Touch: tap to show, tap outside to dismiss
+        blips.forEach(function(blip) {
+          blip.addEventListener("click", function(e) {
+            e.stopPropagation();
+            var alreadyVisible = tooltip.classList.contains("visible");
+            var currentLabel = tooltip.dataset.currentBlip;
+            var blipData = d3.select(this).datum();
+            var thisLabel = blipData ? blipData.label : "";
+            hideTooltip();
+            // If tapping a different blip (or tooltip was hidden), show it
+            if (!alreadyVisible || currentLabel !== thisLabel) {
+              showTooltip(this);
+              tooltip.dataset.currentBlip = thisLabel;
+            }
+          });
         });
-        blip.addEventListener("mouseleave", function() {
-          hideTooltip();
+
+        document.addEventListener("click", function(e) {
+          if (!e.target.closest(".blip")) {
+            hideTooltip();
+          }
         });
-      });
+      } else {
+        // Desktop: hover to show/hide
+        blips.forEach(function(blip) {
+          blip.addEventListener("mouseenter", function() {
+            showTooltip(this);
+          });
+          blip.addEventListener("mouseleave", function() {
+            hideTooltip();
+          });
+        });
+      }
 
       // Hide on resize to prevent stale positioning
       window.addEventListener("resize", hideTooltip);
