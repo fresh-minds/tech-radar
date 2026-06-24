@@ -95,6 +95,7 @@
       max-width: 1450px;
       margin: 0 auto;
       overflow-x: auto;
+      position: relative;
     }
 
     /* ── Footer ── */
@@ -173,13 +174,12 @@
 
 <div class="radar-container">
   <svg id="radar"></svg>
+  <div id="radar-tooltip" class="radar-tooltip"></div>
 </div>
 
 <footer class="radar-footer">
   FreshMinds Tech Radar &middot; Based on <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
 </footer>
-
-<div id="radar-tooltip" class="radar-tooltip"></div>
 
 <script>
   const RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
@@ -248,17 +248,23 @@
       const tooltip = document.getElementById("radar-tooltip");
       const radarContainer = document.querySelector(".radar-container");
 
+      function escapeHtml(str) {
+        var div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      }
+
       function showTooltip(blipEl) {
         const d = d3.select(blipEl).datum();
         if (!d || !d.description) return;
 
         const ringColor = RING_COLORS[d.ringName] || "#545454";
         tooltip.innerHTML =
-          '<p class="radar-tooltip__name">' + d.label + '</p>' +
+          '<p class="radar-tooltip__name">' + escapeHtml(d.label) + '</p>' +
           '<p class="radar-tooltip__meta" style="color:' + ringColor + '">' +
-            d.ringName + ' &middot; ' + d.quadrantName +
+            escapeHtml(d.ringName) + ' &middot; ' + escapeHtml(d.quadrantName) +
           '</p>' +
-          '<p class="radar-tooltip__desc">' + d.description + '</p>';
+          '<p class="radar-tooltip__desc">' + escapeHtml(d.description) + '</p>';
 
         positionTooltip(blipEl);
         tooltip.classList.add("visible");
@@ -325,7 +331,7 @@
         });
 
         document.addEventListener("click", function(e) {
-          if (!e.target.closest(".blip")) {
+          if (!e.target.closest(".blip") && !e.target.closest("#radar-tooltip")) {
             hideTooltip();
           }
         });
