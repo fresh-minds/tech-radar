@@ -110,6 +110,41 @@
       color: #2f45c2;
       text-decoration: none;
     }
+
+    /* ── Tooltip ── */
+    .radar-tooltip {
+      position: absolute;
+      max-width: 280px;
+      background: #fff;
+      border: 1px solid #d1d1ff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 12px 16px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 150ms ease;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+    }
+    .radar-tooltip.visible {
+      opacity: 1;
+    }
+    .radar-tooltip__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #131413;
+      margin: 0 0 4px;
+    }
+    .radar-tooltip__meta {
+      font-size: 11px;
+      margin: 0 0 6px;
+    }
+    .radar-tooltip__desc {
+      font-size: 12px;
+      color: #545454;
+      line-height: 1.5;
+      margin: 0;
+    }
   </style>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://zalando.github.io/tech-radar/release/radar-0.12.js"></script>
@@ -142,6 +177,8 @@
 <footer class="radar-footer">
   FreshMinds Tech Radar &middot; Based on <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
 </footer>
+
+<div id="radar-tooltip" class="radar-tooltip"></div>
 
 <script>
   const RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
