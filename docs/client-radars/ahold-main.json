@@ -1,0 +1,2799 @@
+{
+  "title": "Tech NL Radar - main",
+  "quadrants": [
+    {
+      "id": "techniques",
+      "name": "Techniques"
+    },
+    {
+      "id": "tools",
+      "name": "Tools"
+    },
+    {
+      "id": "platforms",
+      "name": "Platforms"
+    },
+    {
+      "id": "languages",
+      "name": "Languages & Frameworks"
+    }
+  ],
+  "rings": [
+    {
+      "id": "adopt",
+      "name": "Adopt",
+      "color": "#5BA300"
+    },
+    {
+      "id": "trial",
+      "name": "Trial",
+      "color": "#009EB0"
+    },
+    {
+      "id": "assess",
+      "name": "Assess",
+      "color": "#C7BA00"
+    },
+    {
+      "id": "hold",
+      "name": "Hold",
+      "color": "#E09B96"
+    },
+    {
+      "id": "leave",
+      "name": "Leave",
+      "color": "#FF0000"
+    }
+  ],
+  "entries": [
+    {
+      "id": "4-eyes",
+      "title": "4-eyes review",
+      "description": "The 4-eye review principle means that a pull-request must be approved by at least two people. This will help to reduce the risk of defect code going to production",
+      "key": "4-eyes",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-02-06",
+          "description": "The 4-eyes review principle has become mandatory for all TechNL respositories",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Abra",
+      "title": "Abra",
+      "description": "Accessibility testing toolset to enable our teams to test and validate the accessibility of our applications.",
+      "key": "Abra",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-09-25",
+          "description": "Move Abra to PoC phase. PoC is done by EEP Phoenix team - Anton Lilevsky, Silvija Klincharska, CTP - Koen Bakker.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "android-studio",
+      "title": "Android Studio",
+      "description": "Official IDE for Android development",
+      "key": "android-studio",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Ansible",
+      "title": "ansible",
+      "description": "Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code. It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows.",
+      "key": "Ansible",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "apachehttp",
+      "title": "Apache HTTP Server",
+      "description": "Apache HTTP Server is a free, open-source web server software designed to serve web content and provide various features like SSL/TLS encryption, URL rewriting, and authentication.",
+      "key": "apachehttp",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "apachetomcat",
+      "title": "Tomcat",
+      "description": "Apache Tomcat",
+      "key": "apachetomcat",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "apollo-router",
+      "title": "Apollo Router",
+      "description": "Apollo (GraphOS) Router is a GraphQL federation router. It provides functionality to read supergraphs and route traffic to the appropriate subgraphs in an efficient manner. It is possible to self-host. It is also used by Bol.com and GET, self-hosted on Kubernetes.",
+      "key": "apollo-router",
+      "license": "ELv2",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2026-07-28",
+          "description": "Confirmed as the GraphQL federation router for Integration & Interoperability, alongside its existing use in CTP and GET.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/spaces/TNLTA/pages/150900048027",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2025-02-13",
+          "description": "Apollo (GraphOS) Router is the preferred Federation router to enable GraphQL Federation. It is used by the Customer Tech Platform using a self-hosted setup.\nscope: CTP, GET",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/F5lXvSI",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ArgoCD",
+      "title": "ArgoCD",
+      "description": "ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes.",
+      "key": "ArgoCD",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-02-16",
+          "description": "ArgoCD is widely adopted within CTP and KaaS. The decision to adopt is only for managed platforms (AH CTP and KaaS)\n",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/nQAOpiI",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ARM",
+      "title": "ARM",
+      "description": "Azure Resource Manager (ARM) is a service that provides a management layer for Azure resources. It provides a consistent management layer that enables you to create, update, and delete resources in your Azure subscription.",
+      "key": "ARM",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Artifactory",
+      "title": "Artifactory",
+      "description": "Artifactory is a an alternative solution to GitHub Packages for housing and managing artifacts, packages etc. when GitHub packages does not suffice.",
+      "key": "Artifactory",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-02-02",
+          "description": "Converged on Artifactory in case GitHub Packages does not suffice",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "avro",
+      "title": "Avro",
+      "description": "Apache Avro is the leading serialization format for record data, and first choice for streaming data pipelines.",
+      "key": "avro",
+      "license": "Apache License 2.0",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Used for (de)serializing Kafka messages",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azure-ad",
+      "title": "Azure Active Directory",
+      "description": "Azure Active Directory (Azure AD) is Microsoft's multi-tenant cloud-based directory and identity management service.",
+      "key": "azure-ad",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azure-devops-artifacts",
+      "title": "Azure Devops Artifacts",
+      "description": "Azure DevOps Artifacts is a cloud-based artifact repository that helps you to manage your projects.",
+      "key": "azure-devops-artifacts",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azure-devops-pipelines",
+      "title": "Azure DevOps Pipelines",
+      "description": "Azure DevOps Pipelines is a cloud-based continuous integration and continuous delivery (CI/CD) solution that helps you to manage your projects.",
+      "key": "azure-devops-pipelines",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "AzureDevopsBoards",
+      "title": "Azure Devops Boards",
+      "description": "Azure DevOps Boards is a web-based service that you can use to track and manage your team's work. It provides a single location for your team to discuss, plan, and track work.",
+      "key": "AzureDevopsBoards",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "AzureDevopsRepo",
+      "title": "Azure Devops Repositories",
+      "description": "Azure DevOps Repos is a cloud-hosted Git repository service to store and version your code. It provides unlimited, free private Git repos, access controls, and the ability to collaborate with your team.",
+      "key": "AzureDevopsRepo",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azureiot",
+      "title": "Azure IOT",
+      "description": "Azure IoT is a cloud-based platform that enables the development, deployment, and management of Internet of Things (IoT) solutions at scale.",
+      "key": "azureiot",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azurekubernetes",
+      "title": "Azure Kubernetes Service",
+      "description": "AKS is the preferred Kubernetes platform and the core for the KaaS product",
+      "key": "azurekubernetes",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-12-09",
+          "description": "KaaS is preferred over AKS",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/7gAS1SI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-07-12",
+          "description": "AKS is the preferred Kuberenetes solution",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "AzureMonitor",
+      "title": "Azure Monitor",
+      "description": "Azure Monitor is a service that provides a single source for monitoring Azure resources. It provides a unified view of the health of your Azure resources and the applications running on them.",
+      "key": "AzureMonitor",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-10-10",
+          "description": "Azure Monitor should only be used as a data source in Grafana, and only if it's undesireable to send its data to Mimir. Do not create dashboards in Azure Monitor.",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "AzureSecurityCenter",
+      "title": "Azure Security Center",
+      "description": "Azure Security Center is a unified security management system that provides a single solution for protecting your hybrid cloud workloads. It provides security management capabilities for your Azure workloads, as well as workloads in your on-premises environment and other clouds.",
+      "key": "AzureSecurityCenter",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "AzureSentinel",
+      "title": "Azure Sentinel",
+      "description": "Azure Sentinel is a cloud-native SIEM and security orchestration solution that helps you detect, investigate, and respond to threats across your enterprise. It provides intelligent security analytics and threat intelligence to help you detect and respond to threats faster.",
+      "key": "AzureSentinel",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "azureservicebus",
+      "title": "Azure Service Bus",
+      "description": "Azure Service Bus is a cloud-based messaging service that allows decoupled communication between applications and services.",
+      "key": "azureservicebus",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Confluent Kafka is the preferred solution for Kafka",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "bicep",
+      "title": "Bicep",
+      "description": "Bicep is a Domain Specific Language (DSL) for deploying Azure resources declaratively.",
+      "key": "bicep",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Bitbucket",
+      "title": "Bitbucket",
+      "description": "Bitbucket is a web-based version control repository hosting service owned by Atlassian, for source code and development projects that use either Mercurial or Git revision control systems.",
+      "key": "Bitbucket",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "BizzDesign",
+      "title": "BizzDesign",
+      "description": "BizzDesign is a tool that helps you to create a business model canvas.",
+      "key": "BizzDesign",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Browserstack",
+      "title": "Browserstack",
+      "description": "BrowserStack is a cross-platform web browser testing tool that allows users to test their websites & native mobile apps and will be used by frontend Web paved road",
+      "key": "Browserstack",
+      "license": "",
+      "links": [
+        {
+          "title": "BrowserStack Official Website",
+          "url": "https://www.browserstack.com/"
+        }
+      ],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-02-05",
+          "description": "BrowserStack is a cross-platform web browser testing tool that allows users to test their websites and will be used by frontend Web paved road",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/UYFZviI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "checkmarx",
+      "title": "Checkmarx",
+      "description": "Checkmarx is a static Application Security Testing (SAST) solution that analyzes source code to identify potential security vulnerabilities and compliance issues. Checkmarx is used for code languages not supported by GitHub Advanced Security.",
+      "key": "checkmarx",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-07-22",
+          "description": "",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/3xm9ryI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2023-03-06",
+          "description": "Adopt for code languages not supported by GitHub Advanced Security, e.g PL/SQL.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/l/cp/KoCPrDVe",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "checkov",
+      "title": "Checkov",
+      "description": "Checkov scans cloud infrastructure configurations to find misconfigurations before they're deployed.",
+      "key": "checkov",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-07-05",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Cilium",
+      "title": "Cilium",
+      "description": "Cilium is an open source software for providing, securing and observing network connectivity between container workloads - cloud native, and fueled by the revolutionary Kernel technology eBPF.",
+      "key": "cilium",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-03-16",
+          "description": "Will be assessed in Kubernetes as a Service to replace Kubenet to reduce network hops, and allow us to test the other features.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "cloud-resources-duplo",
+      "title": "Cloud resources [Duplo]",
+      "description": "The EEP cloud resources platform (Duplo) is the preferred solution for managing cloud resources.",
+      "key": "cloud-resources-duplo",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2026-06-10",
+          "description": "Duplo is preferred over other cloud resource management platforms (https://confluence-aholddelhaize.atlassian.net/wiki/x/kQBGGCM)",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "code-reviews",
+      "title": "Code Reviews",
+      "description": "Code review is careful, systematic study of source code by people who are not the original author of the code. This will lead to a higher quality code and developer",
+      "key": "code-reviews",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "This is a good practice and mandatory for all TechNL respositories",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Commvault-Metallic",
+      "title": "Commvault-Metallic",
+      "description": "Commvault Metallic is a cloud-based backup solution that is used for use cases that are not supported by the native backup service provided by the Cloud Service Provider. For onboarding to this service please contact [Cloud Enablement Team](https://github.com/orgs/RoyalAholdDelhaize/discussions/categories/cloud).",
+      "key": "Commvault-Metallic",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-02-01",
+          "description": "Commvault Metallic replaces the existing Commvault IaaS solution, which is mainly in use for Oracle Databases on Azure and OCVS in Oracle Cloud.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/YQAHoiI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Confluence",
+      "title": "Confluence",
+      "description": "Confluence is a proprietary enterprise wiki used for documenting, discussing, and organizing a project's work with its users. It is developed by Atlassian and is available as a cloud-based software as a service (SaaS) product or as an on-premises installation.",
+      "key": "Confluence",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "controlm",
+      "title": "CONTROL-M/Enterprise Manager Client",
+      "description": "Control-M is a workload automation software solution used for scheduling and managing batch processing jobs in enterprise IT environments.",
+      "key": "controlm",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Control-M is the preferred solution for scheduling and managing batch processing jobs",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "cosmosdb",
+      "title": "Azure Cosmos DB",
+      "description": "Azure Cosmos DB is the Azure native no-sql solution.\n\n MongoDB Atlas is the preferred solution over Azure Cosmos DB",
+      "key": "cosmosdb",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-12-12",
+          "description": "MongoDB Atlas is the preferred solution over Azure Cosmos DB",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/AQA12iI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-07-21",
+          "description": "MongoDB should be used instead",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "cqrs",
+      "title": "CQRS",
+      "description": "Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates data modification (Commands) from data retrieval (Queries) into distinct models.",
+      "key": "cqrs",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Used in CTP",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Crossplane",
+      "title": "Crossplane",
+      "description": "Crossplane enables you to manage and control cloud resources and infrastructure using the Kubernetes control plane.",
+      "key": "Crossplane",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-09-07",
+          "description": "Assessment at EEP for provisioning of cloud resources in Kubernetes as a Service.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Curiosity",
+      "title": "Curiosity",
+      "description": "Test data management tool for complete and compliant test data delivered on demand",
+      "key": "Curiosity",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-07-03",
+          "description": "Test data management tool for complete and compliant test data delivered on demand",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "defenderforcontainers",
+      "title": "Defender for Containers",
+      "description": "Microsoft Defender for Containers is the cloud-native solution that is used to secure your containers so you can improve, monitor, and maintain the security of your clusters, containers, and their applications.",
+      "key": "defenderforcontainers",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-10-19",
+          "description": "Defender for Containers is being trialed at the Cloud Core team from TechNL.",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "deno",
+      "title": "Deno",
+      "description": "Modern runtime for JavaScript and TypeScript.",
+      "key": "deno",
+      "license": "MIT",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-11-22",
+          "description": "Deno is used to automate repositories and workflows with TypeScript, using Deno simplifies package management.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Deque",
+      "title": "Deque",
+      "description": "Accessibility testing toolset to enable our teams to test and validate the accessibility of our applications.",
+      "key": "Deque",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-09-25",
+          "description": "Move Deque to PoC phase. PoC is done by EEP Phoenix team - Anton Lilevsky, Silvija Klincharska, CTP - Koen Bakker.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "devpod",
+      "title": "DevPod",
+      "description": "Open Source Dev-Environments-As-Code (Daes). Open Source tool for Devcontainers. Viable alternative for codespaces as it runs client-only. Enables creating reproducible developer environments in containers and is specified through devcontainer.json.",
+      "key": "devpod",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-06-24",
+          "description": "Open Source Dev-Environments-As-Code (Daes). Open Source tool for Devcontainers. Viable alternative for codespaces as it runs client-only. Enables creating reproducible developer environments in containers and is specified through devcontainer.json.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Docker Desktop",
+      "title": "Docker Desktop",
+      "description": "Docker Desktop is a proprietary solution to run containers on your local workstation.",
+      "key": "docker-desktop",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-07-19",
+          "description": "Free alternatives are available, such as Podman Desktop, Rancher Desktop, Colima and Minikube.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/saMYlSI",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "dockercontainers",
+      "title": "Docker Containers",
+      "description": "A Docker container is a runtime environment with all the necessary components, like code, dependencies, and libraries, needed to run the application code without using host machine dependencies.",
+      "key": "dockercontainers",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "used for deployments on kubernetes (Kaas)",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Dynatrace",
+      "title": "dynaTrace Agent",
+      "description": "dynaTrace and dynaTrace Agent",
+      "key": "Dynatrace",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-10-10",
+          "description": "Dynatrace is a legacy APM tool that is replaced Cerebro. The only remaining use is with store handscanners, whom have an exemption to use it until October 2025.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ElasticSearch",
+      "title": "Elasticsearch",
+      "description": "Elasticsearch (ECK)",
+      "key": "ElasticSearch",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "eventsourcing",
+      "title": "Event Sourcing",
+      "description": "Event sourcing is a software design pattern where changes to application state are stored as an ordered, immutable sequence of events rather than just the current state.",
+      "key": "eventsourcing",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Used in CTP",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "eventstreaming",
+      "title": "Event Streaming",
+      "description": "Event streaming revolves around the unbounded, sequential and real-time flow of data records, called 'events', foundational data structures that record any occurrence in the system or environment.",
+      "key": "eventstreaming",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Part of the data strategy. Used to get changes to business objects into Thor",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Evinced",
+      "title": "Evinced",
+      "description": "Accessibility testing toolset to enable our teams to test and validate the accessibility of our applications.",
+      "key": "Evinced",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-09-25",
+          "description": "Move Evinced to PoC phase. PoC is done by EEP Phoenix team - Anton Lilevsky, Silvija Klincharska, CTP - Koen Bakker.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Falco",
+      "title": "Falco",
+      "description": "Falco is an open source runtime security project that provides behavioral activity monitoring designed to detect anomalous activity in your applications. You can use Falco to monitor run-time security of your Kubernetes applications and internal components.",
+      "key": "Falco",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Flexera",
+      "title": "Flexera",
+      "description": "Flexera is a software company that provides software license management, vulnerability management, and compliance solutions. It is headquartered in Austin, Texas, and has offices in the United Kingdom, Germany, and India.",
+      "key": "Flexera",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-06-26",
+          "description": "Flexera is decommissioned. ServiceNow SAM Pro is the replacement.",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "fluentbit",
+      "title": "Fluentbit",
+      "description": "Fluent Bit is a super fast, lightweight, and highly scalable logging and metrics processor and forwarder.",
+      "key": "fluentbit",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-12-05",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "gas",
+      "title": "GitHub Advanced Security",
+      "description": "GitHub Advanced Security is a suite of security features and tools built into the GitHub platform that helps identify and prevent security vulnerabilities in code. It includes features such as Code Scanning, Secret Scanning, Dependabot alerts, and Security Advisories.",
+      "key": "gas",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-03-06",
+          "description": "GHAS is the default SAST tooling. Checkmarx to be used for code languages not supported by GHAS (e.g. PL/SQL)",
+          "url": "https://confluence-aholddelhaize.atlassian.net/l/cp/KoCPrDVe",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2022-09-01",
+          "description": "Trial started with GAS as replacement for Checkmarx and adding new features like secret and license scanning. GAS is close/part of our Developer platform giving better integration with our processes and tools",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "git-ops",
+      "title": "GitOps",
+      "description": "GitOps is a way of implementing Continuous Deployment for cloud native applications. It focuses on a developer-centric experience when operating infrastructure, by using tools developers are already familiar with, including Git and Continuous Deployment tools.",
+      "key": "git-ops",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "GitOps is the preferred way of implementing Continuous Deployment for cloud native applications",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "title": "GitHub",
+      "description": "GitHub is a web-based platform for version control and collaborative software development using Git.",
+      "key": "github",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github-actions-ci-cd",
+      "title": "GitHub Actions",
+      "description": "GitHub Actions is a platform for automating software development workflows, enabling users to build, test, and deploy code directly from GitHub.",
+      "key": "github-actions-r2d",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github-actions-deployment",
+      "title": "GitHub Actions",
+      "description": "GitHub Actions is a platform for automating software development workflows, enabling users to build, test, and deploy code directly from GitHub.",
+      "key": "github-actions-r2f",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "title": "GitHub Copilot",
+      "description": "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor.",
+      "key": "github-copilot",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-11-27",
+          "description": "Copilot is adopted by multiple teams across TechNL to increase developer productivity.",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2022-03-10",
+          "description": "A Pilot will start in Tech NL to evaluate Copilot for a variety of scenarios.",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github-packages",
+      "title": "Github Packages",
+      "description": "GitHub Packages is a package hosting service that allows users to store and share different types of packages, such as code libraries, Docker images, and more, within the GitHub ecosystem.",
+      "key": "github-packages",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-11-27",
+          "description": "Moved to Hold in favor of Artifactory for better package management capabilities.",
+          "ringId": "hold",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "go-lang",
+      "title": "Go-lang",
+      "description": "Go-lang is an open-source programming language supported by Google.",
+      "key": "go-lang",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "In trial at CTP platform - owner: Daniel Molenaar",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "gradle",
+      "title": "Gradle",
+      "description": "Gradle: build system, to accelerate developer productivity",
+      "key": "gradle",
+      "license": "Apache2.0",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-11-27",
+          "description": "For Android the default (and only option) is Gradle.",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2024-11-07",
+          "description": "Backend is Testing Gradle within CTP for backend builds as alternative to Maven to improve the build time and reap other benefits. For Android apps the default (and only option) is Gradle.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Grafana",
+      "title": "Grafana",
+      "description": "Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.",
+      "key": "Grafana",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "greenpixie",
+      "title": "Greenpixie",
+      "description": "Greenpixie is a company that provides services to calculate the carbon footprint of cloud infrastructure consumption.",
+      "key": "greenpixie",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-09-05",
+          "description": "Proof-of-Concept only",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "hazelcast",
+      "title": "Hazelcast",
+      "description": "Hazelcast provides central, predictable scaling of applications through in-memory access to frequently used data and across an elastically scalable data grid.",
+      "key": "hazelcast",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-11-21",
+          "description": "The adopt alternative for Hazelcast is Redis.",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "hive",
+      "title": "Hive",
+      "description": "Hive is a GraphQL federation platform. It provides functionality to govern and serve supergraphs, track schema changes, and collect usage statistics. It is possible to self-host. It is also used by Bol.com, self-hosted on Kubernetes.",
+      "key": "hive",
+      "license": "MIT",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-02-13",
+          "description": "Hive is the preferred solution for GraphQL federation platform. It is used by the Customer Tech Platform using a self-hosted setup.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/F5lXvSI",
+          "ringId": "trial",
+          "moved": 1
+        },
+        {
+          "date": "2024-12-05",
+          "description": "Hive is the preferred solution for GraphQL federation platform. It is used by the Customer Tech Platform using a self-hosted setup.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "influxdb",
+      "title": "InfluxDB",
+      "description": "InfluxDB is an open-source time series database (TSDB). It is used for storage and retrieval of time series data in fields such as operations monitoring, application metrics, IoT sensor data, and real-time analytics.",
+      "key": "InfluxDB",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-04-08",
+          "description": "InfluxDB is used in performance testing to collect metrics and store them for further analysis. InfluxDB is required for smooth integration with Cerebro and will be used as an internal EEP tool, which should replace current OTLP -> Prometheus collector.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "informaticatdm",
+      "title": "Informatica TDM",
+      "description": "Informatica TDM",
+      "key": "informaticatdm",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-09-12",
+          "description": "The tool is not used anymore in favor of custom scripting for existing use cases.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/LgG1rSI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-06-10",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "infracost",
+      "title": "Infracost",
+      "description": "Infracost scans cloud infrastructure configurations to find cost impact before they're deployed.",
+      "key": "infracost",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-03-03",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ingress-nginx",
+      "title": "Ingress NGINX",
+      "description": "Ingress NGINX is a Kubernetes Ingress controller that uses NGINX to route HTTP and HTTPS traffic to services in a cluster.",
+      "key": "ingress-nginx",
+      "license": "Apache-2.0",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2026-09-01",
+          "description": "",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/YpQc9iI",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "intellij",
+      "title": "IntelliJ IDEA",
+      "description": "IntelliJ IDEA is an integrated development environment (IDE) written in Java for developing computer software. It is developed by JetBrains (formerly known as IntelliJ), and is available as an Apache 2 Licensed community edition, and in a proprietary commercial edition.",
+      "key": "intellij",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "isam",
+      "title": "ISAM",
+      "description": "ISAM is a web access management solution that provides single sign-on, access control, and federation capabilities.",
+      "key": "isam",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-09",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "isim",
+      "title": "ISIM/ITIM",
+      "description": "ISIM/ITIM is a web access management solution that provides single sign-on, access control, and federation capabilities.",
+      "key": "isim",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "java",
+      "title": "Java",
+      "description": "Java is a high-level, object-oriented programming language that is designed to be portable, secure, and platform-independent.",
+      "key": "java",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2025-12-09",
+          "description": "Any new development should be done using Kotlin (https://confluence-aholddelhaize.atlassian.net/wiki/x/cYHi1SI).",
+          "ringId": "hold",
+          "moved": -1
+        },
+        {
+          "date": "2022-01-01",
+          "description": "Java can be used as a language for the backend, but Kotlin is preferred",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "jboss",
+      "title": "Redhat JBoss EAP",
+      "description": "Red Hat JBoss EAP (Enterprise Application Platform) is a middleware solution that provides a platform for developing, deploying, and managing Java-based applications.",
+      "key": "jboss",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-12-11",
+          "description": "Redhat JBoss EAP is the preferred solution for Java based applications",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/ipTb3yI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-07-12",
+          "description": "Redhat JBoss EAP is the preferred solution for Java based applications",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "jenkins",
+      "title": "Jenkins",
+      "description": "Jenkins is an open source automation server. It helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery.",
+      "key": "jenkins",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-02-26",
+          "description": "",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Jira",
+      "title": "Jira",
+      "description": "Jira is a proprietary issue tracking product, developed by Atlassian. It provides bug tracking, issue tracking, and project management functions.",
+      "key": "Jira",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "JMeter",
+      "title": "JMeter",
+      "description": "JMETER is a load testing tool that is used to test the performance of a web application.",
+      "key": "JMeter",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "title": "JSON",
+      "description": "JSON (JavaScript Object Notation) is commonly used for data storage and transfer.",
+      "key": "json",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Used in our APIs and in Kafka messages",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "jsonrpc",
+      "title": "RPC-style over HTTP/JSON",
+      "description": "Used when REST architecture does not have a good fit",
+      "key": "jsonrpc",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "k6",
+      "title": "K6",
+      "description": "Grafana k6 is an open-source load testing tool that makes performance testing easy and productive for engineering teams. k6 is free, developer-centric, and extensible.",
+      "key": "k6",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-06-03",
+          "description": "K6 performance testing tool PoC was done by CTP (Daniel Molenaar) and EEP Phoenix (Vitalii Rymar) teams. Managements contacts: Silvija Klincharska and Ivan Merrill.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "karate",
+      "title": "Karate",
+      "description": "Low-code API Test automation framework that supports BDD-style predefined steps for writing the tests. Can be used for performance, and UI testing. Also, has an ability to produce and consume messages from Kafka.",
+      "key": "karate",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-07-28",
+          "description": "Karate is confirmed as a relevant API test automation framework for Integration & Interoperability.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/spaces/TNLTA/pages/150900048027",
+          "ringId": "trial",
+          "moved": 0
+        },
+        {
+          "date": "2024-06-11",
+          "description": "Karate framework PoC is done by EEP Phoenix team (Francois Pogieter, Anton Lilevsky), managerial contact - Silvija Klincharska. Karate is used in CTP(Ashok Rathnasabapathy, Alex Sijm), Gall&Gall(Bjorn van Lienen), RBP MDM(Avirup Das + Durga Marimuthu), STP Enablement(Abdel Al Bojaddaine), Etos(Soumya Rani Khamari).",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/_wCmryI",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Kibana",
+      "title": "kibana",
+      "description": "Kibana is an open source data visualization plugin for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line, area, scatter, pie, and metric charts with multiple indices, and drill down into the visualized data.",
+      "key": "Kibana",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "knime",
+      "title": "KNIME Desktop",
+      "description": "As self-service Data & Analytic Platform. The tool will be used as self-service offer, that will enable the bussines to consume , blend and analyse the data as per need.",
+      "key": "KNIME",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2024-01-01",
+          "description": "As self-service Data & Analytic Platform. The tool will be used as self-service offer, that will enable the bussines to consume , blend and analyse the data as per need.",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "kubernetes-kaas",
+      "title": "Kubernetes [KaaS]",
+      "description": "AKS is the preferred Kubernetes platform and the core for the KaaS product",
+      "key": "kubernetes-kaas",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-12-09",
+          "description": "KaaS is preferred over AKS (https://confluence-aholddelhaize.atlassian.net/wiki/x/7gAS1SI)",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "loki",
+      "title": "Grafana Loki",
+      "description": "Grafana Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system.",
+      "key": "loki",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-03-28",
+          "description": "Grafana Loki is part of the TechNL observability platform 'Cerebro', this is the primary platform for all observability data.\n",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "mimir",
+      "title": "Grafana Mimir",
+      "description": "Grafana Mimir is an open source, horizontally scalable, highly available, multi-tenant TSDB for long-term storage for Prometheus.",
+      "key": "mimir",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-03-28",
+          "description": "Grafana Loki is part of the TechNL observability platform 'Cerebro', this is the primary platform for all observability data.\n",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Miro",
+      "title": "Miro",
+      "description": "Miro is a collaborative whiteboard platform that enables distributed teams to work together in real time.",
+      "key": "Miro",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "mob-programming",
+      "title": "Mob Programming",
+      "description": "Mob Programming is a software development approach where the whole team works on the same code, at the same time, on the same computer.",
+      "key": "mob-programming",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "Mob programming is a good way to work together on a problem and is being assessed by",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "mongodb",
+      "title": "MongoDB [Atlas]",
+      "description": "MongoDB Atlas is the choice of implementation for a non-SQL database. MongoDB Atlas is a fully-managed cloud database that handles all the complexity of deploying, managing, and healing your deployments on any public cloud service. Self hosted MongoDB is not allowed.",
+      "key": "mongodb",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2024-01-17",
+          "description": "MongoDB is the first choice for non-SQL databases.",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2023-04-17",
+          "description": "In Trial phase and used in most of the platforms. The enabling community is still building up",
+          "ringId": "trial",
+          "moved": 0
+        },
+        {
+          "date": "2022-05-06",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "msiis",
+      "title": "Internet Information Services",
+      "description": "Microsoft Internet Information Services",
+      "key": "msiis",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Microsoft Internet Information Services is not the preferred solution for web hosting",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "mspowerapps",
+      "title": "Microsoft Power Apps",
+      "description": "Usage of Power Apps outside of personal and team usage is subject to approval by architecture",
+      "key": "mspowerapps",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Microsoft Power Apps is not the preferred solution",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Mural",
+      "title": "Mural",
+      "description": "Mural is a collaborative workspace that helps teams solve problems, generate ideas, and create visual artifacts.",
+      "key": "Mural",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Myst",
+      "title": "Myst",
+      "description": "Myst is a proprietary software product that provides a secure, encrypted, and anonymous Internet connection.",
+      "key": "Myst",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Nagios",
+      "title": "Nagios",
+      "description": "Nagios is a computer-software application that monitors systems, networks, and infrastructure. Nagios offers monitoring and alerting services for servers, switches, applications, and services. It alerts users when things go wrong and notifies them when they are fixed.",
+      "key": "Nagios",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Nexus",
+      "title": "Nexus",
+      "description": "Nexus is a repository manager that supports multiple package formats, including Maven, npm, NuGet, PyPI, and Docker.",
+      "key": "Nexus",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-02-02",
+          "description": "Defaults are GitHub Packages and Artifactory",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "Look into GitHub Artifacts / ACR",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "nginx",
+      "title": "Nginx",
+      "description": "Nginx is a popular web server and reverse proxy that is designed to handle high traffic websites with efficiency and performance.",
+      "key": "nginx",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Nginx is the preferred solution for web hosting",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "nix",
+      "title": "Nix",
+      "description": "Nix is a declarative, purely functional package manager and configuration management system designed for reproducible and reliable software environments.",
+      "key": "nix",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-09-28",
+          "description": "Nix is a declarative, purely functional package manager and configuration management system designed for reproducible and reliable software environments.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ocvs",
+      "title": "Oracle Cloud VMWare Solution",
+      "description": "OCVS is used as a tactical solution to lift-and-shift the VMware environment on DXC hardware towards Oracle hardware",
+      "key": "ocvs",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2023-04-05",
+          "description": "OCVS is used as a tactical solution to lift-and-shift the VMware environment on DXC hardware towards Oracle hardware",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "oem",
+      "title": "Oracle Enterprise Manager",
+      "description": "All Oracle Databases should be onboarded to an OEM instance. However this is not yet fully automated and requires manual actions",
+      "key": "oem",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-10-31",
+          "description": "Oracle Enterprise Manager (OEM) is the de facto standard for monitoring Oracle DB.",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "opentelemetry",
+      "title": "OpenTelemetry Protocol",
+      "description": "OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyze your software's performance and behavior. (Currently only Traces are within the Trial scope)",
+      "key": "opentelemetry",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-12-19",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "opentelemetry-collector",
+      "title": "OpenTelemetry Collector",
+      "description": "OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyze your software's performance and behavior.",
+      "key": "opentelemetry",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-10-10",
+          "description": "The OpenTelemetry collector is used within Cerebro to send traces towards Tempo. In addition, it is used on virtual machines to send metrics to Mimir.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2022-12-05",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Opsgenie",
+      "title": "Opsgenie",
+      "description": "Opsgenie is a cloud-based service that provides alerting and on-call management for systems and applications.",
+      "key": "Opsgenie",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-06-26",
+          "description": "Atlassian is ending Opsgenie; replaced by PagerDuty.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/spaces/AHENA/pages/150213427643/EA-TP-AD-2026-02-26+Replace+Opsgenie",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "oracleapex",
+      "title": "Oracle Apex",
+      "description": "Oracle Apex is a low-code web application development platform used to build scalable and secure enterprise applications.",
+      "key": "oracleapex",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Oracle Apex is not the preferred solution for web development",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "oracledb",
+      "title": "Oracle Database",
+      "description": "Oracle Database is a relational database management system (RDBMS) designed for enterprise-level applications.",
+      "key": "oracledb",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "Oracle Database is one of the solution for relational databases, for new developement we recommend to use PostgreSQL",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "outsystems",
+      "title": "Outsystems",
+      "description": "OutSystems is a low-code development platform that enables organizations to build and deploy enterprise-grade applications with minimal coding.",
+      "key": "outsystems",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-06-25",
+          "description": "Outsystems is considered on HOLD for all domains. An exception process exists for limited cases.",
+          "ringId": "hold",
+          "moved": -1
+        },
+        {
+          "date": "2023-09-14",
+          "description": "Outsystems is in ADOPT state for Customer Technology Platform. Other platforms are treating Outsystems as HOLD.",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "pagerduty",
+      "title": "PagerDuty",
+      "description": "PagerDuty is a cloud-based incident management and on-call alerting platform.",
+      "key": "pagerduty",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-06-26",
+          "description": "Replacement for Opsgenie (Atlassian Opsgenie EOL).",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/spaces/AHENA/pages/150213427643/EA-TP-AD-2026-02-26+Replace+Opsgenie",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Perfana",
+      "title": "Perfana",
+      "description": "Perfana is a performance testing tool that helps you to test the performance of your web application.",
+      "key": "Perfana",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-02-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "pl-sql",
+      "title": "PL/SQL",
+      "description": "PL/SQL is a procedural language designed specifically for managing and manipulating relational database systems.",
+      "key": "pl-sql",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "PL/SQL is not the preferred solution for database development, please adopt the (micro)service architecture",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "playwright",
+      "title": "Playwright",
+      "description": "Test automation framework developed by Microsoft which enables reliable end-to-end testing for modern web apps with extensive cross-browser and platforms support.",
+      "key": "playwright",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-12-30",
+          "description": "Playwright is adopted as the standard end-to-end testing framework for web applications within TechNL.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/G6Q7wCI",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2024-04-22",
+          "description": "Playwright is a test framework for modern web applications end-to-end testing",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "polyapi",
+      "title": "Poly API",
+      "description": "Poly is the go-to platform for developer teams looking to simplify their API and Event discovery and consumption. Experience seamless integration, satisfy your development partners, and unlock the potential of LLM AI Agents—all through the power of Poly.",
+      "key": "polyapi",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-10-12",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "powershell",
+      "title": "Windows PowerShell",
+      "description": "Windows PowerShell is a command-line shell and scripting language designed for system administration and automation in the Windows operating system.",
+      "key": "powershell",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2022-11-07",
+          "description": "Only for automation on Windows based machines",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "PowerSteering",
+      "title": "PowerSteering",
+      "description": "PowerSteering is a project management software that helps you to manage your projects.",
+      "key": "PowerSteering",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "title": "OpenEdge",
+      "description": "OpenEdge is a development platform for building enterprise applications that are scalable, reliable, and can be deployed across various operating systems and databases.",
+      "key": "progress",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-09-06",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Prometheus",
+      "title": "Prometheus",
+      "description": "Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community.",
+      "key": "Prometheus",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Pulumi",
+      "title": "Pulumi",
+      "description": "Pulumi is a tool to write Infrastructure as Code in higher-level programming language, interacting directly with the resource API's instead of through hand-written providers. TechNL can selectively leverage Pulumi for orchestration with Typescript for IaC based on prior approval from their PDA. It should not be used as direct replacement of Terraform for all use cases.",
+      "key": "Pulumi",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-03-14",
+          "description": "Pulumi with TypeScript for Infrastructure as Code, trialed within Kubernetes as a Service and Teams as Code.",
+          "url": "https://github.com/RoyalAholdDelhaize/tech-nl-radar/issues/157",
+          "ringId": "trial",
+          "moved": 1
+        },
+        {
+          "date": "2023-04-25",
+          "description": "Is being assessed to function as the Infrastructure as Code platform for the Kubernetes as a Service platform.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "description": "Python is a general-purpose language used for automation and data analysis.",
+      "key": "python",
+      "license": "PSF-2.0",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2025-03-21",
+          "description": "Python is adopted only within GET and DDP for service development or data science.\nCloud Foundation team uses Python for automation scripts and Azure functions.\nAH CTP decided to replace Perl by Python on the POS.\nThe Python paved road for microservices is currently in Alpha and can be used for evaluation purposes (assess).\nOther platforms may use Python in restricted use cases.",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2024-10-04",
+          "description": "Python is adopted only within GET and DDP for service development or data science. Cloud Foundation team uses Python for automation scripts and Azure functions. Other platforms may use Python in restricted use cases.",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2023-03-16",
+          "description": "Python is widely in use in AholdDelhaize and standards are available.",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2022-01-01",
+          "description": "Python is the preferred solution for automation and data analysis",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "qdrant",
+      "title": "qdrant",
+      "description": "Opensource vector database (search engine).",
+      "key": "qdrant",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-03-23",
+          "description": "In CTP the search team would like to use qdrant as vector search engine for semantic product search and product recommendations.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "rapid7",
+      "title": "Rapid7",
+      "description": "Rapid7 is a cybersecurity company that provides security analytics, asset management, vulnerability management, and incident detection and response solutions.",
+      "key": "rapid7",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "redis",
+      "title": "Redis [Azure managed Redis]",
+      "description": "Azure Managed Redis provides an in-memory data store based on the Redis Enterprise software. It is supported by Duplo.",
+      "key": "redis",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2026-06-10",
+          "description": "The cloud resources platform (Duplo) supports Azure Managed Redis.",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2025-12-11",
+          "description": "Currently there are many teams using Azure Managed Redis. TechNL enablement does not offer a managed equivalent and as such this implementation is considered preferred (https://confluence-aholddelhaize.atlassian.net/wiki/x/LIDs1SI).",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "redis-azure",
+      "title": "Redis [Azure Cache for Redis]",
+      "description": "Azure Cache for Redis provides an in-memory data store based on the Redis software and is supported by Duplo.",
+      "key": "redis-azure",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2025-12-11",
+          "description": "Azure Cache for Redis announced its retirement timeline for all SKUs. We recommend moving your existing Azure Cache for Redis instances to Azure Managed Redis as soon as you can. (https://confluence-aholddelhaize.atlassian.net/wiki/x/LIDs1SI).",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "reportportal",
+      "title": "Reportportal",
+      "description": "ReportPortal is an open source test management and reporting tool for software testing teams. It is a web-based application that allows you to manage and track your test automation efforts.",
+      "key": "reportportal",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "rest",
+      "title": "REST over HTTP",
+      "description": "REST is an architecture style heavily used in the backend to expose data by services",
+      "key": "rest",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "REST Assured",
+      "title": "REST Assured",
+      "description": "REST Assured is a popular, open-source Java/Kotlin library that provides a domain-specific language (DSL) for testing and validating RESTful APIs.",
+      "key": "REST Assured",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-05-29",
+          "description": "REST Assured is a popular open-source Java/Kotlin library used to test, validate, and automate RESTful APIs.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/SgB95CI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Roadmunk",
+      "title": "Roadmunk",
+      "description": "Roadmunk is a product management tool that helps you to create a business model canvas.",
+      "key": "Roadmunk",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-06-09",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "rust",
+      "title": "Rust",
+      "description": "A language empowering everyone to build reliable and efficient software.",
+      "key": "rust",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2025-12-09",
+          "description": "Both DS&A and CTP have applied Rust for production use cases.",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/ZoHi1SI",
+          "ringId": "trial",
+          "moved": 1
+        },
+        {
+          "date": "2022-12-22",
+          "description": "Rust seems to be the future language for all Data Engineering / Data Platform related work. Other areas are not as clear (Microservices for instance).",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ServiceNow-ITBM",
+      "title": "ServiceNow ITBM",
+      "description": "ServiceNow ITBM is a cloud-based IT business management solution that helps you to manage your IT services.",
+      "key": "ServiceNow-ITBM",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ServiceNow-SAM-Pro",
+      "title": "ServiceNow SAM Pro",
+      "description": "ServiceNow SAM Pro is a software asset management solution that provides visibility into software licenses, compliance, and optimization. It replaces Flexera as the standard SAM tool.",
+      "key": "ServiceNow-SAM-Pro",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-06-26",
+          "description": "ServiceNow SAM Pro replaces Flexera for software asset management.",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "sigrid",
+      "title": "Sigrid",
+      "description": "Sigrid is a data-driven software intelligence platform, that will analyze all source code derive holistic insights into risks, costs, opportunities on multiple software quality aspects and translate those into business risks and concrete actions.",
+      "key": "sigrid",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-10-10",
+          "description": "Used by the STP and SBP teams next to sonarqube as a software quality tool",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/8wBUsyI",
+          "ringId": "leave",
+          "moved": -1
+        },
+        {
+          "date": "2023-01-17",
+          "description": "Used by the STP and SBP teams next to sonarqube as a software quality tool",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/qAAVayI",
+          "ringId": "adopt",
+          "moved": 0
+        },
+        {
+          "date": "2022-06-15",
+          "description": "Used by the STP and SBP teams next to sonarqube as a software quality tool",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Sonarqube",
+      "title": "Sonarqube",
+      "description": "Sonarqube is an open source platform to perform automatic reviews with static analysis of code to detect bugs, code smells and security vulnerabilities on 20+ programming languages.",
+      "key": "Sonarqube",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "streamprocessing",
+      "title": "Stream Processing",
+      "description": "Stream processing is a data management technique that ingests, analyzes, and acts on data immediately as it is generated, rather than waiting to collect it in batches.",
+      "key": "streamprocessing",
+      "license": "",
+      "links": [],
+      "quadrant": "techniques",
+      "timeline": [
+        {
+          "date": "2026-05-01",
+          "description": "Used and backed by Kafka Stream and other platforms and frameworks",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "teams-as-code",
+      "title": "Teams as Code",
+      "description": "Teams as Code is a group creation & membership automation tool.\nIt allows us to manage groups in a single place, in an automated fashion and propagate that to any number of systems.\n",
+      "key": "teams-as-code",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-02-27",
+          "description": "",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/8IhViiI",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "tempo",
+      "title": "Grafana Tempo",
+      "description": "Grafana Tempo is an open source, easy-to-use, and high-scale distributed tracing backend",
+      "key": "tempo",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-10-10",
+          "description": "Grafana Tempo is part of the TechNL observability platform 'Cerebro', this is the primary platform for all observability data.\n",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2024-03-28",
+          "description": "Grafana Tempo is part of the TechNL observability platform 'Cerebro', this is the primary platform for all observability data.\nTempo is still in trial phase, but is expected to be adopted soon after user acceptance testing.\n",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/mo3ApiI",
+          "ringId": "trial",
+          "moved": 0
+        },
+        {
+          "date": "2022-12-05",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Terraform",
+      "title": "Terraform",
+      "description": "Terraform is an open-source infrastructure as code software tool created by HashiCorp. Users define and provide data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language, or optionally JSON.",
+      "key": "Terraform",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Terragrunt",
+      "title": "Terragrunt",
+      "description": "Terragrunt is a thin wrapper that provides extra tools for keeping your code DRY",
+      "key": "Terragrunt",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-03-30",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "thanos",
+      "title": "Thanos",
+      "description": "Open source, highly available Prometheus setup with long term storage capabilities",
+      "key": "thanos",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-12-19",
+          "description": "",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "trivy",
+      "title": "Trivy",
+      "description": "Trivy is the world's most popular open source vulnerability and misconfiguration scanner.",
+      "key": "trivy",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-10-19",
+          "description": "Trivy helped to gather insights into the commons-text vulnerability (CVE-2022-42889). EEP Paved Roads is evaluating the tool for further use.",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "uft",
+      "title": "Unified Functional Testing",
+      "description": "Unified Functional Testing (UFT) is a software testing tool developed by Micro Focus. It is a part of the Unified Functional Testing (UFT) product suite.",
+      "key": "uft",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-06-16",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "unix-shell",
+      "title": "Unix Shell",
+      "description": "Unix Shell is a command-line interface that allows users to interact with the operating system by typing commands to perform various tasks.",
+      "key": "unix-shell",
+      "license": "",
+      "links": [],
+      "quadrant": "languages",
+      "timeline": [
+        {
+          "date": "2022-11-07",
+          "description": "Simple tasks on Linux based machines or pipelines (e.g. GitHub actions)",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "uv",
+      "title": "Python Package Manager [uv]",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "key": "uv",
+      "license": "Apache-2.0 OR MIT",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2026-03-12",
+          "description": "Moved to adopt, replacing Poetry",
+          "url": "https://confluence-aholddelhaize.atlassian.net/wiki/x/FAC49SI",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2024-11-12",
+          "description": "Scope: TechNL",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "vsc",
+      "title": "Visual Studio Code",
+      "description": "Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
+      "key": "vsc",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "webcentercontent",
+      "title": "WebCenter Content",
+      "description": "Oracle WebCenter Content is an enterprise content management system that allows organizations to efficiently capture, store, manage, and deliver business documents and digital assets.",
+      "key": "webcentercontent",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2022-07-12",
+          "description": "Oracle WebCenter Content is not the preferred solution for content management and should not be used for new projects",
+          "ringId": "hold",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "wmat",
+      "title": "webMethods Active Transfer",
+      "description": "webMethods Active Transfer is a managed file transfer solution that enables secure, reliable, and automated exchange of files between systems, applications, and partners.",
+      "key": "wmat",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "WebMethods Active Transfer is the preferred solution for managed file transfer",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "xcode",
+      "title": "XCode",
+      "description": "Official IDE for iOS (Apple) development",
+      "key": "xcode",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-01-01",
+          "description": "",
+          "ringId": "adopt",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "YMonitor",
+      "title": "YMonitor",
+      "description": "YMonitor is a cloud-based solution that helps you to manage your projects.",
+      "key": "YMonitor",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "Zabbix",
+      "title": "Zabbix Agent",
+      "description": "Zabbix is an open-source monitoring software tool for diverse IT components, including networks, servers, virtual machines and cloud services.",
+      "key": "Zabbix",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2022-05-07",
+          "description": "",
+          "ringId": "leave",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "ZephyrScale",
+      "title": "Zephyr Scale",
+      "description": "A scalable, performant test management solution inside Jira with advanced test planning, reporting, and reusability features.",
+      "key": "ZephyrScale",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2024-04-22",
+          "description": "This is the main test management tool which should be used by all projects",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    }
+  ]
+}

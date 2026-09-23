@@ -1,0 +1,107 @@
+{
+  "title": "Tech NL Radar - generative-ai",
+  "quadrants": [
+    {
+      "id": "techniques",
+      "name": "Techniques"
+    },
+    {
+      "id": "tools",
+      "name": "Tools"
+    },
+    {
+      "id": "platforms",
+      "name": "Platforms"
+    },
+    {
+      "id": "languages",
+      "name": "Languages & Frameworks"
+    }
+  ],
+  "rings": [
+    {
+      "id": "adopt",
+      "name": "Adopt",
+      "color": "#5BA300"
+    },
+    {
+      "id": "trial",
+      "name": "Trial",
+      "color": "#009EB0"
+    },
+    {
+      "id": "assess",
+      "name": "Assess",
+      "color": "#C7BA00"
+    },
+    {
+      "id": "hold",
+      "name": "Hold",
+      "color": "#E09B96"
+    },
+    {
+      "id": "leave",
+      "name": "Leave",
+      "color": "#FF0000"
+    }
+  ],
+  "entries": [
+    {
+      "id": "aopenai",
+      "title": "Azure OpenAI",
+      "description": "Advanced language AI service provided by Azure supporting OpenAI GPT-4, Codex, and DALL-E models.",
+      "key": "aopenai",
+      "license": "",
+      "links": [],
+      "quadrant": "platforms",
+      "timeline": [
+        {
+          "date": "2023-04-19",
+          "description": "Will be assess during the Scan je recept Labs pilot.",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "title": "GitHub Copilot",
+      "description": "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor.",
+      "key": "github-copilot",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2025-11-27",
+          "description": "Copilot is adopted by multiple teams across TechNL to increase developer productivity.",
+          "ringId": "adopt",
+          "moved": 1
+        },
+        {
+          "date": "2022-03-10",
+          "description": "A Pilot will start in Tech NL to evaluate Copilot for a variety of scenarios.",
+          "ringId": "trial",
+          "moved": 0
+        }
+      ]
+    },
+    {
+      "id": "polyapi",
+      "title": "Poly API",
+      "description": "Poly is the go-to platform for developer teams looking to simplify their API and Event discovery and consumption. Experience seamless integration, satisfy your development partners, and unlock the potential of LLM AI Agents—all through the power of Poly.",
+      "key": "polyapi",
+      "license": "",
+      "links": [],
+      "quadrant": "tools",
+      "timeline": [
+        {
+          "date": "2023-10-12",
+          "description": "",
+          "ringId": "assess",
+          "moved": 0
+        }
+      ]
+    }
+  ]
+}
