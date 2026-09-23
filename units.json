@@ -9,30 +9,30 @@
     "id": "software",
     "label": "Software Engineering",
     "path": "/software/",
-    "pitch": "Wij bouwen schaalbare, onderhoudbare systemen. Hier staan de talen, frameworks en werkwijzen die wij aanbevelen voor nieuwe projecten."
+    "pitch": "De Software Engineering unit bestaat uit consultants die gespecialiseerd zijn in het bouwen van schaalbare, onderhoudbare systemen. Deze Tech Radar bevat alle talen, frameworks en werkwijzen die wij hiervoor relevant achten. Voor elke blip staat een korte toelichting waarom wij als FreshMinders de blip op die plek in de radar hebben geplaatst. Vragen? Neem contact op met onze principals Jeroen Rosenberg en Roy de Bokx."
   },
   {
     "id": "ai",
     "label": "AI",
     "path": "/ai/",
-    "pitch": "Wij helpen klanten kunstmatige intelligentie toe te passen. Hier staan de AI-platformen, tools en technieken waar wij op inzetten."
+    "pitch": "De AI unit bestaat uit consultants die klanten helpen bij het toepassen van kunstmatige intelligentie. Deze Tech Radar bevat de AI-platformen, frameworks en technieken die wij relevant achten. Let op: dit is een eerste concept op basis van markt- en klantdata. De definitieve versie volgt na validatie door de unit owners."
   },
   {
     "id": "cloud",
     "label": "Cloud",
     "path": "/cloud/",
-    "pitch": "Wij ontwerpen en beheren cloud-infrastructuur. Hier staan onze aanbevelingen voor cloud providers, IaC-tooling en observability."
+    "pitch": "De Cloud unit ondersteunt klanten bij het ontwerpen en beheren van cloud-infrastructuur. Deze Tech Radar bevat onze aanbevelingen voor cloud providers, IaC-tooling, container platforms en observability. Let op: dit is een eerste concept op basis van markt- en klantdata. De definitieve versie volgt na validatie door de unit owners."
   },
   {
     "id": "data",
     "label": "Data",
     "path": "/data/",
-    "pitch": "Wij bouwen data platforms, pipelines en analytics. Hier staan de tools en technieken die wij aanbevelen voor datagedreven organisaties."
+    "pitch": "De Data unit richt zich op data platforms, pipelines en analytics. Deze Tech Radar bevat de tools en technieken die wij aanbevelen voor datagedreven organisaties. Let op: dit is een eerste concept op basis van markt- en klantdata. De definitieve versie volgt na validatie door de unit owners."
   },
   {
     "id": "security",
     "label": "Security",
     "path": "/security/",
-    "pitch": "Wij helpen klanten met cybersecurity-vraagstukken. Deze radar wordt binnenkort gepubliceerd."
+    "pitch": "De Security unit helpt klanten met cybersecurity-vraagstukken. Deze radar wordt binnenkort gepubliceerd."
   }
 ]
