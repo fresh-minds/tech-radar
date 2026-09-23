@@ -1,0 +1,124 @@
+{
+  "title": "FreshMinds Tech Radar",
+  "date": "2026.09",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
+  "entries": [
+    {
+      "label": "Kotlin",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Onze aanbevolen taal voor nieuwe backend-projecten op het JVM-platform. Goede type safety en naadloze Java-interoperabiliteit. Groeit snel bij onze klanten."
+    },
+    {
+      "label": "Python",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De standaardtaal voor data engineering, data science en AI-toepassingen. Breed ingezet bij klanten en binnen meerdere FreshMinds-units."
+    },
+    {
+      "label": "TypeScript",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Standaardtaal voor frontend-ontwikkeling. Type safety voorkomt veelvoorkomende fouten op de grens tussen frontend en backend."
+    },
+    {
+      "label": "React",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Onze aanbevolen frontend-library. Groot ecosysteem en breed ingezet bij klanten."
+    },
+    {
+      "label": "Kubernetes",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Industriestandaard voor container orchestration. Vrijwel alle productie-workloads bij klanten draaien op Kubernetes. Brede expertise binnen FreshMinds."
+    },
+    {
+      "label": "Kafka",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Event streaming-platform voor event-driven architecturen en real-time data pipelines. Bewezen op schaal bij grote klanten en ingezet door zowel onze software- als data-unit."
+    },
+    {
+      "label": "Docker",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Standaard containerisatie voor alle projecten. Iedere engineer die met moderne deployment pipelines werkt moet hiermee overweg kunnen."
+    },
+    {
+      "label": "Grafana",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Onze aanbevolen visualisatielaag voor metrics en logs. De Grafana-stack (Loki, Mimir, Tempo) dekt dashboarding, log-aggregatie en tracing in één ecosysteem."
+    },
+    {
+      "label": "Terraform",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Infrastructure as code met multi-cloud support. Waardevol voor een consultancy die werkt met AWS, Azure en GCP. Brede ervaring binnen meerdere units."
+    },
+    {
+      "label": "AI-ondersteunde ontwikkeling",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "AI coding-assistenten (Claude Code, GitHub Copilot) veranderen hoe software wordt geschreven. We evalueren hoe deze tools passen in onze workflows, van inline code completion tot agentic multi-file ontwikkeling."
+    },
+    {
+      "label": "OpenTelemetry",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Vendor-neutrale observability-standaard voor traces, metrics en logs. Omdat wij bij verschillende klanten met verschillende stacks werken, is die ontkoppeling van instrumentatie en backend voor ons extra waardevol."
+    },
+    {
+      "label": "Observability",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Gestructureerd inzicht in systemen via metrics, logs en traces. Denk aan structured logging, DORA Metrics en tooling als Grafana en OpenTelemetry. Hoort standaard te zijn voor ieder nieuw systeem."
+    },
+    {
+      "label": "API-First Design",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Ontwerp API's voordat je begint met implementatie. Maakt parallelle frontend- en backend-ontwikkeling mogelijk en levert betere contracten op. Geldt voor zowel REST als GraphQL."
+    },
+    {
+      "label": "Platform Engineering",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Interne developer platforms om cognitive load van productteams te verlagen. Veel organisaties hebben platform-teams, maar weinig doen het goed. Klanten vragen steeds vaker om hulp bij het bouwen of adopteren van deze platforms."
+    },
+    {
+      "label": "Passkeys",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Wachtwoordloze authenticatie via FIDO2/WebAuthn. Phishing-bestendig en geen wachtwoorden om te lekken. Alle grote platformen en browsers ondersteunen het inmiddels. Aanbevolen als standaard voor nieuwe gebruikersgerichte applicaties."
+    },
+    {
+      "label": "Event-Driven Architecture",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Architectuurstijl gebaseerd op events als primaire communicatiemechanisme tussen services. Krachtig voor schaalbare, ontkoppelde systemen. Omvat technieken als Event Sourcing, CQRS en event streaming via Kafka."
+    }
+  ]
+}

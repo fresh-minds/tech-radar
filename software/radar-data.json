@@ -1,0 +1,502 @@
+{
+  "title": "FreshMinds Software Engineering Tech Radar",
+  "date": "2026.09",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
+  "entries": [
+    {
+      "label": "Kotlin",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our recommended language for new backend projects. Adopted at both Ahold and bol.com. Around 30% of the software unit is proficient today; the rest are upskilling. New projects should default to Kotlin unless there is a specific reason not to.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Java",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Still widely used across client engagements, but Kotlin offers better defaults for new JVM projects. Existing Java codebases are maintained as-is; new backend work should start in Kotlin.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Spring Boot",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "The standard framework for backend services. Adopted at Ahold and bol.com. Deep expertise across the unit. Pair with Kotlin for new projects.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "TypeScript",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Default language for frontend and Node.js work. Adopted at Ahold for all frontend development. Type safety prevents entire classes of bugs at the boundary where most web application errors occur.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "React",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our recommended frontend library. Adopted at both Ahold and bol.com. Large ecosystem and strong community. Preferred over Angular for new projects.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "Angular",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Widely used by our consultants at client sites, but React has a larger ecosystem and more momentum for new frontend work. Broad Angular experience across the unit remains valuable for maintaining existing applications.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "Next.js",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "React meta-framework for full-stack web applications. Valuable for projects that need server-side rendering or static generation. Limited hands-on experience across the unit today, so we keep it at Trial while consultants build proficiency.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "Scala",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Limited adoption within FreshMinds and declining industry demand. Complexity and tooling gaps make it hard to staff and maintain. Not recommended for new projects.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Rust",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Memory-safe systems language worth pursuing for performance-critical services or tooling where the learning curve is justified. Limited FreshMinds experience today, so Trial reflects where we are, not where the language is headed.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Go",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Simple, fast, and well-suited for CLI tools, networking, and infrastructure code. Worth exploring to understand where it fits alongside Kotlin, but not yet a FreshMinds focus area.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Flutter",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Cross-platform mobile framework. No current production use within FreshMinds. Included because client demand for cross-platform mobile is growing. Evaluate before committing to native development for new mobile projects.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "PostgreSQL",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Our default relational database. Adopted at Ahold (Azure Flexible Server) and widely used at bol.com (Cloud SQL). Skill matrix confirms deep expertise across the unit. Reliable, feature-rich, and well-supported everywhere.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Kafka",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "Event streaming platform for event-driven architectures. Ahold runs Confluent Kafka as their strategic platform. Skill matrix shows broad experience ranging from basic consumers to topic and partition management. Proven at scale.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Kubernetes",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Industry standard for container orchestration. Deep expertise across the unit and most production workloads at client engagements run on it. Essential knowledge for any backend or platform engineer.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "AWS",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Primary cloud provider for several client engagements. Skill matrix shows AWS as the most commonly listed cloud platform. Ahold runs Azure, bol.com runs GCP; our consultants should be cloud-literate, not cloud-locked.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "GitHub Actions",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "CI/CD platform tightly integrated with GitHub, which is our default source control. Broad experience across the unit. Used in our own internal projects and at most client engagements.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Docker",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Standard containerisation across all projects. Fundamental skill for any backend engineer working with modern deployment pipelines.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Grafana",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Our recommended visualisation layer for metrics and logs. The full stack (Loki, Mimir, Tempo) covers dashboarding, log aggregation, and tracing in one ecosystem. Wide usage across the unit.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Testcontainers",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Throwaway containers for integration testing. Eliminates mocked dependencies and catches issues that unit tests miss. Multiple consultants already use it; every project with external dependencies should include it.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Flyway",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Database schema migration tool. Every project with a relational database should version its schema, and Flyway is our pick over Liquibase for its simplicity. Straightforward migration model that works well with CI pipelines.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Terraform",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Infrastructure as code. Adopted at Ahold and used across FreshMinds projects. Skill matrix shows broad IaC experience. Multi-cloud support makes it valuable for a consultancy that works across AWS, Azure, and GCP.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Podman",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Daemonless, rootless container engine. Drop-in replacement for Docker Desktop without per-seat licensing. Backed by Red Hat, used by several consultants at OpenShift-based clients including Ahold. Worth pursuing as the default local container runtime at enterprise clients where Docker Desktop licensing is a concern.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Docker Desktop",
+      "quadrant": "Tools",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Licensing costs make Docker Desktop problematic at enterprise clients. Ahold is actively moving away from it. Alternatives like Podman, Colima, or Rancher Desktop provide the same functionality without per-seat licensing. Be aware of this when advising clients on local development setups.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "ArgoCD",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Declarative GitOps continuous delivery for Kubernetes. Uses Git as the single source of truth for deployments, which fits naturally with trunk-based development. The standard approach for Kubernetes workload delivery.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Crossplane",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Kubernetes-native infrastructure as code that lets you manage cloud resources through the Kubernetes control plane. Worth pursuing as a complement to Terraform for teams already invested in Kubernetes. Early days for FreshMinds adoption.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Azure DevOps",
+      "quadrant": "Platforms",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "GitHub provides a more integrated experience for source control, CI/CD, and project management. If you encounter Azure DevOps at a client, recommend migrating to GitHub Actions and GitHub-native tooling. Not recommended for new projects.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Sentry",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Error tracking and performance monitoring. One of several observability options alongside the Grafana stack. Useful when a dedicated error-tracking tool is needed on top of metrics and logs.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Claude Code",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "AI-powered coding assistant for agentic development workflows. Skill matrix shows growing adoption across the unit, from chat-based usage to full agentic coding of features. Evaluating alongside GitHub Copilot.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "GitHub Copilot",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "AI-powered code completion and chat. Complements Claude Code: Copilot is strongest at inline completions, while Claude Code handles multi-file agentic workflows. Evaluating both to understand where each fits.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "SonarQube",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "Static code analysis and quality gates. Should be part of every CI pipeline to enforce code quality standards and catch issues early. Consultants regularly encounter it at client sites, so familiarity is high.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Datadog",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Unified observability platform. Skill matrix shows some consultants use it at clients. Competes with the Grafana stack; evaluate based on client context and whether a managed SaaS solution is preferred over self-hosted.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "OpenTelemetry",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Vendor-neutral observability standard for traces, metrics, and logs. Decouples instrumentation from backend choice, which matters for a consultancy working across different observability stacks. Growing familiarity across the unit.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Dev Containers",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Standardized, reproducible development environments defined as code. Eliminates 'works on my machine' problems and speeds up onboarding. Particularly useful for consultants who switch between client projects frequently.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Storybook",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Develop and test UI components in isolation. Speeds up frontend development by decoupling component work from application state. Useful for building and documenting component libraries on React projects.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "Playwright",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "End-to-end testing framework with cross-browser support and more reliable test execution than Cypress. Worth pursuing for projects that need browser-based testing. Growing adoption at major clients confirms the direction.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "label": "Prometheus",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Metrics collection and alerting that pairs naturally with Grafana for a self-hosted observability stack. Consultant experience exists across the unit. Trial reflects that managed alternatives (Grafana Mimir, Datadog) may be a better fit depending on context.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Trunk-Based Development",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Short-lived feature branches merged frequently. Reduces integration pain and enables continuous delivery. Our recommended branching strategy for all projects.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "API-First Design",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Design APIs before implementation using OpenAPI specs. Adopted at Ahold (REST and GraphQL as service interfaces). Enables parallel frontend and backend work and produces better contracts.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "GraphQL",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Query language for APIs. Adopted at both Ahold and bol.com. Lets clients request exactly the data they need. Particularly valuable for BFF patterns and applications with complex data requirements.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "DORA Metrics",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Four metrics for measuring software delivery performance: deployment frequency, lead time for changes, change failure rate, and time to restore service. Gives teams and leadership a shared language for improvement. Recommend to every client as the starting point for engineering effectiveness.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Structured Logging",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Log as structured data (JSON), not plain text. Adopted at Ahold. Makes logs queryable, parseable, and useful for debugging in distributed systems. Should be the default for any new service.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Event Sourcing",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Persist state changes as an immutable sequence of events. Powerful for audit-heavy and event-driven domains, but adds significant complexity. Evaluate per use case; don't apply by default.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Architecture Decision Records",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Lightweight documentation of significant technical decisions. Captures the context and reasoning behind choices. Low effort, high value for teams that rotate members or hand off projects.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Platform Engineering",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Internal developer platforms to reduce cognitive load on product teams. Many organisations have platform teams, but few do it well. Worth understanding as a consulting offering since clients increasingly ask for help building or adopting these platforms.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "CQRS",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Separate read and write models. Often paired with Event Sourcing but can be used independently. Adds architectural complexity; assess whether the read/write asymmetry in your domain justifies it.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Passkeys",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Passwordless authentication using FIDO2/WebAuthn. Phishing-resistant, eliminates password leaks, and supported by all major platforms and browsers. Recommend to clients as the default authentication method for new user-facing applications.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "MCP by Default",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Model Context Protocol adds integration complexity that is not always justified. Evaluate whether a simpler approach (direct API call, function calling) meets the need before reaching for MCP. The protocol is valuable when you genuinely need tool discovery and multi-provider interop.",
+      "tags": [
+        "cross-cutting"
+      ]
+    },
+    {
+      "label": "Reactive Programming",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Asynchronous stream-based programming (Project Reactor, RxJava). Debugging complexity and steep learning curve outweigh benefits for most use cases. Virtual threads (Project Loom) offer a simpler concurrency model for the same problems.",
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "label": "Micro Frontends",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Independently deployable frontend applications composed into a whole. Ahold adopts a specific multi-zone variant for their large-scale consumer apps. For most FreshMinds client contexts, the operational overhead is too high. Consider only for very large frontend teams with independent release cycles.",
+      "tags": [
+        "frontend"
+      ]
+    }
+  ]
+}
