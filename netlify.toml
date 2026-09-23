@@ -2,54 +2,10 @@
   command = "# no build command"
   publish = ""
 
-# SPA-style routing: all unit paths serve index.html
+# SPA routing: paths that don't match a static file fall back to index.html.
+# Netlify checks for static files first (force = false is the default),
+# so /software/radar-data.json still serves the JSON file directly.
 [[redirects]]
-  from = "/software/*"
+  from = "/*"
   to = "/index.html"
   status = 200
-
-[[redirects]]
-  from = "/software"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/ai/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/ai"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/cloud/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/cloud"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/data/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/data"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/security/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/security"
-  to = "/index.html"
-  status = 200
-

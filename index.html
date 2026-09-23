@@ -548,11 +548,24 @@
       tooltip.style.left = left + "px";
     }
 
-    var isTouch = window.matchMedia("(pointer: coarse)").matches;
+    var isTouch = ("ontouchstart" in window) || window.matchMedia("(pointer: coarse)").matches;
     var blips = document.querySelectorAll("#radar .blip");
 
     if (isTouch) {
       blips.forEach(function(blip) {
+        blip.addEventListener("touchstart", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var alreadyVisible = tooltip.classList.contains("visible");
+          var currentLabel = tooltip.dataset.currentBlip;
+          var blipData = d3.select(this).datum();
+          var thisLabel = blipData ? blipData.label : "";
+          hideTooltip();
+          if (!alreadyVisible || currentLabel !== thisLabel) {
+            showTooltip(this);
+            tooltip.dataset.currentBlip = thisLabel;
+          }
+        });
         blip.addEventListener("click", function(e) {
           e.stopPropagation();
           var alreadyVisible = tooltip.classList.contains("visible");

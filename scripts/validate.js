@@ -72,6 +72,10 @@ function validateFile(filePath) {
         );
       }
 
+      if (!entry.description) {
+        errors.push(`${prefix}: missing 'description'`);
+      }
+
       // Validate optional tags field
       if (entry.tags !== undefined) {
         if (!Array.isArray(entry.tags)) {
