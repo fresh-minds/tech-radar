@@ -233,6 +233,13 @@
       "description": "Vendor-neutral observability standard for traces, metrics, and logs. Decouples instrumentation from backend choice, which matters for a consultancy working across different observability stacks. Growing familiarity across the unit."
     },
     {
+      "label": "Dev Containers",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Standardized, reproducible development environments defined as code. Eliminates 'works on my machine' problems and speeds up onboarding. Particularly useful for consultants who switch between client projects frequently."
+    },
+    {
       "label": "Storybook",
       "quadrant": "Tools",
       "ring": "Trial",
@@ -273,6 +280,13 @@
       "ring": "Adopt",
       "moved": 2,
       "description": "Query language for APIs. Adopted at both Ahold and bol.com. Lets clients request exactly the data they need. Particularly valuable for BFF patterns and applications with complex data requirements."
+    },
+    {
+      "label": "DORA Metrics",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Four metrics for measuring software delivery performance: deployment frequency, lead time for changes, change failure rate, and time to restore service. Gives teams and leadership a shared language for improvement. Recommend to every client as the starting point for engineering effectiveness."
     },
     {
       "label": "Structured Logging",
