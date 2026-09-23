@@ -44,6 +44,13 @@
       "description": "De Python API voor Apache Spark, essentieel voor gedistribueerde data processing op Databricks. Biedt de schaalbaarheid van Spark met de productiviteit van Python. De standaard voor batch processing op grote datasets."
     },
     {
+      "label": "Microsoft Fabric",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Microsofts unified data platform met OneLake als centrale opslag. Combineert data engineering, warehousing, real-time analytics en BI in één SaaS-omgeving. Groeit snel bij enterprise klanten, vooral in Microsoft-georiënteerde omgevingen. Past bij onze Microsoft-partnership en is het directe alternatief voor Databricks."
+    },
+    {
       "label": "Databricks",
       "quadrant": "Platforms",
       "ring": "Adopt",
