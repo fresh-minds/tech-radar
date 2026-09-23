@@ -48,7 +48,12 @@ cloud/radar-data.json        # Cloud unit
 data/radar-data.json         # Data unit
 security/radar-data.json     # Security unit (scaffold)
 global/radar-data.json       # Global cross-cutting radar
+docs/client-radars/          # Reference data from client tech radars (Ahold, bol.com)
 ```
+
+### Client radar reference data
+
+`docs/client-radars/` contains tech radar exports from Ahold Delhaize and bol.com. These use the Zalando v2 format (different schema from our radar-data.json files) and are not validated by the build script. They exist as reference material for seeding and comparing entries, not as published radars.
 
 ## Adding a new unit
 

@@ -6,7 +6,7 @@ This document extends the original software engineering tech radar design decisi
 
 Two tiers: unit radars and one global radar. No discipline sub-radars.
 
-Units at launch: Software (populated), AI, Cloud, Data (seeded from client/industry data). Security and SAP scaffolded with empty data files.
+Units at launch: Software (populated), AI, Cloud, Data (seeded from client/industry data). Security scaffolded with an empty data file. SAP excluded for now.
 
 Disciplines within a unit (e.g., Java, .NET, Python within Software) are handled through optional tags on entries, not separate radars.
 
@@ -39,8 +39,6 @@ Committee of principals owns the global radar collectively. Lazy consensus: publ
 ├── data/
 │   └── radar-data.json
 ├── security/
-│   └── radar-data.json       (empty scaffold)
-├── sap/
 │   └── radar-data.json       (empty scaffold)
 ├── global/
 │   └── radar-data.json

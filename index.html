@@ -308,7 +308,7 @@
   var RING_COLORS = {
     "Adopt": "#2f45c2",
     "Trial": "#198754",
-    "Assess": "#6b6b9e",
+    "Assess": "#d1d1ff",
     "Hold": "#f1134d"
   };
 
@@ -544,32 +544,28 @@
     var isTouch = ("ontouchstart" in window) || window.matchMedia("(pointer: coarse)").matches;
     var blips = document.querySelectorAll("#radar .blip");
 
+    function toggleTooltip(blipEl) {
+      var alreadyVisible = tooltip.classList.contains("visible");
+      var currentLabel = tooltip.dataset.currentBlip;
+      var blipData = d3.select(blipEl).datum();
+      var thisLabel = blipData ? blipData.label : "";
+      hideTooltip();
+      if (!alreadyVisible || currentLabel !== thisLabel) {
+        showTooltip(blipEl);
+        tooltip.dataset.currentBlip = thisLabel;
+      }
+    }
+
     if (isTouch) {
       blips.forEach(function(blip) {
         blip.addEventListener("touchstart", function(e) {
           e.preventDefault();
           e.stopPropagation();
-          var alreadyVisible = tooltip.classList.contains("visible");
-          var currentLabel = tooltip.dataset.currentBlip;
-          var blipData = d3.select(this).datum();
-          var thisLabel = blipData ? blipData.label : "";
-          hideTooltip();
-          if (!alreadyVisible || currentLabel !== thisLabel) {
-            showTooltip(this);
-            tooltip.dataset.currentBlip = thisLabel;
-          }
+          toggleTooltip(this);
         });
         blip.addEventListener("click", function(e) {
           e.stopPropagation();
-          var alreadyVisible = tooltip.classList.contains("visible");
-          var currentLabel = tooltip.dataset.currentBlip;
-          var blipData = d3.select(this).datum();
-          var thisLabel = blipData ? blipData.label : "";
-          hideTooltip();
-          if (!alreadyVisible || currentLabel !== thisLabel) {
-            showTooltip(this);
-            tooltip.dataset.currentBlip = thisLabel;
-          }
+          toggleTooltip(this);
         });
       });
       document.addEventListener("click", function(e) {
