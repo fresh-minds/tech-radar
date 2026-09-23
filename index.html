@@ -624,6 +624,10 @@
       UNITS = units;
       window.addEventListener("popstate", loadRadar);
       loadRadar();
+    })
+    .catch(function() {
+      document.querySelector(".radar-container").innerHTML =
+        '<div class="loading">Configuratie kon niet geladen worden.</div>';
     });
 </script>
 
