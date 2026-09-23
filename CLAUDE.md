@@ -8,6 +8,7 @@ The site has a global landing page and per-unit radars: software, ai, cloud, dat
 
 ## Key files
 
+- `units.json` — unit definitions (id, label, path, pitch). Adding a unit here is all you need.
 - `{unit}/radar-data.json` — per-unit radar data (e.g. `software/radar-data.json`, `global/radar-data.json`)
 - `index.html` — visualization with client-side routing using the Zalando tech-radar library (loaded via CDN)
 - `scripts/validate.js` — validates all `*/radar-data.json` files
@@ -51,9 +52,10 @@ global/radar-data.json       # Global cross-cutting radar
 
 ## Adding a new unit
 
-1. Create a directory: `{unit}/radar-data.json`
-2. Add the unit to the `UNITS` array in `index.html`
-3. Add redirect rules in `netlify.toml`
+1. Create a directory with a `radar-data.json` file
+2. Add the unit to `units.json`
+
+No changes to `index.html` or `netlify.toml` needed.
 
 ## Important
 

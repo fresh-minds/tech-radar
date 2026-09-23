@@ -71,5 +71,4 @@ When publishing a new edition of a unit's radar:
 ## Adding a new unit
 
 1. Create a directory with a `radar-data.json` file (see existing units for format)
-2. Add the unit to the `UNITS` array in `index.html`
-3. Add redirect rules in `netlify.toml`
+2. Add the unit to `units.json` (id, label, path, pitch)

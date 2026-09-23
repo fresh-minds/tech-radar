@@ -301,14 +301,7 @@
 
 <script>
   // ── Configuration ──
-  var UNITS = [
-    { id: "global",   label: "Overzicht",            path: "/",           pitch: "Wat vindt FreshMinds van de technologie waar wij dagelijks mee werken? Deze radar laat het zien, dwars door alle units heen." },
-    { id: "software", label: "Software Engineering",  path: "/software/",  pitch: "Wij bouwen schaalbare, onderhoudbare systemen. Hier staan de talen, frameworks en werkwijzen die wij aanbevelen voor nieuwe projecten." },
-    { id: "ai",       label: "AI",                    path: "/ai/",        pitch: "Wij helpen klanten kunstmatige intelligentie toe te passen. Hier staan de AI-platformen, tools en technieken waar wij op inzetten." },
-    { id: "cloud",    label: "Cloud",                 path: "/cloud/",     pitch: "Wij ontwerpen en beheren cloud-infrastructuur. Hier staan onze aanbevelingen voor cloud providers, IaC-tooling en observability." },
-    { id: "data",     label: "Data",                  path: "/data/",      pitch: "Wij bouwen data platforms, pipelines en analytics. Hier staan de tools en technieken die wij aanbevelen voor datagedreven organisaties." },
-    { id: "security", label: "Security",              path: "/security/",  pitch: "Wij helpen klanten met cybersecurity-vraagstukken. Deze radar wordt binnenkort gepubliceerd." },
-  ];
+  var UNITS = [];
 
   var RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
   var QUADRANT_NAMES = ["Languages & Frameworks", "Platforms", "Tools", "Techniques"];
@@ -629,8 +622,13 @@
   }
 
   // ── Init ──
-  window.addEventListener("popstate", loadRadar);
-  loadRadar();
+  fetch("/units.json")
+    .then(function(r) { return r.json(); })
+    .then(function(units) {
+      UNITS = units;
+      window.addEventListener("popstate", loadRadar);
+      loadRadar();
+    });
 </script>
 
 </body>
