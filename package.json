@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "FreshMinds Technology Radar",
   "scripts": {
-    "dev": "npx http-server . -p 8080 -o",
+    "dev": "node scripts/dev-server.js",
     "build": "node scripts/validate.js",
     "validate": "node scripts/validate.js"
   },

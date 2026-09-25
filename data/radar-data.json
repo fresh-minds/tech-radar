@@ -1,0 +1,159 @@
+{
+  "title": "FreshMinds Data Tech Radar",
+  "date": "2026.09",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
+  "entries": [
+    {
+      "label": "Python",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De standaardtaal voor data engineering en data science. Breed geadopteerd bij zowel Ahold (GET, DDP) als bol.com. Het ecosysteem van libraries (pandas, PySpark, scikit-learn) is ongeëvenaard voor datawerk. Alle nieuwe data pipelines en analyses starten in Python."
+    },
+    {
+      "label": "SQL",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De lingua franca voor data-analyse en transformaties. Essentieel voor het werken met data warehouses, lakehouses en BI-tooling. In combinatie met DBT vormt SQL de basis van de analytische stack."
+    },
+    {
+      "label": "DBT",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het transformatie-framework voor analytics engineering, geadopteerd bij bol.com. DBT maakt SQL-transformaties testbaar, versioneerbaar en documenteerbaar. Brengt software engineering best practices naar de analytische laag en is de standaard voor ELT-transformaties."
+    },
+    {
+      "label": "Apache Avro",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het standaard serialization format voor streaming data pipelines, geadopteerd bij Ahold voor Kafka-berichten. Schema evolution support maakt Avro ideaal voor event-driven architecturen waar backward compatibility cruciaal is."
+    },
+    {
+      "label": "PySpark",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De Python API voor Apache Spark, essentieel voor gedistribueerde data processing op Databricks. Biedt de schaalbaarheid van Spark met de productiviteit van Python. De standaard voor batch processing op grote datasets."
+    },
+    {
+      "label": "Microsoft Fabric",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Microsofts unified data platform met OneLake als centrale opslag. Combineert data engineering, warehousing, real-time analytics en BI in één SaaS-omgeving. Groeit snel bij enterprise klanten, vooral in Microsoft-georiënteerde omgevingen. Past bij onze Microsoft-partnership en is het directe alternatief voor Databricks."
+    },
+    {
+      "label": "Databricks",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het unified analytics platform gebaseerd op Apache Spark, geadopteerd bij Ahold als de standaardoplossing voor data processing en machine learning. Databricks Lakehouse combineert de flexibiliteit van een data lake met de betrouwbaarheid van een data warehouse."
+    },
+    {
+      "label": "Kafka (Confluent)",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het strategische streaming platform, geadopteerd bij Ahold als de standaard voor event streaming. Confluent biedt managed Kafka met Schema Registry, waardoor operationele complexiteit afneemt. Onmisbaar voor real-time data pipelines en event-driven architecturen."
+    },
+    {
+      "label": "BigQuery",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Google's serverless data warehouse, geadopteerd bij bol.com voor analytische workloads. Sterk in ad-hoc analyse en BI dankzij het serverless model en de scheiding van storage en compute. In trial voor FreshMinds-context vanwege de GCP-afhankelijkheid."
+    },
+    {
+      "label": "Snowflake",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Cloud-native data warehouse met sterke multi-cloud support en unieke architectuur voor het scheiden van storage en compute. Biedt data sharing en marketplace features die interessant zijn voor cross-organisatie samenwerking. Te evalueren als alternatief naast Databricks."
+    },
+    {
+      "label": "Apache Airflow",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het standaard workflow orchestration platform voor data pipelines, geadopteerd bij bol.com en in gebruik bij Ahold. Airflow biedt programmatische DAG-definities in Python, uitgebreide monitoring en een groot ecosysteem van operators voor integratie met cloud services."
+    },
+    {
+      "label": "Apache Flink",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Open source stream processing framework met sterke exactly-once guarantees. Bij zowel Ahold als bol.com in gebruik of in evaluatie. Confluent investeert zwaar in Flink als opvolger van ksqlDB. Interessant voor complexe real-time verrijkingen en windowed aggregaties."
+    },
+    {
+      "label": "Kafka Streams",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Lichtgewicht Java/Kotlin client library voor stream processing, geadopteerd bij Ahold. Geen apart cluster nodig — draait als embedded library in de applicatie. Geschikt voor eenvoudige stream processing use cases; voor complexere scenario's is Apache Flink het alternatief."
+    },
+    {
+      "label": "Delta Lake",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Open source storage layer die ACID-transacties toevoegt aan data lakes. Native geïntegreerd in Databricks en biedt time travel, schema enforcement en unified batch/streaming. De standaard table format binnen het Databricks lakehouse ecosysteem."
+    },
+    {
+      "label": "Great Expectations",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Open source data quality framework voor het valideren, documenteren en profileren van data. Maakt data quality checks integreerbaar in pipelines als geautomatiseerde tests. Helpt bij het vroegtijdig opsporen van data issues voordat ze downstream impact hebben."
+    },
+    {
+      "label": "Schema Registry (Confluent)",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Centraal schema management voor streaming data, geadopteerd bij Ahold voor zowel Strimzi als Confluent clusters. Borgt compatibility van schema-evoluties en voorkomt breaking changes in event-driven architecturen. Essentieel onderdeel van een mature streaming platform."
+    },
+    {
+      "label": "uv",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Ultrasnelle Python package manager geschreven in Rust, vervangt Poetry bij Ahold. Combineert dependency resolution, virtual environment management en project tooling in één tool. Significant sneller dan pip en Poetry, wat de developer experience voor data teams verbetert."
+    },
+    {
+      "label": "Data Mesh",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Gedecentraliseerd data-architectuurparadigma waarbij domeinteams eigenaarschap nemen over hun data als product. Vereist organisatorische volwassenheid en een self-serve data platform. Relevant voor grotere organisaties die worstelen met gecentraliseerde data teams als bottleneck."
+    },
+    {
+      "label": "Data Contracts",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Formele afspraken tussen data producers en consumers over structuur, semantiek en SLA's van datasets. Vergelijkbaar met API contracts maar dan voor data. Cruciaal voor het schaalbaar maken van data-uitwisseling en het voorkomen van onverwachte breaking changes."
+    },
+    {
+      "label": "ELT over ETL",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Het patroon waarbij ruwe data eerst wordt geladen in het warehouse en daarna getransformeerd (Extract-Load-Transform). Maakt gebruik van de rekenkracht van moderne cloud warehouses. In combinatie met DBT de standaardaanpak voor analytische data pipelines."
+    },
+    {
+      "label": "Data Lineage",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Het traceren van de herkomst en transformaties van data door de gehele pipeline. Essentieel voor compliance, debugging en impact-analyse bij schemawijzigingen. Tools als DBT bieden dit deels out-of-the-box; voor end-to-end lineage zijn aanvullende oplossingen nodig."
+    }
+  ]
+}

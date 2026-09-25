@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,62 +39,159 @@
       letter-spacing: -0.01em;
     }
     .radar-header .edition {
-      color: #d1d1ff;
+      color: #8b8cc7;
       font-size: 0.85rem;
       font-weight: 400;
       margin-left: auto;
     }
 
-    /* ── Legend ── */
-    #radar-description {
+    /* ── Navigation ── */
+    .radar-nav {
+      background: #1a1b1a;
+      padding: 0 40px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .radar-nav a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-bottom: 2px solid transparent;
+      transition: color 150ms, border-color 150ms;
+      white-space: nowrap;
+    }
+    .radar-nav a:hover {
+      color: #fff;
+    }
+    .radar-nav a.active {
+      color: #fff;
+      border-bottom-color: #2f45c2;
+    }
+
+    /* ── Intro section ── */
+    .radar-intro {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 24px 40px 0;
-      font-size: 14px;
-      line-height: 1.6;
+      padding: 24px 40px 32px;
     }
-    #radar-description h3 {
-      margin: 0 0 12px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #131413;
-    }
-    .ring-legend {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin: 0 0 8px;
-    }
-    .ring-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
+    .radar-intro p {
+      font-size: 15px;
+      line-height: 1.7;
       color: #545454;
+      margin: 0 0 12px;
     }
-    .ring-legend-item strong {
-      color: #131413;
-    }
-    .ring-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .movement-legend {
+    .radar-intro .cta-links {
       display: flex;
       gap: 24px;
-      flex-wrap: wrap;
-      margin: 8px 0 0;
-      font-size: 12px;
-      color: #c8c8c8;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .radar-intro .cta-links a {
+      color: #2f45c2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .radar-intro .cta-links a:hover {
+      text-decoration: underline;
     }
 
     /* ── Radar container ── */
     .radar-container {
       max-width: 1450px;
       margin: 0 auto;
-      overflow-x: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .radar-container svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+
+    /* ── Textual explanation ── */
+    .radar-explanation {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #545454;
+    }
+    .radar-explanation p {
+      margin: 0 0 16px;
+    }
+    .radar-explanation ul {
+      margin: 0 0 16px;
+      padding-left: 24px;
+    }
+    .radar-explanation li {
+      margin: 0 0 8px;
+    }
+    .radar-explanation .ring-label {
+      font-weight: 700;
+      color: #131413;
+    }
+
+    /* ── Unit cards ── */
+    .unit-cards {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .unit-cards h2 {
+      grid-column: 1 / -1;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #131413;
+      margin: 0 0 4px;
+    }
+    .unit-card {
+      background: #f8f8fa;
+      border: 1px solid #e8e8ec;
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .unit-card:hover {
+      border-color: #2f45c2;
+      box-shadow: 0 2px 8px rgba(47, 69, 194, 0.08);
+    }
+    .unit-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+      color: #131413;
+    }
+    .unit-card .entry-count {
+      font-size: 13px;
+      color: #a0a0a0;
+      margin: 0 0 12px;
+    }
+    .unit-card .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .unit-card .highlight-tag {
+      background: #2f45c2;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+    .unit-card.scaffold {
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     /* ── Footer ── */
@@ -110,6 +207,50 @@
       color: #2f45c2;
       text-decoration: none;
     }
+
+    /* ── Tooltip ── */
+    .radar-tooltip {
+      position: absolute;
+      max-width: 320px;
+      background: #fff;
+      border: 1px solid #8b8cc7;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 12px 16px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 150ms ease;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+    }
+    .radar-tooltip.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .radar-tooltip__name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #131413;
+      margin: 0 0 4px;
+    }
+    .radar-tooltip__meta {
+      font-size: 13px;
+      margin: 0 0 6px;
+    }
+    .radar-tooltip__desc {
+      font-size: 14px;
+      color: #545454;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── Loading ── */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: #a0a0a0;
+      font-size: 14px;
+    }
   </style>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://zalando.github.io/tech-radar/release/radar-0.12.js"></script>
@@ -118,83 +259,377 @@
 
 <header class="radar-header">
   <img src="https://freshminds.nl/uploads/freshminds/userfiles/images/setup/icon.png" alt="FreshMinds" />
-  <h1>Tech Radar</h1>
+  <h1 id="radar-title">Tech Radar</h1>
   <span class="edition" id="radar-edition"></span>
 </header>
 
-<div id="radar-description">
-  <h3>How to read the radar</h3>
-  <div class="ring-legend">
-    <span class="ring-legend-item"><span class="ring-dot" style="background: #2f45c2"></span> <strong>Adopt</strong> — proven, use by default</span>
-    <span class="ring-legend-item"><span class="ring-dot" style="background: #198754"></span> <strong>Trial</strong> — ready for non-critical use</span>
-    <span class="ring-legend-item"><span class="ring-dot" style="background: #d1d1ff"></span> <strong>Assess</strong> — worth exploring</span>
-    <span class="ring-legend-item"><span class="ring-dot" style="background: #f1134d"></span> <strong>Hold</strong> — proceed with caution</span>
-  </div>
-  <div class="movement-legend">
-    <span>&#9650; Moved in/up &nbsp;&nbsp; &#9660; Moved out/down &nbsp;&nbsp; &#9679; No change &nbsp;&nbsp; &#9733; New</span>
-  </div>
-</div>
+<nav class="radar-nav" id="radar-nav"></nav>
+
+<div id="radar-intro" class="radar-intro"></div>
 
 <div class="radar-container">
   <svg id="radar"></svg>
+  <div id="radar-tooltip" class="radar-tooltip"></div>
 </div>
 
+<div class="radar-explanation" id="radar-explanation">
+  <p>Elke technologie op de radar is een blip. Blips kunnen nieuw zijn in deze editie, of van ring verschuiven als onze aanbeveling is veranderd.</p>
+  <p>De ringen:</p>
+  <ul>
+    <li><span class="ring-label" style="color: #2f45c2">Adopt.</span> Bewezen in productie. Onze standaardkeuze voor dit domein.</li>
+    <li><span class="ring-label" style="color: #198754">Trial.</span> Actief mee aan de slag. Geschikt voor niet-kritieke projecten.</li>
+    <li><span class="ring-label" style="color: #8b8cc7">Assess.</span> De moeite waard om te verkennen en te begrijpen.</li>
+    <li><span class="ring-label" style="color: #f1134d">Hold.</span> Wees voorzichtig. Niet aanbevolen voor nieuwe projecten.</li>
+  </ul>
+</div>
+
+<div class="unit-cards" id="unit-cards" style="display: none;"></div>
+
 <footer class="radar-footer">
-  FreshMinds Tech Radar &middot; Based on <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
+  FreshMinds Tech Radar &middot; Gebaseerd op de <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
 </footer>
 
 <script>
-  const RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
-  const QUADRANT_NAMES = [
-    "Languages & Frameworks",
-    "Platforms",
-    "Tools",
-    "Techniques"
-  ];
+  // ── Configuration ──
+  var UNITS = [];
 
-  fetch("radar-data.json")
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("radar-edition").textContent = "Edition " + data.date;
+  var RING_MAP = { "Adopt": 0, "Trial": 1, "Assess": 2, "Hold": 3 };
+  var QUADRANT_NAMES = ["Languages & Frameworks", "Platforms", "Tools", "Techniques"];
+  var RING_COLORS = {
+    "Adopt": "#2f45c2",
+    "Trial": "#198754",
+    "Assess": "#8b8cc7",
+    "Hold": "#f1134d"
+  };
 
-      const quadrantMap = {};
-      data.quadrants.forEach((name, index) => { quadrantMap[name] = index; });
+  // ── Routing ──
+  function getCurrentUnit() {
+    var path = window.location.pathname.replace(/\/+$/, "");
+    for (var i = 0; i < UNITS.length; i++) {
+      var unitPath = UNITS[i].path.replace(/\/+$/, "");
+      if (path === unitPath || (unitPath === "" && path === "")) {
+        return UNITS[i];
+      }
+    }
+    return UNITS[0]; // default to global
+  }
 
-      const entries = data.entries.map(entry => ({
+  // ── Navigation ──
+  function renderNav(activeUnit) {
+    var nav = document.getElementById("radar-nav");
+    nav.innerHTML = "";
+    UNITS.forEach(function(unit) {
+      var a = document.createElement("a");
+      a.href = unit.path;
+      a.textContent = unit.label;
+      if (unit.id === activeUnit.id) a.className = "active";
+      a.addEventListener("click", function(e) {
+        e.preventDefault();
+        history.pushState(null, "", unit.path);
+        loadRadar();
+      });
+      nav.appendChild(a);
+    });
+  }
+
+  // ── Intro ──
+  function renderIntro(unit, isGlobal) {
+    var intro = document.getElementById("radar-intro");
+    if (isGlobal) {
+      intro.innerHTML =
+        '<p>De FreshMinds Tech Radar laat zien welke technologieen wij aanbevelen, welke we verkennen en welke we liever vermijden. ' +
+        'De radar is gebaseerd op onze eigen visie en ervaring en wordt halfjaarlijks bijgewerkt.</p>' +
+        '<div class="cta-links">' +
+          '<a href="https://freshminds.nl/vacatures">Werken bij FreshMinds &rarr;</a>' +
+          '<a href="https://freshminds.nl/contact">Op zoek naar een technologiepartner? &rarr;</a>' +
+        '</div>';
+    } else {
+      intro.innerHTML = '<p>' + escapeHtml(unit.pitch) + ' ' +
+        'Dit is een levend document dat halfjaarlijks wordt bijgewerkt.</p>';
+    }
+  }
+
+  // ── Highlights ──
+  function getHighlights(entries) {
+    // Pick Adopt entries with moved 2 (new) or 1 (moved in), max 4
+    var highlights = entries
+      .filter(function(e) { return e.ring === "Adopt" && (e.moved === 2 || e.moved === 1); })
+      .slice(0, 4)
+      .map(function(e) { return e.label; });
+    return highlights;
+  }
+
+  // ── Unit cards (landing page only) ──
+  function renderUnitCards() {
+    var container = document.getElementById("unit-cards");
+    container.innerHTML = "<h2>Bekijk onze unit-radars</h2>";
+    container.style.display = "grid";
+
+    var promises = UNITS.filter(function(u) { return u.id !== "global"; }).map(function(unit) {
+      return fetch("/" + unit.id + "/radar-data.json")
+        .then(function(r) { return r.json(); })
+        .then(function(data) { return { unit: unit, data: data }; })
+        .catch(function() { return { unit: unit, data: null }; });
+    });
+
+    Promise.all(promises).then(function(results) {
+      results.forEach(function(result) {
+        var unit = result.unit;
+        var data = result.data;
+        var card = document.createElement("a");
+        card.href = unit.path;
+        card.className = "unit-card";
+
+        if (!data || !data.entries || data.entries.length === 0) {
+          card.className += " scaffold";
+          card.innerHTML =
+            '<h3>' + escapeHtml(unit.label) + '</h3>' +
+            '<p class="entry-count">Binnenkort beschikbaar</p>';
+        } else {
+          var highlights = getHighlights(data.entries);
+          card.innerHTML =
+            '<h3>' + escapeHtml(unit.label) + '</h3>' +
+            '<p class="entry-count">' + data.entries.length + ' entries</p>' +
+            '<div class="highlights">' +
+              highlights.map(function(h) {
+                return '<span class="highlight-tag">' + escapeHtml(h) + '</span>';
+              }).join("") +
+            '</div>';
+        }
+
+        card.addEventListener("click", function(e) {
+          e.preventDefault();
+          history.pushState(null, "", unit.path);
+          loadRadar();
+        });
+
+        container.appendChild(card);
+      });
+    });
+  }
+
+  // ── Radar rendering ──
+  function renderRadar(data) {
+    // Clear previous radar
+    var svgEl = document.getElementById("radar");
+    svgEl.innerHTML = "";
+
+    document.getElementById("radar-edition").textContent = "Editie " + data.date;
+
+    if (!data.entries || data.entries.length === 0) {
+      svgEl.parentElement.innerHTML =
+        '<div class="loading">Deze radar wordt binnenkort gepubliceerd.</div>' +
+        '<div id="radar-tooltip" class="radar-tooltip"></div>';
+      return;
+    }
+
+    var quadrantMap = {};
+    data.quadrants.forEach(function(name, index) { quadrantMap[name] = index; });
+
+    var entries = data.entries.map(function(entry) {
+      return {
         label: entry.label,
         quadrant: quadrantMap[entry.quadrant],
         ring: RING_MAP[entry.ring],
         moved: entry.moved,
         link: entry.link || "",
-        active: true
-      }));
+        active: true,
+        description: entry.description || "",
+        ringName: entry.ring,
+        quadrantName: entry.quadrant
+      };
+    });
 
-      radar_visualization({
-        svg_id: "radar",
-        width: 1450,
-        height: 1000,
-        colors: {
-          background: "#fff",
-          grid: "#d1d1ff",
-          inactive: "#c8c8c8"
-        },
-        title: "",
-        print_layout: true,
-        links_in_new_tabs: true,
-        quadrants: [
-          { name: QUADRANT_NAMES[0] },
-          { name: QUADRANT_NAMES[1] },
-          { name: QUADRANT_NAMES[2] },
-          { name: QUADRANT_NAMES[3] }
-        ],
-        rings: [
-          { name: "Adopt",  color: "#2f45c2" },
-          { name: "Trial",  color: "#198754" },
-          { name: "Assess", color: "#d1d1ff" },
-          { name: "Hold",   color: "#f1134d" }
-        ],
-        entries: entries
+    radar_visualization({
+      svg_id: "radar",
+      width: 1450,
+      height: 1000,
+      colors: {
+        background: "#fff",
+        grid: "#d1d1ff",
+        inactive: "#c8c8c8"
+      },
+      title: "",
+      print_layout: true,
+      links_in_new_tabs: true,
+      quadrants: [
+        { name: QUADRANT_NAMES[0] },
+        { name: QUADRANT_NAMES[1] },
+        { name: QUADRANT_NAMES[2] },
+        { name: QUADRANT_NAMES[3] }
+      ],
+      rings: [
+        { name: "Adopt",  color: "#2f45c2" },
+        { name: "Trial",  color: "#198754" },
+        { name: "Assess", color: "#8b8cc7" },
+        { name: "Hold",   color: "#f1134d" }
+      ],
+      entries: entries
+    });
+
+    // Add viewBox so the SVG scales proportionally on smaller screens
+    var radarSvg = document.getElementById("radar");
+    if (radarSvg) {
+      var w = radarSvg.getAttribute("width");
+      var h = radarSvg.getAttribute("height");
+      if (w && h) {
+        radarSvg.setAttribute("viewBox", "0 0 " + w + " " + h);
+        radarSvg.removeAttribute("width");
+        radarSvg.removeAttribute("height");
+      }
+    }
+
+    setupTooltips();
+  }
+
+  // ── Tooltip logic ──
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function setupTooltips() {
+    var tooltip = document.getElementById("radar-tooltip");
+    var radarContainer = document.querySelector(".radar-container");
+    if (!tooltip || !radarContainer) return;
+
+    function showTooltip(blipEl) {
+      var d = d3.select(blipEl).datum();
+      if (!d || !d.description) return;
+
+      var ringColor = RING_COLORS[d.ringName] || "#545454";
+      tooltip.innerHTML =
+        '<p class="radar-tooltip__name">' + escapeHtml(d.label) + '</p>' +
+        '<p class="radar-tooltip__meta" style="color:' + ringColor + '">' +
+          escapeHtml(d.ringName) + ' &middot; ' + escapeHtml(d.quadrantName) +
+        '</p>' +
+        '<p class="radar-tooltip__desc">' + escapeHtml(d.description) + '</p>';
+
+      positionTooltip(blipEl);
+      tooltip.classList.add("visible");
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove("visible");
+      tooltip.dataset.currentBlip = "";
+    }
+
+    function positionTooltip(blipEl) {
+      var blipRect = blipEl.getBoundingClientRect();
+      var containerRect = radarContainer.getBoundingClientRect();
+
+      tooltip.style.visibility = "hidden";
+      tooltip.style.display = "block";
+      tooltip.style.opacity = "0";
+      var tooltipRect = tooltip.getBoundingClientRect();
+      tooltip.style.visibility = "";
+      tooltip.style.display = "";
+      tooltip.style.opacity = "";
+
+      var offsetY = 12;
+      var top = blipRect.top - containerRect.top - tooltipRect.height - offsetY;
+      var left = blipRect.left - containerRect.left + (blipRect.width / 2) - (tooltipRect.width / 2);
+
+      if (top < 0) {
+        top = blipRect.bottom - containerRect.top + offsetY;
+      }
+      if (left < 0) left = 4;
+      if (left + tooltipRect.width > containerRect.width) {
+        left = containerRect.width - tooltipRect.width - 4;
+      }
+
+      tooltip.style.top = top + "px";
+      tooltip.style.left = left + "px";
+    }
+
+    var isTouch = ("ontouchstart" in window) || window.matchMedia("(pointer: coarse)").matches;
+    var blips = document.querySelectorAll("#radar .blip");
+
+    function toggleTooltip(blipEl) {
+      var alreadyVisible = tooltip.classList.contains("visible");
+      var currentLabel = tooltip.dataset.currentBlip;
+      var blipData = d3.select(blipEl).datum();
+      var thisLabel = blipData ? blipData.label : "";
+      hideTooltip();
+      if (!alreadyVisible || currentLabel !== thisLabel) {
+        showTooltip(blipEl);
+        tooltip.dataset.currentBlip = thisLabel;
+      }
+    }
+
+    if (isTouch) {
+      blips.forEach(function(blip) {
+        blip.addEventListener("touchstart", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleTooltip(this);
+        });
+        blip.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleTooltip(this);
+        });
       });
+      document.addEventListener("click", function(e) {
+        if (!e.target.closest(".blip") && !e.target.closest("#radar-tooltip")) {
+          hideTooltip();
+        }
+      });
+    } else {
+      blips.forEach(function(blip) {
+        blip.addEventListener("mouseenter", function() { showTooltip(this); });
+        blip.addEventListener("mouseleave", function() { hideTooltip(); });
+      });
+    }
+
+    window.addEventListener("resize", hideTooltip);
+  }
+
+  // ── Main load function ──
+  function loadRadar() {
+    var unit = getCurrentUnit();
+    var isGlobal = unit.id === "global";
+    var dataFile = isGlobal ? "/global/radar-data.json" : "/" + unit.id + "/radar-data.json";
+
+    // Update page title
+    document.title = isGlobal ? "FreshMinds Tech Radar" : unit.label + " — FreshMinds Tech Radar";
+    document.getElementById("radar-title").textContent = isGlobal ? "Tech Radar" : unit.label + " Tech Radar";
+
+    // Reset radar container (important for re-renders)
+    var container = document.querySelector(".radar-container");
+    container.innerHTML = '<svg id="radar"></svg><div id="radar-tooltip" class="radar-tooltip"></div>';
+
+    renderNav(unit);
+    renderIntro(unit, isGlobal);
+
+    // Show/hide unit cards
+    var cardsContainer = document.getElementById("unit-cards");
+    if (isGlobal) {
+      renderUnitCards();
+    } else {
+      cardsContainer.style.display = "none";
+      cardsContainer.innerHTML = "";
+    }
+
+    fetch(dataFile)
+      .then(function(r) { return r.json(); })
+      .then(function(data) { renderRadar(data); })
+      .catch(function() {
+        container.innerHTML = '<div class="loading">Radar data kon niet geladen worden.</div>';
+      });
+  }
+
+  // ── Init ──
+  fetch("/units.json")
+    .then(function(r) { return r.json(); })
+    .then(function(units) {
+      UNITS = units;
+      window.addEventListener("popstate", loadRadar);
+      loadRadar();
+    })
+    .catch(function() {
+      document.querySelector(".radar-container").innerHTML =
+        '<div class="loading">Configuratie kon niet geladen worden.</div>';
     });
 </script>
 
