@@ -2,7 +2,7 @@
 
 ## Scope
 
-The FreshMinds Tech Radar has two tiers: unit radars and a global radar. Each business unit (Software Engineering, AI, Cloud, Data, Security) has its own radar with concrete technology recommendations. The global radar is a curated selection of cross-cutting entries, aimed at clients and recruitment.
+The FreshMinds Tech Radar has two tiers: unit radars and a global radar. Each business unit (Software Engineering, AI, Cloud, Data, Security, SAP) has its own radar with concrete technology recommendations once populated. Security and SAP currently have empty scaffolds awaiting content. The global radar is a curated selection of cross-cutting entries, aimed at clients and recruitment.
 
 ## Ownership
 

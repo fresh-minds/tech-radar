@@ -14,6 +14,7 @@ Live at: https://earnest-cocada-04456b.netlify.app
 | Cloud | 26 | `/cloud/` |
 | Data | 21 | `/data/` |
 | Security | scaffold | `/security/` |
+| SAP | scaffold | `/sap/` |
 
 The global radar cuts across all units. The unit radars go deeper into specific technology choices.
 
@@ -49,6 +50,7 @@ ai/radar-data.json           # AI radar
 cloud/radar-data.json        # Cloud radar
 data/radar-data.json         # Data radar
 security/radar-data.json     # Security radar (scaffold)
+sap/radar-data.json          # SAP radar (scaffold)
 global/radar-data.json       # Global radar
 index.html                   # Visualization with client-side routing
 scripts/validate.js          # Validates all radar-data.json files
@@ -83,3 +85,4 @@ Each entry in a `radar-data.json` file:
 
 1. Create a directory with a `radar-data.json` file
 2. Add the unit to `units.json`
+3. Add the unit ID to the allowlists in `scripts/monthly-scan.js` and `scripts/monthly-scan-publish.js`

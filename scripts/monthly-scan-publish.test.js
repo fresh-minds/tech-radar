@@ -18,6 +18,7 @@ test('month calculation uses Amsterdam calendar boundaries and year rollover', (
 
 test('publisher permits only actual radar data plus its dated research report', () => {
   assert.deepEqual(scanPaths(validResult()), ['software/radar-data.json', 'docs/research/2026-09.md']);
+  assert.deepEqual(scanPaths({ ...validResult(), modifiedFiles: ['sap/radar-data.json'] }), ['sap/radar-data.json', 'docs/research/2026-09.md']);
   for (const file of ['.github/workflows/validate.yml', '../radar-data.json', 'software/../../package.json']) {
     assert.throws(() => scanPaths({ ...validResult(), modifiedFiles: [file] }), /allowlist/);
   }
