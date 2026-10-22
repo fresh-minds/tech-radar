@@ -1,4 +1,5 @@
 node_modules/
+update-status.json
 .netlify/
 *.pptx
 ~$*

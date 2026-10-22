@@ -286,6 +286,7 @@
 <div class="unit-cards" id="unit-cards" style="display: none;"></div>
 
 <footer class="radar-footer">
+  <a href="/updates/">Laatste updates</a> &middot;
   FreshMinds Tech Radar &middot; Gebaseerd op de <a href="https://github.com/zalando/tech-radar" target="_blank">Zalando Tech Radar</a>
 </footer>
 
@@ -330,6 +331,10 @@
       });
       nav.appendChild(a);
     });
+    var updatesLink = document.createElement("a");
+    updatesLink.href = "/updates/";
+    updatesLink.textContent = "Updates";
+    nav.appendChild(updatesLink);
   }
 
   // ── Intro ──

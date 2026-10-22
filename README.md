@@ -31,6 +31,12 @@ The global radar cuts across all units. The unit radars go deeper into specific 
 3. Get one approval from a reviewer
 4. Merge to main. The radar auto-deploys to production
 
+## Update history
+
+The [Updates page](https://earnest-cocada-04456b.netlify.app/updates/) shows the latest radar-data change overall and per
+unit, the current editions, and links to each change. Dates are generated from
+Git history during `npm run build`; website-only changes do not advance them.
+
 ## Project structure
 
 ```
