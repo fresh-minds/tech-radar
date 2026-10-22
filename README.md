@@ -13,7 +13,7 @@ Live at: https://earnest-cocada-04456b.netlify.app
 | AI | 17 | `/ai/` |
 | Cloud | 26 | `/cloud/` |
 | Data | 21 | `/data/` |
-| Security | scaffold | `/security/` |
+| Security | 21 (draft) | `/security/` |
 
 The global radar cuts across all units. The unit radars go deeper into specific technology choices.
 

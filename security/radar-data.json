@@ -1,11 +1,201 @@
 {
-  "title": "FreshMinds Security Tech Radar",
-  "date": "2026.09",
+  "title": "FreshMinds Security Tech Radar — CONCEPT (validatie door unit owners vereist)",
+  "date": "2026.10",
   "quadrants": [
     "Languages & Frameworks",
     "Platforms",
     "Tools",
     "Techniques"
   ],
-  "entries": []
+  "entries": [
+    {
+      "label": "Rust",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Rust beperkt veel geheugenfouten met ownership en compilercontroles. Onderzoek de toepasbaarheid voor beveiligingskritieke componenten, inclusief afhankelijkheden, unsafe-code en beschikbare expertise.",
+      "tags": ["memory-safety", "secure-development"],
+      "link": "https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html"
+    },
+    {
+      "label": "Spring Security",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Spring Security biedt authenticatie, autorisatie en bescherming voor Spring-applicaties. Beoordeel de standaardconfiguratie, expliciete toegangsregels en beveiligingstests binnen onze Java-projecten voordat een Security-standaard wordt vastgesteld.",
+      "tags": ["application-security", "jvm", "identity"],
+      "link": "https://spring.io/projects/spring-security/"
+    },
+    {
+      "label": "ASP.NET Core Identity",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "ASP.NET Core Identity ondersteunt gebruikersbeheer en authenticatie, met ingebouwde passkey-ondersteuning vanaf .NET 10. Onderzoek configuratie, accountherstel en de afbakening tegenover een centrale identityprovider.",
+      "tags": ["application-security", "dotnet", "identity"],
+      "link": "https://learn.microsoft.com/en-us/aspnet/core/security/authentication/passkeys/?view=aspnetcore-10.0"
+    },
+    {
+      "label": "Microsoft Entra ID",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Entra ID biedt centraal identiteitsbeheer en integratie via OpenID Connect en OAuth. Onderzoek tenantgrenzen, toegangsbeleid en de juiste productvariant voor medewerkers of externe gebruikers per klantcontext.",
+      "tags": ["identity", "azure", "access-management"],
+      "link": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
+    },
+    {
+      "label": "Keycloak",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Keycloak biedt een open-source identityplatform voor onder meer OpenID Connect en SAML. Beoordeel beheer, updates, herstel en federatie voordat het als alternatief voor een beheerde identityprovider wordt gekozen.",
+      "tags": ["identity", "open-source", "access-management"],
+      "link": "https://www.keycloak.org/securing-apps/overview"
+    },
+    {
+      "label": "Azure Key Vault",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Key Vault biedt beheerde opslag en toegangscontrole voor applicatiesecrets, sleutels en certificaten op Azure. Onderzoek autorisatie, rotatie en herstel, en vergelijk de vereisten met Vault voordat een platformkeuze wordt gemaakt.",
+      "tags": ["secrets-management", "azure", "cryptography"],
+      "link": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+    },
+    {
+      "label": "SonarQube",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De bestaande Software Engineering-radar adviseert SonarQube als standaard voor codeanalyse en kwaliteitsgates. Neem beveiligingsbevindingen en hotspotreviews mee; beschikbare analyse hangt af van de gekozen editie en vervangt geen gerichte beveiligingstests.",
+      "tags": ["application-security", "sast", "devsecops"],
+      "link": "https://docs.sonarsource.com/sonarqube-server/quality-standards-administration/managing-rules/security-related-rules"
+    },
+    {
+      "label": "Trivy",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Trivy controleert onder meer containerimages en repositories op kwetsbaarheden, secrets en configuratiefouten. De voorgestelde Trial-positie sluit aan op de Cloud-radar; valideer dekking en opvolging van bevindingen in een representatieve ontwikkelstraat.",
+      "tags": ["vulnerability-management", "containers", "devsecops"],
+      "link": "https://trivy.dev/docs/latest/getting-started/"
+    },
+    {
+      "label": "Checkov",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Checkov controleert infrastructure as code op configuratiefouten voordat wijzigingen worden uitgerold. Neem de Trial-positie uit de Cloud-radar als voorstel over en maak expliciet welke policies en controles het naast Trivy toevoegt.",
+      "tags": ["cloud-security", "iac", "policy-as-code"],
+      "link": "https://www.checkov.io/"
+    },
+    {
+      "label": "HashiCorp Vault",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Vault centraliseert secrets en kan kortlevende credentials uitgeven en intrekken. De Trial-positie volgt het Cloud-concept; valideer beheerlast, herstel en de behoefte aan dynamische secrets tegenover cloud-native alternatieven.",
+      "tags": ["secrets-management", "identity", "cloud-security"],
+      "link": "https://developer.hashicorp.com/vault/docs/about-vault/how-vault-works"
+    },
+    {
+      "label": "ZAP Automation Framework",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Het ZAP Automation Framework maakt dynamische webapplicatietests herhaalbaar met scanplannen. Onderzoek geauthenticeerde scans, afbakening en opvolging in een daarvoor ingerichte testomgeving.",
+      "tags": ["application-security", "dast", "devsecops"],
+      "link": "https://www.zaproxy.org/docs/automate/automation-framework/"
+    },
+    {
+      "label": "Sigstore Cosign",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Cosign ondertekent softwareartefacten en verifieert signatures en attestations. Onderzoek hoe build- en deploymentbeleid ook de verwachte uitgever en identiteit controleert, zodat een geldige signature niet automatisch als vertrouwd wordt beschouwd.",
+      "tags": ["software-supply-chain", "artifact-signing", "devsecops"],
+      "link": "https://docs.sigstore.dev/quickstart/quickstart-cosign/"
+    },
+    {
+      "label": "Falco",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Falco detecteert verdacht runtimegedrag op Linux-hosts en in containers. Beoordeel detectieregels, meldingsdruk en aansluiting op incidentrespons voordat productiebrede inzet wordt overwogen.",
+      "tags": ["runtime-security", "detection", "kubernetes"],
+      "link": "https://falco.org/docs/"
+    },
+    {
+      "label": "Open Policy Agent",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "OPA maakt autorisatie- en infrastructuurregels expliciet en testbaar met policy as code in Rego. Onderzoek hergebruik en borg eigenaarschap, tests en beschikbaarheid van de beslislaag.",
+      "tags": ["policy-as-code", "authorization", "cloud-security"],
+      "link": "https://www.openpolicyagent.org/docs"
+    },
+    {
+      "label": "Passkeys",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "De bestaande Global- en Software Engineering-radars adviseren passkeys als standaard voor nieuwe gebruikersgerichte applicaties. WebAuthn ondersteunt phishingbestendige authenticatie; ontwerp registratie en accountherstel met dezelfde zorg als het aanmelden.",
+      "tags": ["identity", "passwordless", "phishing-resistant"],
+      "link": "https://www.w3.org/TR/webauthn-3/"
+    },
+    {
+      "label": "OWASP ASVS 5.0",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "ASVS biedt toetsbare beveiligingseisen voor webapplicaties en API's. Onderzoek een passend verificatieniveau en koppel eisen aan ontwerp, implementatie en acceptatiecriteria.",
+      "tags": ["application-security", "verification", "secure-development"],
+      "link": "https://asvs.owasp.org/"
+    },
+    {
+      "label": "OAuth Authorization Code + PKCE",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Authorization code met PKCE S256 beschermt interactieve OAuth-clients tegen misbruik van onderschepte codes. Onderzoek de implementatie samen met exacte redirect-URI-validatie en passende bescherming van tokens en sessies.",
+      "tags": ["identity", "oauth", "api-security"],
+      "link": "https://www.rfc-editor.org/rfc/rfc9700.html#section-2.1.1"
+    },
+    {
+      "label": "SLSA provenance",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "SLSA beschrijft waarborgen voor de herkomst en integriteit van broncode en buildartefacten. Onderzoek welke provenance en verificatie nodig zijn voor kritieke softwareketens en welke garanties het buildplatform werkelijk levert.",
+      "tags": ["software-supply-chain", "provenance", "devsecops"],
+      "link": "https://slsa.dev/spec/v1.2/"
+    },
+    {
+      "label": "CycloneDX SBOM",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Een CycloneDX SBOM legt softwarecomponenten en afhankelijkheden machineleesbaar vast. Onderzoek generatie per release, volledigheid en aansluiting op kwetsbaarhedenbeheer; kies het formaat in overleg met de ketenpartners.",
+      "tags": ["software-supply-chain", "sbom", "vulnerability-management"],
+      "link": "https://cyclonedx.org/specification/overview/"
+    },
+    {
+      "label": "OAuth Implicit Grant",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Vermijd deze flow voor nieuwe interactieve integraties en kies in beginsel authorization code met PKCE. RFC 9700 raadt het uitgeven van access tokens via de browserredirect af, met beperkte uitzonderingen bij aanvullende maatregelen.",
+      "tags": ["identity", "oauth", "legacy"],
+      "link": "https://www.rfc-editor.org/rfc/rfc9700.html#section-2.1.2"
+    },
+    {
+      "label": "OAuth Password Grant (ROPC)",
+      "quadrant": "Techniques",
+      "ring": "Hold",
+      "moved": 2,
+      "description": "Migreer bestaande password-grant-integraties en gebruik deze flow niet voor nieuwe integraties. RFC 9700 verbiedt de resource-owner-password-credentials-grant: gebruikerswachtwoorden worden aan de client doorgegeven en moderne interactieve authenticatie wordt belemmerd.",
+      "tags": ["identity", "oauth", "legacy"],
+      "link": "https://www.rfc-editor.org/rfc/rfc9700.html#section-2.4"
+    }
+  ]
 }

@@ -33,6 +33,6 @@
     "id": "security",
     "label": "Security",
     "path": "/security/",
-    "pitch": "De Security unit helpt klanten met cybersecurity-vraagstukken. Deze radar wordt binnenkort gepubliceerd."
+    "pitch": "De Security unit helpt klanten met applicatiebeveiliging, identity, cloud security en de softwareketen. Dit is een eerste concept op basis van openbare standaarden, productdocumentatie en de bestaande FreshMinds-radars. Alle ringposities zijn voorstellen voor validatie door de Security unit owners; bestaande aanbevelingen uit andere units bewijzen geen productie-ervaring binnen Security."
   }
 ]
