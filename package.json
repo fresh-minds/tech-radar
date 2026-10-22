@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "FreshMinds Technology Radar",
   "scripts": {
-    "predev": "node scripts/build-update-status.js --fetch-history",
     "dev": "node scripts/dev-server.js",
-    "build": "node scripts/validate.js && node scripts/build-update-status.js --fetch-history",
+    "build": "node scripts/validate.js",
     "validate": "node scripts/validate.js",
     "test": "node --test scripts/*.test.js",
     "scan": "node scripts/monthly-scan.js"

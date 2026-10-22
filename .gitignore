@@ -1,6 +1,5 @@
 node_modules/
 .scan-output/
-update-status.json
 .netlify/
 *.pptx
 ~$*
