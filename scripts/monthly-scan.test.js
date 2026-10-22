@@ -12,6 +12,7 @@ const NOW = new Date('2026-10-22T12:00:00Z');
 const URL = 'https://project.example.org/releases/2026-09';
 const CITATION_URL = 'https://standards.example.org/2026/update';
 const QUADRANTS = ['Languages & Frameworks', 'Platforms', 'Tools', 'Techniques'];
+const FOUNDRY_ENDPOINT = 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1';
 
 function response(text = 'Official September releases reviewed for all six units.') {
   return { status: 'completed', output: [
@@ -200,7 +201,7 @@ test('failed extraction retains research audit and removes stale success artifac
   const { root } = tempRepo(t);
   await runFixture(root, proposal());
   let calls = 0;
-  await assert.rejects(scan.run({ month: MONTH }, { root, now: NOW, env: { OPENAI_API_KEY: 'test-secret' }, fetchImpl: async () => {
+  await assert.rejects(scan.run({ month: MONTH }, { root, now: NOW, env: { FOUNDRY_AZURE_AI_KEY: 'test-secret' }, fetchImpl: async () => {
     calls++;
     return new Response(JSON.stringify(calls === 1 ? response() : { status: 'incomplete', output: [] }));
   } }), /did not complete/);
@@ -213,7 +214,7 @@ test('failed extraction retains research audit and removes stale success artifac
 test('unsafe output locations and artifact symlinks fail before any API request', async t => {
   const { root } = tempRepo(t);
   let calls = 0;
-  const dependencies = { root, now: NOW, env: { OPENAI_API_KEY: 'test-secret' }, fetchImpl: async () => { calls++; throw new Error('must not fetch'); } };
+  const dependencies = { root, now: NOW, env: { FOUNDRY_AZURE_AI_KEY: 'test-secret' }, fetchImpl: async () => { calls++; throw new Error('must not fetch'); } };
   await assert.rejects(scan.run({ month: MONTH, output: 'software' }, dependencies), /overlap radar directories/);
   fs.mkdirSync(path.join(root, '.scan-output'));
   fs.symlinkSync(path.join(root, 'ai', 'radar-data.json'), path.join(root, '.scan-output', 'research.json'));
@@ -228,10 +229,10 @@ test('incomplete, missing, or refusal API output fails closed', async () => {
   await assert.rejects(scan.callResponses({}, { apiKey: 'test-secret', fetchImpl: async () => new Response(JSON.stringify({ status: 'incomplete', output: [] })) }), /did not complete/);
 });
 
-test('research requires live hosted web_search, extraction has no tools and uses strict schema', () => {
+test('research requires Foundry hosted web_search, extraction has no tools and uses strict schema', () => {
   const bodies = scan.requestBodies({}, MONTH, scan.monthCoverage(MONTH, NOW), 'test-model');
   assert.equal(bodies.research.tool_choice, 'required');
-  assert.deepEqual(bodies.research.tools, [{ type: 'web_search', external_web_access: true }]);
+  assert.deepEqual(bodies.research.tools, [{ type: 'web_search', external_web_access: false }]);
   assert.deepEqual(bodies.research.include, ['web_search_call.action.sources']);
   assert.equal(bodies.research.max_tool_calls, 18);
   assert.equal(bodies.research.store, false);
@@ -240,6 +241,85 @@ test('research requires live hosted web_search, extraction has no tools and uses
   assert.equal(extraction.text.format.type, 'json_schema');
   assert.equal(extraction.text.format.strict, true);
   assert.equal(extraction.text.format.schema, scan.PROPOSAL_SCHEMA);
+});
+
+test('Foundry endpoint normalization accepts only HTTPS Azure v1 resource routes', () => {
+  assert.equal(scan.responsesEndpoint(), `${FOUNDRY_ENDPOINT}/responses`);
+  for (const base of [FOUNDRY_ENDPOINT, `${FOUNDRY_ENDPOINT}/`, 'https://another.openai.azure.com/openai/v1', 'https://another.openai.azure.com/openai/v1/']) {
+    assert.equal(scan.responsesEndpoint(base), `${base.replace(/\/$/, '')}/responses`);
+  }
+  for (const endpoint of [
+    'http://devfreshmindsaifoundry.services.ai.azure.com/openai/v1',
+    'https://user:password@devfreshmindsaifoundry.services.ai.azure.com/openai/v1',
+    `${FOUNDRY_ENDPOINT}?api-version=preview`,
+    `${FOUNDRY_ENDPOINT}#fragment`,
+    'https://api.openai.com/openai/v1',
+    'https://resource.services.ai.azure.com.evil.example/openai/v1',
+    'https://services.ai.azure.com/openai/v1',
+    'https://resource.openai.azure.com/',
+    `${FOUNDRY_ENDPOINT}/responses`,
+    'https://resource.openai.azure.com/other/openai/v1',
+    'not a URL'
+  ]) assert.throws(() => scan.responsesEndpoint(endpoint), /endpoint|HTTPS|Azure|Foundry/i);
+});
+
+test('Foundry transport sends the resource key only in api-key and disallows redirects', async () => {
+  const body = { model: 'gpt-6-luna', input: 'Research the scan month.' };
+  for (const endpoint of [undefined, 'https://another.openai.azure.com/openai/v1/']) {
+    let calls = 0;
+    const found = await scan.callResponses(body, { apiKey: 'test-foundry-key', endpoint, fetchImpl: async (url, options) => {
+      calls++;
+      assert.equal(url, scan.responsesEndpoint(endpoint));
+      assert.equal(options.method, 'POST');
+      assert.equal(options.redirect, 'error');
+      const headers = new Headers(options.headers);
+      assert.equal(headers.get('api-key'), 'test-foundry-key');
+      assert.equal(headers.has('authorization'), false);
+      assert.equal(headers.get('content-type'), 'application/json');
+      assert.deepEqual(JSON.parse(options.body), body);
+      return new Response(JSON.stringify(response()));
+    } });
+    assert.equal(calls, 1);
+    assert.equal(found.status, 'completed');
+  }
+});
+
+test('live scan uses the default Foundry deployment and honors endpoint and deployment overrides', async t => {
+  for (const settings of [
+    { env: {}, model: 'gpt-6-luna', endpoint: FOUNDRY_ENDPOINT },
+    { env: { RADAR_SCAN_MODEL: 'custom-foundry-deployment', FOUNDRY_AZURE_AI_ENDPOINT: 'https://another.openai.azure.com/openai/v1/' },
+      model: 'custom-foundry-deployment', endpoint: 'https://another.openai.azure.com/openai/v1/' }
+  ]) {
+    const { root } = tempRepo(t);
+    const bodies = [];
+    await assert.rejects(scan.run({ month: MONTH }, { root, now: NOW,
+      env: { FOUNDRY_AZURE_AI_KEY: 'test-foundry-key', ...settings.env }, fetchImpl: async (url, options) => {
+        assert.equal(url, scan.responsesEndpoint(settings.endpoint));
+        assert.equal(new Headers(options.headers).get('api-key'), 'test-foundry-key');
+        bodies.push(JSON.parse(options.body));
+        return new Response(JSON.stringify(bodies.length === 1 ? response() : { status: 'incomplete', output: [] }));
+      }
+    }), /did not complete/);
+    assert.equal(bodies.length, 2);
+    assert.deepEqual(bodies.map(body => body.model), [settings.model, settings.model]);
+  }
+});
+
+test('missing Foundry key and unsafe configured endpoint fail before any API request', async t => {
+  let calls = 0;
+  const fetchImpl = async () => { calls++; throw new Error('must not fetch'); };
+  for (const apiKey of [undefined, null, '']) {
+    await assert.rejects(scan.callResponses({}, { apiKey, fetchImpl }), /FOUNDRY_AZURE_AI_KEY/);
+  }
+  for (const endpoint of ['https://evil.example/openai/v1', `${FOUNDRY_ENDPOINT}?redirect=evil`, 'http://resource.openai.azure.com/openai/v1']) {
+    await assert.rejects(scan.callResponses({}, { apiKey: 'test-foundry-key', endpoint, fetchImpl }), /endpoint|HTTPS|Azure|Foundry/i);
+  }
+  const { root } = tempRepo(t);
+  await assert.rejects(scan.run({ month: MONTH }, { root, now: NOW,
+    env: { OPENAI_API_KEY: 'old-key-must-not-be-used' }, fetchImpl }), /FOUNDRY_AZURE_AI_KEY/);
+  await assert.rejects(scan.run({ month: MONTH }, { root, now: NOW,
+    env: { FOUNDRY_AZURE_AI_KEY: 'test-foundry-key', FOUNDRY_AZURE_AI_ENDPOINT: 'https://evil.example/openai/v1' }, fetchImpl }), /endpoint|HTTPS|Azure|Foundry/i);
+  assert.equal(calls, 0);
 });
 
 test('API failures retry within bounds and never expose provider response bodies or secrets', async () => {

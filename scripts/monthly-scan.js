@@ -11,7 +11,7 @@ const QUADRANTS = ['Languages & Frameworks', 'Platforms', 'Tools', 'Techniques']
 const RINGS = ['Adopt', 'Trial', 'Assess', 'Hold'];
 const TIME_ZONE = 'Europe/Amsterdam';
 const MAX_CHANGES = 12;
-const API_URL = 'https://api.openai.com/v1/responses';
+const DEFAULT_ENDPOINT = 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1';
 const ROOT = path.resolve(__dirname, '..');
 const ARTIFACT_NAMES = ['result.json', 'report.md', 'pr-body.md', 'research.json', 'proposal.json'];
 
@@ -301,28 +301,39 @@ function renderReport(proposal, plan, research, coverage, fixture) {
   return `${lines.join('\n')}\n`;
 }
 
-async function callResponses(body, { apiKey, fetchImpl = fetch, sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) } = {}) {
-  assert(typeof apiKey === 'string' && apiKey.length > 0, 'OPENAI_API_KEY is required');
+function responsesEndpoint(endpoint = DEFAULT_ENDPOINT) {
+  let url;
+  try { url = new URL(endpoint); } catch { throw new Error('Invalid Foundry endpoint'); }
+  assert(url.protocol === 'https:' && !url.username && !url.password && !url.port && !url.search && !url.hash &&
+    (url.hostname.endsWith('.services.ai.azure.com') || url.hostname.endsWith('.openai.azure.com')) &&
+    /^\/openai\/v1\/?$/.test(url.pathname), 'Foundry endpoint must be an Azure HTTPS resource URL ending in /openai/v1');
+  url.pathname = '/openai/v1/responses';
+  return url.href;
+}
+
+async function callResponses(body, { apiKey, endpoint = DEFAULT_ENDPOINT, fetchImpl = fetch, sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) } = {}) {
+  assert(typeof apiKey === 'string' && apiKey.length > 0, 'FOUNDRY_AZURE_AI_KEY is required');
+  const apiUrl = responsesEndpoint(endpoint);
   for (let attempt = 0; attempt < 2; attempt++) {
     let response;
     try {
-      response = await fetchImpl(API_URL, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+      response = await fetchImpl(apiUrl, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'api-key': apiKey }, redirect: 'error',
         body: JSON.stringify(body), signal: AbortSignal.timeout(400_000)
       });
     } catch {
       if (attempt === 0) { await sleep(2000); continue; }
-      throw new Error('OpenAI network request failed or timed out; no API body was logged');
+      throw new Error('Foundry network request failed or timed out; no API body was logged');
     }
     if (!response.ok) {
       if (attempt === 0 && (response.status === 429 || response.status >= 500)) { await sleep(5000); continue; }
-      throw new Error(`OpenAI request failed (HTTP ${response.status}); no API body was logged`);
+      throw new Error(`Foundry request failed (HTTP ${response.status}); no API body was logged`);
     }
-    assert(Number(response.headers.get('content-length') || 0) <= 6_000_000, 'OpenAI response exceeds size limit');
+    assert(Number(response.headers.get('content-length') || 0) <= 6_000_000, 'Foundry response exceeds size limit');
     const raw = await response.text();
-    assert(Buffer.byteLength(raw) <= 6_000_000, 'OpenAI response exceeds size limit');
+    assert(Buffer.byteLength(raw) <= 6_000_000, 'Foundry response exceeds size limit');
     let data;
-    try { data = JSON.parse(raw); } catch { throw new Error('OpenAI returned invalid JSON; no API body was logged'); }
+    try { data = JSON.parse(raw); } catch { throw new Error('Foundry returned invalid JSON; no API body was logged'); }
     responseText(data);
     return data;
   }
@@ -333,8 +344,8 @@ function requestBodies(context, month, coverage, model) {
   const base = { model, reasoning: { effort: 'medium' }, store: false };
   return {
     research: { ...base, max_output_tokens: 16000, max_tool_calls: 18,
-      tools: [{ type: 'web_search', external_web_access: true }], tool_choice: 'required', include: ['web_search_call.action.sources'],
-      instructions: `${shared} Use live hosted web search. Produce a source-backed research report covering each unit, even if there is no material development. Include candidate changes, exact existing labels, current and proposed rings, evidence dates, rationale, and questions needing owner judgment. Research across units and both current entries and plausible emerging technologies.`,
+      tools: [{ type: 'web_search', external_web_access: false }], tool_choice: 'required', include: ['web_search_call.action.sources'],
+      instructions: `${shared} Use Foundry hosted web search grounded in Bing's indexed sources. Do not claim direct live fetching of origin pages. Produce a source-backed research report covering each unit, even if there is no material development. Include candidate changes, exact existing labels, current and proposed rings, evidence dates, rationale, and questions needing owner judgment. Research across units and both current entries and plausible emerging technologies.`,
       input: JSON.stringify({ coverage, repository: context }) },
     extraction(research) { return { ...base, max_output_tokens: 14000,
       instructions: `${shared} Extract only from the supplied research and source allowlist. No tools are available. Return the strict schema. Every unit must occur exactly once in unitReviews. tags/link null means preserve existing values (omit on additions); populated tags/link must be justified by the research. Keep existing labels and quadrants exact. Evidence primary=true is permitted only for the original project/vendor, standards body, advisory author or research author. Supply evidence dates as YYYY-MM-DD. Unsupported candidates and promotions belong in ownerQuestions, not changes.`,
@@ -371,10 +382,11 @@ async function run(options = {}, { root = ROOT, now = new Date(), env = process.
     writeArtifact(output, 'research.json', research);
     proposal = readJson(path.resolve(options.proposal));
   } else {
-    const bodies = requestBodies(context, month, coverage, env.RADAR_SCAN_MODEL || 'gpt-6.1-sol');
-    research = collectResearch(await callResponses(bodies.research, { apiKey: env.OPENAI_API_KEY, fetchImpl }));
+    const bodies = requestBodies(context, month, coverage, env.RADAR_SCAN_MODEL || 'gpt-6-luna');
+    const client = { apiKey: env.FOUNDRY_AZURE_AI_KEY, endpoint: env.FOUNDRY_AZURE_AI_ENDPOINT || DEFAULT_ENDPOINT, fetchImpl };
+    research = collectResearch(await callResponses(bodies.research, client));
     writeArtifact(output, 'research.json', research);
-    const extracted = responseText(await callResponses(bodies.extraction(research), { apiKey: env.OPENAI_API_KEY, fetchImpl }));
+    const extracted = responseText(await callResponses(bodies.extraction(research), client));
     try { proposal = JSON.parse(extracted); } catch { throw new Error('Proposal is not valid JSON; no radar files were written'); }
   }
   writeArtifact(output, 'proposal.json', proposal);
@@ -404,4 +416,4 @@ if (require.main === module) {
   }).catch(error => { console.error(`Monthly scan failed: ${error.message}`); process.exitCode = 1; });
 }
 
-module.exports = { UNIT_IDS, PROPOSAL_SCHEMA, calendarMonth, previousMonth, monthCoverage, sourceUrl, radarPath, loadContext, responseText, collectResearch, validateProposal, renderReport, requestBodies, callResponses, parseArgs, run };
+module.exports = { UNIT_IDS, PROPOSAL_SCHEMA, calendarMonth, previousMonth, monthCoverage, sourceUrl, radarPath, loadContext, responseText, collectResearch, validateProposal, renderReport, requestBodies, responsesEndpoint, callResponses, parseArgs, run };

@@ -47,8 +47,9 @@ jobs:
       - name: Research and propose radar updates
         if: steps.context.outputs.skip != 'true'
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          RADAR_SCAN_MODEL: ${{ vars.RADAR_SCAN_MODEL || 'gpt-6.1-sol' }}
+          FOUNDRY_AZURE_AI_KEY: ${{ secrets.FOUNDRY_AZURE_AI_KEY }}
+          FOUNDRY_AZURE_AI_ENDPOINT: ${{ vars.FOUNDRY_AZURE_AI_ENDPOINT || 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1' }}
+          RADAR_SCAN_MODEL: ${{ vars.RADAR_SCAN_MODEL || 'gpt-6-luna' }}
           SCAN_MONTH: ${{ steps.context.outputs.month }}
         run: node scripts/monthly-scan.js --month "$SCAN_MONTH" --context .scan-output/context.json
       - name: Validate proposed data
