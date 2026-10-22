@@ -14,7 +14,7 @@ const CITATION_URL = 'https://standards.example.org/2026/update';
 const QUADRANTS = ['Languages & Frameworks', 'Platforms', 'Tools', 'Techniques'];
 const FOUNDRY_ENDPOINT = 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1';
 
-function response(text = 'Official September releases reviewed for all six units.') {
+function response(text = `Official September releases reviewed for all ${scan.UNIT_IDS.length} units.`) {
   return { status: 'completed', output: [
     { type: 'web_search_call', status: 'completed', action: { type: 'search', sources: [{ type: 'url', url: URL }] } },
     { type: 'message', status: 'completed', content: [{ type: 'output_text', text, annotations: [{ type: 'url_citation', url: CITATION_URL }] }] }
@@ -110,7 +110,7 @@ test('new entries are Assess; promotions, renames, removals and quadrant changes
   assert.throws(() => validate(proposal([update({ ring: 'Trial' })]), assess), /promotions/);
 });
 
-test('only six known unit paths are allowlisted and symlinks are rejected', t => {
+test('only known unit paths are allowlisted and symlinks are rejected', t => {
   const { root } = tempRepo(t);
   assert.throws(() => scan.radarPath(root, '../software'), /not allowlisted/);
   assert.throws(() => validate(proposal([addition({ unitId: '../software' })])), /not allowlisted/);
@@ -121,19 +121,31 @@ test('only six known unit paths are allowlisted and symlinks are rejected', t =>
   assert.throws(() => scan.radarPath(root, 'software'), /symbolic links/);
 });
 
-test('all six unique units are mandatory even for no changes; duplicate labels are rejected', () => {
+test('all unique units including SAP are mandatory even for no changes; duplicate labels are rejected', () => {
   const noChange = validate(proposal());
   assert.deepEqual(noChange.modifiedFiles, []);
   assert.deepEqual(noChange.applied, []);
   const missing = proposal();
-  missing.unitReviews.pop();
-  assert.throws(() => validate(missing), /All six/);
+  missing.unitReviews = missing.unitReviews.filter(review => review.unitId !== 'sap');
+  assert.throws(() => validate(missing), new RegExp(`All ${scan.UNIT_IDS.length} units`));
   const duplicate = proposal();
-  duplicate.unitReviews[5].unitId = 'global';
-  assert.throws(() => validate(duplicate), /six unique/);
+  duplicate.unitReviews.at(-1).unitId = 'global';
+  assert.throws(() => validate(duplicate), new RegExp(`${scan.UNIT_IDS.length} unique`));
   assert.throws(() => validate(proposal([addition(), addition({ label: 'new tool' })])), /Duplicate add\/update/);
   assert.throws(() => validate(proposal([addition({ label: 'Existing tool' })])), /already exists/);
   assert.throws(() => validate(proposal([update({ label: 'Unknown tool' })])), /unknown label/);
+});
+
+test('SAP radar paths, repository context and Assess proposals are accepted', t => {
+  const { root, data } = tempRepo(t);
+  const canonicalRoot = fs.realpathSync(root);
+  assert.equal(scan.radarPath(canonicalRoot, 'sap'), path.join(canonicalRoot, 'sap', 'radar-data.json'));
+  assert.deepEqual(scan.loadContext(root).radars.sap, data.sap);
+  assert.equal(scan.PROPOSAL_SCHEMA.properties.unitReviews.minItems, scan.UNIT_IDS.length);
+  assert.equal(scan.PROPOSAL_SCHEMA.properties.unitReviews.maxItems, scan.UNIT_IDS.length);
+  const plan = validate(proposal([addition({ unitId: 'sap' })]), data);
+  assert.deepEqual(plan.modifiedFiles, ['sap/radar-data.json']);
+  assert.equal(plan.radars.sap.entries[1].ring, 'Assess');
 });
 
 test('valid deterministic plan preserves dates, unrelated entries and metadata; moved is calculated', () => {

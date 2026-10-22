@@ -4,7 +4,7 @@ The **Monthly Tech Radar Scan** workflow runs on GitHub-hosted runners on the
 first day of every month at **09:00 Europe/Amsterdam**, including daylight saving
 changes. It runs with the computer off and the Codex app closed. Each run covers
 the previous completed calendar month across Software Engineering, AI, Cloud,
-Data, Security, and Global.
+Data, Security, SAP, and Global.
 
 The workflow uses Microsoft Foundry's OpenAI-compatible Responses API with
 Bing-grounded web search. Azure searches indexed/cached web sources rather than

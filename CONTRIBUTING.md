@@ -2,7 +2,7 @@
 
 ## How to add or update an entry
 
-Radar data lives in per-unit files: `software/radar-data.json`, `ai/radar-data.json`, `cloud/radar-data.json`, `data/radar-data.json`, `security/radar-data.json`, and `global/radar-data.json`.
+Radar data lives in per-unit files: `software/radar-data.json`, `ai/radar-data.json`, `cloud/radar-data.json`, `data/radar-data.json`, `security/radar-data.json`, `sap/radar-data.json`, and `global/radar-data.json`.
 
 Edit the file for the unit you want to change.
 
@@ -72,3 +72,4 @@ When publishing a new edition of a unit's radar:
 
 1. Create a directory with a `radar-data.json` file (see existing units for format)
 2. Add the unit to `units.json` (id, label, path, pitch)
+3. Add the unit ID to the allowlists in `scripts/monthly-scan.js` and `scripts/monthly-scan-publish.js`

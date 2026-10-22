@@ -23,7 +23,7 @@ async function main() {
   const proposal = JSON.parse(scan.responseText(await scan.callResponses({
     ...bodies.extraction(research),
     max_output_tokens: 4000,
-    instructions: 'This is a connection check, not a technology scan. Return the strict proposal schema. Use the supplied month, summary "Foundry connection verified", all six units with summary "Connection check only", and empty changes and ownerQuestions arrays.',
+    instructions: `This is a connection check, not a technology scan. Return the strict proposal schema. Use the supplied month, summary "Foundry connection verified", all ${scan.UNIT_IDS.length} units with summary "Connection check only", and empty changes and ownerQuestions arrays.`,
     input: JSON.stringify({ month, units: scan.UNIT_IDS }),
   }, client)));
   const plan = scan.validateProposal(proposal, research, scan.loadContext(process.cwd()).radars, month, coverage);
