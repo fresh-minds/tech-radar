@@ -1,0 +1,33 @@
+name: Check Foundry Connection
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/foundry-check.yml'
+      - '.github/workflows/monthly-scan.yml'
+      - 'scripts/check-foundry.js'
+      - 'scripts/monthly-scan.js'
+
+permissions:
+  contents: read
+
+jobs:
+  foundry:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify deployment, web search, and proposal schema
+        env:
+          FOUNDRY_AZURE_AI_KEY: ${{ secrets.FOUNDRY_AZURE_AI_KEY }}
+          FOUNDRY_AZURE_AI_ENDPOINT: ${{ vars.FOUNDRY_AZURE_AI_ENDPOINT || 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1' }}
+          RADAR_SCAN_MODEL: ${{ vars.RADAR_SCAN_MODEL || 'gpt-6-luna' }}
+        run: node scripts/check-foundry.js

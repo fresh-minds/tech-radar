@@ -14,6 +14,7 @@ Live at: https://earnest-cocada-04456b.netlify.app
 | Cloud | 26 | `/cloud/` |
 | Data | 21 | `/data/` |
 | Security | scaffold | `/security/` |
+| SAP | scaffold | `/sap/` |
 
 The global radar cuts across all units. The unit radars go deeper into specific technology choices.
 
@@ -31,6 +32,15 @@ The global radar cuts across all units. The unit radars go deeper into specific 
 3. Get one approval from a reviewer
 4. Merge to main. The radar auto-deploys to production
 
+## Monthly research
+
+The [monthly scan workflow](.github/workflows/monthly-scan.yml) researches relevant
+technology developments on GitHub-hosted runners and opens evidence-backed
+proposal PRs for owner review. It runs on the 1st at 09:00 Amsterdam time, and can
+also be triggered manually. See [setup, review, and troubleshooting](docs/monthly-scans.md)
+for the required API secret and repository settings. Monthly proposals do not
+change the semi-annual publication policy.
+
 ## Project structure
 
 ```
@@ -40,6 +50,7 @@ ai/radar-data.json           # AI radar
 cloud/radar-data.json        # Cloud radar
 data/radar-data.json         # Data radar
 security/radar-data.json     # Security radar (scaffold)
+sap/radar-data.json          # SAP radar (scaffold)
 global/radar-data.json       # Global radar
 index.html                   # Visualization with client-side routing
 scripts/validate.js          # Validates all radar-data.json files
@@ -74,3 +85,4 @@ Each entry in a `radar-data.json` file:
 
 1. Create a directory with a `radar-data.json` file
 2. Add the unit to `units.json`
+3. Add the unit ID to the allowlists in `scripts/monthly-scan.js` and `scripts/monthly-scan-publish.js`

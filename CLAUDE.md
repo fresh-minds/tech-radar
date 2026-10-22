@@ -4,11 +4,11 @@
 
 FreshMinds Tech Radar — a multi-unit static site that visualizes technology choices across the company. Based on the Zalando Tech Radar. Hosted on Netlify with auto-deploy from GitHub.
 
-The site has a global landing page and per-unit radars: software, ai, cloud, data, security.
+The site has a global landing page and per-unit radars: software, ai, cloud, data, security, sap.
 
 ## Key files
 
-- `units.json` — unit definitions (id, label, path, pitch). Adding a unit here is all you need.
+- `units.json` — unit definitions (id, label, path, pitch) for navigation and landing-page cards.
 - `{unit}/radar-data.json` — per-unit radar data (e.g. `software/radar-data.json`, `global/radar-data.json`)
 - `index.html` — visualization with client-side routing using the Zalando tech-radar library (loaded via CDN)
 - `scripts/validate.js` — validates all `*/radar-data.json` files
@@ -47,6 +47,7 @@ ai/radar-data.json           # AI unit
 cloud/radar-data.json        # Cloud unit
 data/radar-data.json         # Data unit
 security/radar-data.json     # Security unit (scaffold)
+sap/radar-data.json          # SAP unit (scaffold)
 global/radar-data.json       # Global cross-cutting radar
 ```
 
@@ -54,6 +55,7 @@ global/radar-data.json       # Global cross-cutting radar
 
 1. Create a directory with a `radar-data.json` file
 2. Add the unit to `units.json`
+3. Add the unit ID to the allowlists in `scripts/monthly-scan.js` and `scripts/monthly-scan-publish.js`
 
 No changes to `index.html` or `netlify.toml` needed.
 
