@@ -1,0 +1,96 @@
+name: Monthly Tech Radar Scan
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'
+      timezone: Europe/Amsterdam
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Completed month to research (YYYY-MM); empty means previous month'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monthly-tech-radar-scan
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      changes: ${{ steps.package.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Check previous proposals
+        id: context
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SCAN_MONTH: ${{ inputs.month }}
+        run: node scripts/monthly-scan-publish.js prepare
+      - name: Research and propose radar updates
+        if: steps.context.outputs.skip != 'true'
+        env:
+          FOUNDRY_AZURE_AI_KEY: ${{ secrets.FOUNDRY_AZURE_AI_KEY }}
+          FOUNDRY_AZURE_AI_ENDPOINT: ${{ vars.FOUNDRY_AZURE_AI_ENDPOINT || 'https://devfreshmindsaifoundry.services.ai.azure.com/openai/v1' }}
+          RADAR_SCAN_MODEL: ${{ vars.RADAR_SCAN_MODEL || 'gpt-6-luna' }}
+          SCAN_MONTH: ${{ steps.context.outputs.month }}
+        run: node scripts/monthly-scan.js --month "$SCAN_MONTH" --context .scan-output/context.json
+      - name: Validate proposed data
+        if: steps.context.outputs.skip != 'true'
+        run: npm run validate
+      - name: Package reviewed file paths
+        if: steps.context.outputs.skip != 'true'
+        id: package
+        run: node scripts/monthly-scan-publish.js package
+      - name: Save research and proposal artifacts
+        if: always() && steps.context.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthly-tech-radar-research
+          path: .scan-output/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 90
+
+  propose:
+    needs: research
+    if: needs.research.outputs.changes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: monthly-tech-radar-research
+          path: .scan-output
+      - name: Open proposal for owner review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: node scripts/monthly-scan-publish.js publish
