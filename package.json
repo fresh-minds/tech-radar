@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "node scripts/dev-server.js",
     "build": "node scripts/validate.js",
-    "validate": "node scripts/validate.js"
+    "validate": "node scripts/validate.js",
+    "test": "node --test scripts/*.test.js",
+    "scan": "node scripts/monthly-scan.js"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
