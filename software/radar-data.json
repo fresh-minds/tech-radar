@@ -497,6 +497,13 @@
       "tags": [
         "frontend"
       ]
+    },
+    {
+      "label": "Node.js",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Node.js is de JavaScript-runtime voor server-side applicaties en tooling. Verken lifecycle- en patchbeheer; de bestaande TypeScript-entry noemt Node.js al, dus bepaal eerst of een aparte blip voldoende onderscheid biedt."
     }
   ]
 }

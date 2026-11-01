@@ -7,5 +7,20 @@
     "Tools",
     "Techniques"
   ],
-  "entries": []
+  "entries": [
+    {
+      "label": "Joule Studio",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Joule Studio biedt no-code- en pro-code mogelijkheden om SAP-agents te bouwen en uit te breiden. Onderzoek governance, modelkeuze en integratie voordat een projectaanbeveling wordt vastgesteld."
+    },
+    {
+      "label": "SAP AI Agent Hub",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "SAP AI Agent Hub biedt een centrale inventaris voor SAP- en third-party agents, met nadruk op overzicht en governance. Onderzoek de reikwijdte en aansluiting op de bestaande SAP-landscape."
+    }
+  ]
 }

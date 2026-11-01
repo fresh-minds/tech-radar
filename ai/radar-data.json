@@ -1,7 +1,12 @@
 {
   "title": "FreshMinds AI Tech Radar — STRAWMAN DRAFT (validatie door unit owners vereist)",
   "date": "2026.09",
-  "quadrants": ["Languages & Frameworks", "Platforms", "Tools", "Techniques"],
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
   "entries": [
     {
       "label": "Spring AI",
@@ -121,6 +126,13 @@
       "ring": "Hold",
       "moved": 2,
       "description": "Het onbeheerst groeien van system prompts, CLAUDE.md files en agent instructions leidt tot context window verspilling, tegenstrijdige instructies en onvoorspelbaar agent-gedrag. Instructies moeten bewust gecureerd en regelmatig gesnoeid worden. Thoughtworks Radar Vol 34 plaatst dit in Hold."
+    },
+    {
+      "label": "GitHub Copilot Fusion",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "GitHub Copilot Fusion routeert prompts tijdens runtime naar modellen en uitvoeringspatronen zoals single, cascade en critique. Onderzoek bestuurbaarheid, transparantie en kosten naast de bestaande GitHub Copilot-entry."
     }
   ]
 }
