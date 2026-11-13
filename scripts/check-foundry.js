@@ -28,7 +28,7 @@ async function main() {
   }, client)));
   const plan = scan.validateProposal(proposal, research, scan.loadContext(process.cwd()).radars, month, coverage);
   assert.equal(plan.applied.length, 0, 'Connection check must not propose data changes');
-  console.log(`Foundry connection verified: ${research.completedSearches} completed searches, ${research.sourceUrls.length} source URLs, and strict monthly proposal schema accepted. No radar data was edited.`);
+  console.log(`Foundry connection verified: ${research.completedSearches} completed searches, ${research.sourceUrls.length} source URLs, and strict proposal schema accepted. No radar data was edited.`);
 }
 
 main().catch(error => { console.error(`Foundry connection check failed: ${error.message}`); process.exitCode = 1; });

@@ -75,13 +75,20 @@ async function runFixture(root, value, options = {}) {
   return scan.run({ month: MONTH, proposal: file, research: path.join(root, 'research.fixture.json'), ...options }, { root, now: NOW });
 }
 
-test('Amsterdam month boundaries, previous completed month, and leap year coverage', () => {
+test('Amsterdam period boundaries, previous completed half-month, and leap year coverage', () => {
   assert.equal(scan.calendarMonth(new Date('2026-04-30T22:30:00Z')), '2026-05');
-  assert.equal(scan.previousMonth(new Date('2026-04-30T22:30:00Z')), '2026-04');
-  assert.equal(scan.previousMonth(new Date('2026-12-31T23:30:00Z')), '2026-12');
+  assert.equal(scan.previousMonth(new Date('2026-04-30T22:30:00Z')), '2026-04-15');
+  assert.equal(scan.previousMonth(new Date('2026-05-15T07:00:00Z')), '2026-05-01');
+  assert.equal(scan.previousMonth(new Date('2026-05-14T21:30:00Z')), '2026-04-15');
+  assert.equal(scan.previousMonth(new Date('2026-12-31T23:30:00Z')), '2026-12-15');
+  assert.deepEqual(scan.monthCoverage('2026-10-01', NOW), { start: '2026-10-01', end: '2026-10-14', timeZone: 'Europe/Amsterdam' });
+  assert.deepEqual(scan.monthCoverage('2026-09-15', NOW), { start: '2026-09-15', end: '2026-09-30', timeZone: 'Europe/Amsterdam' });
+  assert.deepEqual(scan.monthCoverage('2024-02-01', NOW), { start: '2024-02-01', end: '2024-02-14', timeZone: 'Europe/Amsterdam' });
+  assert.deepEqual(scan.monthCoverage('2024-02-15', NOW), { start: '2024-02-15', end: '2024-02-29', timeZone: 'Europe/Amsterdam' });
   assert.deepEqual(scan.monthCoverage('2024-02', NOW), { start: '2024-02-01', end: '2024-02-29', timeZone: 'Europe/Amsterdam' });
+  assert.equal(scan.monthCoverage('2025-02-15', NOW).end, '2025-02-28');
   assert.equal(scan.monthCoverage('2025-02', NOW).end, '2025-02-28');
-  for (const month of ['2026-10', '2026-11', '2026-00', '2026-13', '26-09', '../data']) assert.throws(() => scan.monthCoverage(month, NOW));
+  for (const month of ['2026-10', '2026-10-15', '2026-10-02', '2026-11', '2026-00', '2026-13', '26-09', '../data']) assert.throws(() => scan.monthCoverage(month, NOW));
 });
 
 test('research allowlist uses actual tool source URLs and citations, requiring completed hosted search', () => {
@@ -94,13 +101,17 @@ test('research allowlist uses actual tool source URLs and citations, requiring c
   assert.throws(() => validate(proposal([addition({ evidence: [{ url: 'https://unseen.example.org/', title: 'Fabricated', date: '2026-09-15', primary: true }] })])), /not returned by research/);
 });
 
-test('evidence must include a primary source with a real date within the scan month', () => {
+test('evidence must include a primary source with a real date within the scan period', () => {
   for (const evidence of [
     [{ url: URL, title: 'News summary', date: '2026-09-15', primary: false }],
     [{ url: URL, title: 'Old release', date: '2026-08-31', primary: true }],
     [{ url: URL, title: 'Future release', date: '2026-10-01', primary: true }],
     [{ url: URL, title: 'Invalid date', date: '2026-09-31', primary: true }]
   ]) assert.throws(() => validate(proposal([addition({ evidence })])));
+  const halfMonth = '2026-09-15';
+  const halfCoverage = scan.monthCoverage(halfMonth, NOW);
+  assert.throws(() => scan.validateProposal({ ...proposal([addition({ evidence: [{ url: URL, title: 'First half release', date: '2026-09-14', primary: true }] })]), month: halfMonth }, scan.collectResearch(response()), radars(), halfMonth, halfCoverage), /within the scan period/);
+  assert.equal(scan.validateProposal({ ...proposal([addition({ evidence: [{ url: URL, title: 'Second half release', date: '2026-09-15', primary: true }] })]), month: halfMonth }, scan.collectResearch(response()), radars(), halfMonth, halfCoverage).applied.length, 1);
   assert.throws(() => validate(proposal([addition({ link: 'https://unseen.example.org/' })])), /not returned by research/);
 });
 
@@ -361,4 +372,6 @@ test('strict local schema rejects unknown fields, too many proposals, unsafe URL
   for (const url of ['http://example.org/', 'https://127.0.0.1/', 'https://localhost/', 'https://user:pass@example.org/']) assert.throws(() => scan.sourceUrl(url));
   assert.throws(() => scan.parseArgs(['--proposal', 'test.json']), /both/);
   assert.throws(() => scan.parseArgs(['--month', MONTH, '--month', MONTH]), /duplicate/);
+  assert.throws(() => scan.parseArgs(['--month', MONTH, '--period', MONTH]), /duplicate/);
+  assert.equal(scan.parseArgs(['--period', '2026-10-01']).month, '2026-10-01');
 });

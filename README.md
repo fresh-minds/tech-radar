@@ -39,13 +39,13 @@ Ring placement reflects what FreshMinds recommends for **new** projects and tech
 The [Updates page](https://earnest-cocada-04456b.netlify.app/updates/) shows the latest radar-data change overall and per
 unit, the current editions, and links to each change. Dates are generated from
 Git history during `npm run build`; website-only changes do not advance them.
-## Monthly research
+## Bi-weekly research
 
-The [monthly scan workflow](.github/workflows/monthly-scan.yml) researches relevant
+The [bi-weekly scan workflow](.github/workflows/monthly-scan.yml) researches relevant
 technology developments on GitHub-hosted runners and opens evidence-backed
-proposal PRs for owner review. It runs on the 1st at 09:00 Amsterdam time, and can
+proposal PRs for owner review. It runs on the 1st and 15th of each month at 09:00 Amsterdam time, and can
 also be triggered manually. See [setup, review, and troubleshooting](docs/monthly-scans.md)
-for the required API secret and repository settings. Monthly proposals do not
+for the required API secret and repository settings. Bi-weekly proposals do not
 change the semi-annual publication policy.
 
 ## Project structure
