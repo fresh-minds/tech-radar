@@ -1,6 +1,6 @@
 {
   "title": "FreshMinds Tech Radar",
-  "date": "2026.09",
+  "date": "2026.10",
   "quadrants": [
     "Languages & Frameworks",
     "Platforms",
@@ -12,113 +12,199 @@
       "label": "Kotlin",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Onze aanbevolen taal voor nieuwe backend-projecten op het JVM-platform. Goede type safety en naadloze Java-interoperabiliteit. Groeit snel bij onze klanten."
+      "moved": 0,
+      "description": "Moderne, statisch getypeerde programmeertaal voor het JVM-platform met null-safety, coroutines en volledige Java-interoperabiliteit.",
+      "standpoint": "Onze aanbevolen standaardtaal voor nieuwe JVM-backendprojecten. Biedt hogere ontwikkelsnelheid en minder foutgevoelige code dan klassiek Java, en groeit sterk bij onze enterprise-klanten.",
+      "units": ["software"]
     },
     {
       "label": "Python",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "De standaardtaal voor data engineering, data science en AI-toepassingen. Breed ingezet bij klanten en binnen meerdere FreshMinds-units."
+      "moved": 0,
+      "description": "Veelzijdige programmeertaal met een dominant ecosysteem voor AI, machine learning, data engineering en moderne API-services.",
+      "standpoint": "De verbindende standaardtaal op het snijvlak van onze AI-, Data- en Software Engineering-units. Onmisbaar voor zowel data-pipelines als het in productie brengen van AI-services.",
+      "units": ["ai", "data", "software"]
     },
     {
       "label": "TypeScript",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Standaardtaal voor frontend-ontwikkeling. Type safety voorkomt veelvoorkomende fouten op de grens tussen frontend en backend."
+      "moved": 0,
+      "description": "Statisch getypeerde superset van JavaScript die compile-time typecontroles toevoegt aan frontend- en Node.js-applicaties.",
+      "standpoint": "Onze standaardkeuze voor alle frontend- en full-stack webontwikkeling. Strikte typering voorkomt hele foutklassen op de grens tussen frontend, API's en AI-integraties.",
+      "units": ["software"]
     },
     {
       "label": "React",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Onze aanbevolen frontend-library. Groot ecosysteem en breed ingezet bij klanten."
+      "moved": 0,
+      "description": "Component-gebaseerde JavaScript-library voor het bouwen van interactieve gebruikersinterfaces.",
+      "standpoint": "Onze aanbevolen standaard voor nieuwe webfrontends dankzij het volwassen ecosysteem, brede klantadoptie en diepe expertise binnen FreshMinds.",
+      "units": ["software"]
     },
     {
       "label": "Kubernetes",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Industriestandaard voor container orchestration. Vrijwel alle productie-workloads bij klanten draaien op Kubernetes. Brede expertise binnen FreshMinds."
+      "moved": 0,
+      "description": "Open-source platform voor het geautomatiseerd uitrollen, schalen en beheren van gecontaineriseerde workloads.",
+      "standpoint": "Het standaard cloudfundament voor schaalbare productieworkloads en een belangrijke pijler onder portabele, cloud-agnostische architecturen.",
+      "units": ["cloud", "software", "security"]
     },
     {
       "label": "Kafka",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Event streaming-platform voor event-driven architecturen en real-time data pipelines. Bewezen op schaal bij grote klanten en ingezet door zowel onze software- als data-unit."
+      "moved": 0,
+      "description": "Gedistribueerd event-streamingplatform voor real-time datapipelines en event-driven systeemintegratie.",
+      "standpoint": "Bewezen op schaal als ruggengraat tussen Software Engineering en Data om silo's te doorbreken en real-time context beschikbaar te maken.",
+      "units": ["software", "data", "cloud"]
     },
     {
       "label": "Docker",
       "quadrant": "Platforms",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Standaardtechnologie voor het verpakken en geïsoleerd uitvoeren van applicaties in containers.",
+      "standpoint": "Fundamentele bouwsteen voor reproduceerbare builds en CI/CD-pipelines. Voor zakelijk lokaal ontwikkelgebruik adviseren we licentievrije runtimes zoals Podman waar Docker Desktop-licenties knellen.",
+      "units": ["software", "cloud", "data", "ai"]
+    },
+    {
+      "label": "Langfuse",
+      "quadrant": "Platforms",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Standaard containerisatie voor alle projecten. Iedere engineer die met moderne deployment pipelines werkt moet hiermee overweg kunnen."
+      "description": "Open-source LLM-observability en evaluatieplatform voor tracing, promptbeheer, kostenanalyse en kwaliteitsmonitoring van AI-toepassingen.",
+      "standpoint": "Je kunt niet vertrouwen wat je niet kunt zien: Langfuse maakt kosten, latency en uitkomstkwaliteit van AI in productie meetbaar en is zelf te hosten voor maximale datasoevereiniteit.",
+      "units": ["ai", "software"]
     },
     {
       "label": "Grafana",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Onze aanbevolen visualisatielaag voor metrics en logs. De Grafana-stack (Loki, Mimir, Tempo) dekt dashboarding, log-aggregatie en tracing in één ecosysteem."
+      "moved": 0,
+      "description": "Open-source visualisatie- en observabilitystack (met Loki, Mimir en Tempo) voor metrics, logs en distributed traces.",
+      "standpoint": "Onze standaard visualisatielaag om systeemgezondheid, SLO's en platformprestaties in één samenhangend ecosysteem inzichtelijk te maken.",
+      "units": ["cloud", "software"]
     },
     {
       "label": "Terraform",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Infrastructure as code met multi-cloud support. Waardevol voor een consultancy die werkt met AWS, Azure en GCP. Brede ervaring binnen meerdere units."
-    },
-    {
-      "label": "AI-ondersteunde ontwikkeling",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "AI coding-assistenten (Claude Code, GitHub Copilot) veranderen hoe software wordt geschreven. We evalueren hoe deze tools passen in onze workflows, van inline code completion tot agentic multi-file ontwikkeling."
+      "moved": 0,
+      "description": "Declaratieve Infrastructure-as-Code tool voor het provisionen en beheren van infrastructuur over meerdere cloudproviders heen.",
+      "standpoint": "De meest ingezette standaard voor reproduceerbare multi-cloud infrastructuur bij onze klanten, waarbij we OpenTofu gericht inzetten wanneer open-source licentiezekerheid vereist is.",
+      "units": ["cloud", "software", "data"]
     },
     {
       "label": "OpenTelemetry",
       "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "Door CNCF gegradueerde, vendor-neutrale standaard voor het verzamelen en exporteren van traces, metrics en logs.",
+      "standpoint": "Gepromoveerd naar Adopt: als productierijpe de-factostandaard ontkoppelt OpenTelemetry instrumentatie van de achterliggende observability-backend en voorkomt het vendor lock-in.",
+      "units": ["cloud", "software", "ai"]
+    },
+    {
+      "label": "Agentic SDLC & AI Coding Tools",
+      "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Vendor-neutrale observability-standaard voor traces, metrics en logs. Omdat wij bij verschillende klanten met verschillende stacks werken, is die ontkoppeling van instrumentatie en backend voor ons extra waardevol."
+      "moved": 0,
+      "description": "De inzet van agentic ontwikkeltools (zoals Claude Code en GitHub Copilot) binnen een gestructureerd software-ontwikkelproces.",
+      "standpoint": "De rol van de engineer verschuift van coder naar logic architect: AI versnelt de bouw, mits ingebed in sterke kwaliteitsgates, geautomatiseerde tests en scherpe architectuurvalidatie.",
+      "units": ["software", "ai"]
     },
     {
       "label": "Observability",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Gestructureerd inzicht in systemen via metrics, logs en traces. Denk aan structured logging, DORA Metrics en tooling als Grafana en OpenTelemetry. Hoort standaard te zijn voor ieder nieuw systeem."
+      "moved": 0,
+      "description": "Het structureel meetbaar en herleidbaar maken van systeemgedrag via gestructureerde logs, metrics en traces.",
+      "standpoint": "Een harde voorwaarde voor zowel bedrijfskritische software als Production AI: elk systeem dat wij opleveren moet vanaf de eerste sprint observeerbaar en controleerbaar zijn.",
+      "units": ["software", "cloud", "ai", "security"]
     },
     {
       "label": "API-First Design",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Ontwerp API's voordat je begint met implementatie. Maakt parallelle frontend- en backend-ontwikkeling mogelijk en levert betere contracten op. Geldt voor zowel REST als GraphQL."
-    },
-    {
-      "label": "Platform Engineering",
-      "quadrant": "Techniques",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Interne developer platforms om cognitive load van productteams te verlagen. Veel organisaties hebben platform-teams, maar weinig doen het goed. Klanten vragen steeds vaker om hulp bij het bouwen of adopteren van deze platforms."
+      "moved": 0,
+      "description": "Ontwerpaanpak waarbij API-contracten (zoals OpenAPI of GraphQL-schema's) expliciet worden vastgelegd vóór de implementatie.",
+      "standpoint": "Essentieel voor het betrouwbaar ontsluiten van bestaande ERP- en kernsystemen en het veilig koppelen van applicaties, dataproducten en AI-agents.",
+      "units": ["software", "data", "ai"]
     },
     {
       "label": "Passkeys",
       "quadrant": "Techniques",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Wachtwoordloze, cryptografische authenticatiestandaard op basis van FIDO2 en WebAuthn.",
+      "standpoint": "Onze aanbevolen standaard voor nieuwe gebruikersgerichte applicaties: phishingbestendig bij ontwerp en breed ondersteund door alle moderne platformen.",
+      "units": ["security", "software"]
+    },
+    {
+      "label": "Context Engineering",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
       "moved": 2,
-      "description": "Wachtwoordloze authenticatie via FIDO2/WebAuthn. Phishing-bestendig en geen wachtwoorden om te lekken. Alle grote platformen en browsers ondersteunen het inmiddels. Aanbevolen als standaard voor nieuwe gebruikersgerichte applicaties."
+      "description": "Het systematisch ontwerpen, selecteren en autoriseren van de informatie, RAG-bronnen en instructies die een taalmodel of agent op het juiste moment ontvangt.",
+      "standpoint": "Vervangt ad-hoc prompt engineering en vormt het hart van onze zesde strategische pijler (Cognitive Architecture): betrouwbare AI-uitkomsten beginnen bij gevalideerde bedrijfscontext.",
+      "units": ["ai", "data", "software"]
+    },
+    {
+      "label": "Platform Engineering",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Het ontwerpen en aanbieden van herbruikbare interne ontwikkelplatformen en golden paths om de cognitieve belasting van product- en AI-teams te verlagen.",
+      "standpoint": "Gepromoveerd naar Trial: een platform slaagt alleen als het wordt behandeld als een product met interne klanten, gericht op adoptie, developer experience en ingebouwde security.",
+      "units": ["cloud", "software", "security"]
     },
     {
       "label": "Event-Driven Architecture",
       "quadrant": "Techniques",
       "ring": "Trial",
+      "moved": 0,
+      "description": "Architectuurstijl waarbij systemen losgekoppeld communiceren en reageren op toestandsveranderingen via asynchrone events.",
+      "standpoint": "Krachtig om silo's tussen bedrijfsprocessen, data-pipelines en AI-workflows te doorbreken, mits bewust gekozen waar schaalbaarheid en ontkoppeling de extra complexiteit rechtvaardigen.",
+      "units": ["software", "data", "cloud"]
+    },
+    {
+      "label": "Gecontroleerde Agentic Workflows",
+      "quadrant": "Techniques",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Architectuurstijl gebaseerd op events als primaire communicatiemechanisme tussen services. Krachtig voor schaalbare, ontkoppelde systemen. Omvat technieken als Event Sourcing, CQRS en event streaming via Kafka."
+      "description": "Meerstaps AI-workflows waarin taakspecifieke agents plannen maken en systemen aansturen binnen strikte kaders en menselijke controlepunten.",
+      "standpoint": "Ons antwoord op de hype rond autonome AI (Trusted Autonomy): begin met gecontroleerde agents met vastgelegde mandaten, audit-logging en verplichte menselijke goedkeuring bij kritieke acties.",
+      "units": ["ai", "software", "security"]
+    },
+    {
+      "label": "Data Contracts",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Formele, afdwingbare afspraken tussen dataproducenten en -afnemers over schema, semantiek, kwaliteit en SLA's van datasets.",
+      "standpoint": "Onmisbaar op het snijvlak van Software Engineering, Data en AI om te voorkomen dat wijzigingen in bronsystemen ongemerkt rapportages of AI-modellen breken.",
+      "units": ["data", "software", "ai"]
+    },
+    {
+      "label": "Semantic Layers",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Centrale betekenislaag die bedrijfsbegrippen (zoals 'klant', 'marge' of 'dossier') en metrics eenduidig definieert tussen ruwe data en afnemende systemen.",
+      "standpoint": "Kernonderdeel van onze pijler Cognitive Architecture: zonder gedeelde semantische laag hallucineren AI-agents en spreken dashboards elkaar tegen.",
+      "units": ["data", "ai"]
+    },
+    {
+      "label": "CycloneDX SBOM",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Standaardformaat voor het geautomatiseerd vastleggen van een machineleesbare Software Bill of Materials (stuklijst van componenten en afhankelijkheden).",
+      "standpoint": "Een cruciale bouwsteen voor Digital Trust en de AI Chain of Custody, én vanaf december 2027 een wettelijke verplichting onder de Europese Cyber Resilience Act.",
+      "units": ["security", "software", "cloud"]
     }
   ]
 }
