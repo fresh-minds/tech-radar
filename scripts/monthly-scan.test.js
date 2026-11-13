@@ -25,7 +25,8 @@ function radars() {
   return Object.fromEntries(scan.UNIT_IDS.map(id => [id, {
     title: `${id} radar`, date: '2026.03', quadrants: [...QUADRANTS], editionNote: 'preserve root metadata',
     entries: [{ label: 'Existing tool', quadrant: 'Tools', ring: 'Trial', moved: 2,
-      description: 'Een bestaande korte beschrijving.', tags: ['jvm'], link: 'https://old.example.org/docs', custom: 'keep entry metadata' }]
+      description: 'Een bestaande korte beschrijving.', standpoint: 'Ons huidige standpunt over deze tool.',
+      units: [id === 'global' ? 'software' : id], tags: ['jvm'], link: 'https://old.example.org/docs', custom: 'keep entry metadata' }]
   }]));
 }
 
@@ -35,8 +36,12 @@ function proposal(changes = []) {
 }
 
 function addition(overrides = {}) {
+  const unitId = overrides.unitId || 'software';
+  const defaultUnits = [unitId === 'global' ? 'software' : unitId];
   return { unitId: 'software', operation: 'add', label: 'New tool', quadrant: 'Tools', ring: 'Assess',
-    description: 'Een nieuwe tool die nader onderzoek verdient.', tags: null, link: null,
+    description: 'Een nieuwe tool die nader onderzoek verdient.',
+    standpoint: 'Relevant om te verkennen binnen onze projecten.',
+    units: defaultUnits, tags: null, link: null,
     rationale: 'De officiële release introduceert een relevante mogelijkheid.',
     evidence: [{ url: URL, title: 'Official project release', date: '2026-09-15', primary: true }], ...overrides };
 }
@@ -349,6 +354,10 @@ test('API failures retry within bounds and never expose provider response bodies
 test('strict local schema rejects unknown fields, too many proposals, unsafe URLs, and incomplete fixtures', () => {
   assert.throws(() => validate({ ...proposal(), arbitrary: true }), /unexpected fields/);
   assert.throws(() => validate(proposal(Array.from({ length: 13 }, (_, index) => addition({ label: `Tool ${index}` })))), /At most 12/);
+  assert.throws(() => validate(proposal([addition({ standpoint: '' })])), /standpoint/);
+  assert.throws(() => validate(proposal([addition({ units: [] })])), /Invalid proposed units/);
+  assert.throws(() => validate(proposal([addition({ units: ['global'] })])), /Invalid proposed units/);
+  assert.throws(() => validate(proposal([addition({ unitId: 'software', units: ['cloud'] })])), /must include software/);
   for (const url of ['http://example.org/', 'https://127.0.0.1/', 'https://localhost/', 'https://user:pass@example.org/']) assert.throws(() => scan.sourceUrl(url));
   assert.throws(() => scan.parseArgs(['--proposal', 'test.json']), /both/);
   assert.throws(() => scan.parseArgs(['--month', MONTH, '--month', MONTH]), /duplicate/);

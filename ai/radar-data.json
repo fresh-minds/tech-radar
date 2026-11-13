@@ -1,126 +1,237 @@
 {
-  "title": "FreshMinds AI Tech Radar — STRAWMAN DRAFT (validatie door unit owners vereist)",
-  "date": "2026.09",
-  "quadrants": ["Languages & Frameworks", "Platforms", "Tools", "Techniques"],
+  "title": "FreshMinds AI Tech Radar",
+  "date": "2026.10",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
   "entries": [
     {
       "label": "Spring AI",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Spring AI biedt een gestandaardiseerde abstractielaag voor LLM-integratie binnen het Spring Boot-ecosysteem, inclusief support voor RAG, function calling en structured output. Ideaal voor JVM-teams die al in Spring Boot werken en AI-features willen toevoegen zonder een volledig nieuw framework te adopteren. Breed geadopteerd bij klanten in de retail-sector."
+      "moved": 0,
+      "description": "Gestandaardiseerde abstractielaag voor LLM-integratie binnen het Spring Boot-ecosysteem, met ondersteuning voor RAG, tool calling en structured output.",
+      "standpoint": "Onze standaardkeuze voor JVM-teams die AI-functionaliteit rechtstreeks en onderhoudbaar willen integreren in bestaande enterprise backend-landschappen.",
+      "units": ["ai", "software"]
     },
     {
       "label": "FastAPI",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "FastAPI is het de-facto framework voor Python-based AI/ML services dankzij native async support, automatische OpenAPI-documentatie en sterke typing via Pydantic. Essentieel voor het bouwen van inference endpoints en AI-microservices. Breed geadopteerd in data- en AI-teams."
-    },
-    {
-      "label": "LangGraph",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "LangGraph maakt het mogelijk om complexe multi-step AI agent workflows te modelleren als stateful graphs met cycles en branching. Biedt meer controle dan lineaire chains voor use cases zoals autonomous agents en human-in-the-loop flows. Thoughtworks Radar Vol 34 plaatst LangGraph in Trial."
-    },
-    {
-      "label": "DeepEval",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "DeepEval is een open-source framework voor het systematisch evalueren van LLM outputs met metrics zoals faithfulness, relevancy en hallucination detection. Cruciaal voor het opbouwen van betrouwbare CI/CD pipelines voor AI-applicaties. Aanbevolen door Thoughtworks Radar Vol 34."
-    },
-    {
-      "label": "LiteLLM",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "LiteLLM biedt een unified API-interface voor 100+ LLM providers (OpenAI, Anthropic, Azure, Bedrock) met load balancing, fallback routing en spend tracking. Vermindert vendor lock-in en vereenvoudigt multi-model strategieen. Thoughtworks Radar Vol 34 plaatst dit in Trial."
+      "moved": 0,
+      "description": "High-performance Python webframework voor het bouwen van asynchrone API's met automatische OpenAPI-documentatie en Pydantic-datavalidatie.",
+      "standpoint": "Het standaard framework binnen onze AI- en Data-opdrachten voor het in productie brengen van inference-endpoints, RAG-services en agent-backends.",
+      "units": ["ai", "software"]
     },
     {
       "label": "Python",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Python is de dominante taal voor AI/ML development dankzij het rijke ecosysteem van libraries (PyTorch, scikit-learn, LangChain) en community support. Voor AI-gerelateerde werkzaamheden is Python de eerste keuze, zowel voor prototyping als productie-workloads."
+      "moved": 0,
+      "description": "De dominante programmeertaal voor AI-engineering, machine learning en data-intensieve applicaties.",
+      "standpoint": "Onze eerste keuze voor vrijwel elk AI-traject, van snelle validatie tot bedrijfskritische productieworkloads op het snijvlak met Data en Software Engineering.",
+      "units": ["ai", "data", "software"]
+    },
+    {
+      "label": "LangGraph",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Orchestratie-framework om meerstaps AI-agent workflows te modelleren als stateful grafen met cycli, vertakkingen en expliciete statusovergangen.",
+      "standpoint": "Biedt veel meer deterministische controle, foutafhandeling en human-in-the-loop ondersteuning dan vrije ketens; gericht inzetten bij complexe agent-workflows.",
+      "units": ["ai", "software"]
+    },
+    {
+      "label": "DeepEval",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Open-source evaluatieframework voor het geautomatiseerd testen van LLM-outputs op onder meer brongetrouwheid, relevantie en hallucinaties.",
+      "standpoint": "Cruciaal voor Production AI: wij behandelen AI-evaluaties als unit- en integratietests in de CI/CD-pipeline voordat een model- of promptwijziging live gaat.",
+      "units": ["ai", "software"]
+    },
+    {
+      "label": "LiteLLM",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Uniforme gateway en SDK die één gestandaardiseerde interface biedt naar meer dan honderd LLM-providers, inclusief fallback-routing en kostenregistratie.",
+      "standpoint": "Maakt onze futureproof-toets ('overleeft dit een modelwissel?') technisch waar: voorkomt model lock-in en geeft direct grip op tokenverbruik per team of toepassing.",
+      "units": ["ai", "cloud", "software"]
     },
     {
       "label": "Azure OpenAI",
       "quadrant": "Platforms",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Beheerde enterprise-dienst op Microsoft Azure voor toegang tot frontier taal- en embeddingmodellen binnen de eigen cloud- en securitygrenzen.",
+      "standpoint": "Onze meest ingezette standaard voor Production AI bij Nederlandse enterprise- en overheidsklanten dankzij Entra ID-integratie, Europese data-residentie en compliance-waarborgen.",
+      "units": ["ai", "cloud"]
+    },
+    {
+      "label": "pgvector",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
       "moved": 2,
-      "description": "Azure OpenAI biedt enterprise-grade toegang tot GPT-4, GPT-4o en embedding models met Azure AD-integratie, data residency en compliance guarantees. De combinatie van krachtige modellen met enterprise security maakt het geschikt voor productie-AI in gereguleerde omgevingen."
+      "description": "Open-source extensie voor PostgreSQL waarmee vector-embeddings direct naast relationele bedrijfsdata kunnen worden opgeslagen en doorzocht.",
+      "standpoint": "Onze standaardkeuze voor RAG wanneer PostgreSQL al in het landschap staat: houdt de architectuur eenvoudig, transactioneel consistent en beheersbaar zonder aparte vector-database.",
+      "units": ["ai", "data", "software"]
     },
     {
       "label": "Vertex AI",
       "quadrant": "Platforms",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Vertex AI is Google Cloud's unified ML platform met support voor Gemini models, AutoML, en managed MLOps pipelines. Relevant voor organisaties in het GCP-ecosysteem die een end-to-end AI platform zoeken. Geadopteerd bij grote e-commerce klanten."
+      "moved": 0,
+      "description": "Het geünificeerde AI- en MLOps-platform van Google Cloud met toegang tot Gemini-modellen, modelgardens en beheerde pipelines.",
+      "standpoint": "Onze aanbevolen keuze voor klanten die al op Google Cloud en BigQuery standaardiseren, met sterke integratie tussen data-engineering en AI.",
+      "units": ["ai", "cloud", "data"]
     },
     {
       "label": "Langfuse",
       "quadrant": "Platforms",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Langfuse is een open-source LLM observability platform voor tracing, evaluatie en monitoring van AI-applicaties in productie. Biedt inzicht in latency, kosten en kwaliteit van LLM calls over de gehele pipeline. Zowel op Thoughtworks Radar Vol 34 (Trial) als bij klanten in Assess."
+      "moved": 0,
+      "description": "Open-source platform voor LLM-observability, gedetailleerde call-tracing, promptversiebeheer en productie-evaluaties.",
+      "standpoint": "Onmisbaar voor LLMOps en Digital Trust: maakt inzichtelijk welk model met welke context en tegen welke kosten tot een antwoord is gekomen.",
+      "units": ["ai", "software"]
     },
     {
       "label": "GitHub Copilot",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "GitHub Copilot is de meest mature AI coding assistant met brede IDE-support en bewezen productiviteitswinst voor code completion en code generation. Geschikt als baseline AI coding tool voor teams die beginnen met AI-assisted development."
+      "moved": 0,
+      "description": "AI-codeerassistent met brede IDE-integratie en enterprise-beheer voor code-aanvulling, refactoring en testgeneratie.",
+      "standpoint": "Standaard hulpmiddel in onze ontwikkelworkflows dankzij volwassen enterprise-governance en naadloze aansluiting op bestaande GitHub-omgevingen bij klanten.",
+      "units": ["ai", "software"]
     },
     {
       "label": "Claude Code",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Claude Code is een agentic coding tool dat complexe multi-file taken kan uitvoeren via een CLI-interface met directe toegang tot het filesystem, git en externe tools. Onderscheidt zich door sterk begrip van grote codebases en de mogelijkheid tot autonome implementatie. Thoughtworks Radar Vol 34 plaatst Claude Code in Adopt."
+      "moved": 0,
+      "description": "Agentic ontwikkeltool die via de terminal complexe taken over meerdere bestanden uitvoert met begrip van de volledige codebase, tests en git-historie.",
+      "standpoint": "Onze standaardkeuze voor agentic software-engineering: versnelt analyse, refactoring en testopbouw aanzienlijk wanneer een senior engineer de architectuur en verificatie stuurt.",
+      "units": ["ai", "software"]
     },
     {
       "label": "Cursor",
       "quadrant": "Tools",
-      "ring": "Adopt",
+      "ring": "Trial",
+      "moved": -1,
+      "description": "AI-native ontwikkelomgeving (gebaseerd op VS Code) met diepe integratie voor multi-file codegeneratie en contextbewuste chat.",
+      "standpoint": "Sterke developer experience voor teams die een visuele AI-IDE verkiezen, maar bij enterprise-klanten bewust afwegen tegen het standaardiseren op IDE-onafhankelijke tools zoals Claude Code en Copilot.",
+      "units": ["ai", "software"]
+    },
+    {
+      "label": "Promptfoo",
+      "quadrant": "Tools",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Cursor is een AI-native IDE gebouwd op VS Code met geintegreerde chat, code generation en multi-file editing capabilities. Biedt een lagere instapdrempel dan CLI-tools voor developers die een visuele workflow prefereren. Thoughtworks Radar Vol 34 plaatst Cursor in Adopt."
+      "description": "Open-source CLI en testframework voor het systematisch evalueren van prompts en het uitvoeren van geautomatiseerde AI red teaming en kwetsbaarhedenscans.",
+      "standpoint": "Brengt ons snijvlak van AI Engineering en Security in de praktijk: maakt het testen op prompt injection, PII-lekken en ongewenst gedrag onderdeel van de ontwikkelstraat.",
+      "units": ["ai", "security", "software"]
     },
     {
       "label": "Context Engineering",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Context engineering is het systematisch ontwerpen en optimaliseren van de informatie die aan LLMs wordt meegegeven, inclusief system prompts, RAG context en tool descriptions. Vervangt ad-hoc prompt engineering met een gestructureerde aanpak die meetbaar betere resultaten oplevert. Thoughtworks Radar Vol 34 plaatst dit in Adopt."
+      "moved": 0,
+      "description": "Het systematisch ontwerpen, filteren en verrijken van de informatie, domeinregels, RAG-resultaten en tooldefinities die een LLM krijgt aangeboden.",
+      "standpoint": "Het fundament onder onze pijler Cognitive Architecture: de kwaliteit en betrouwbaarheid van een AI-systeem worden veel sterker bepaald door de aangeleverde context dan door het gekozen model.",
+      "units": ["ai", "data", "software"]
     },
     {
       "label": "Structured Output from LLMs",
       "quadrant": "Techniques",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Techniek waarbij taalmodellen gedwongen worden te antwoorden volgens een strikt gedefinieerd datamodel (zoals JSON Schema of Pydantic).",
+      "standpoint": "Verplichte standaard voor elke Production AI-koppeling met bestaande bedrijfssoftware: maakt modeluitvoer deterministisch parseerbaar en valideerbaar.",
+      "units": ["ai", "software"]
+    },
+    {
+      "label": "Hybrid Search & Reranking",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
       "moved": 2,
-      "description": "Structured output dwingt LLM responses af in gedefinieerde schema's (JSON Schema, Pydantic models) waardoor outputs direct parseerbaar en valideerbaar zijn in applicatiecode. Essentieel voor betrouwbare integratie van LLMs in software pipelines. Thoughtworks Radar Vol 34 plaatst dit in Adopt."
+      "description": "Retrieval-patroon dat semantisch zoeken op embeddings combineert met exacte zoektermen (BM25) en een cross-encoder reranker voor relevantiesortering.",
+      "standpoint": "Onze standaardaanpak voor enterprise-RAG: alleen vector search mist regelmatig exacte productcodes, wetsartikelen of vakjargon die in bedrijfscontext cruciaal zijn.",
+      "units": ["ai", "data"]
+    },
+    {
+      "label": "Gecontroleerde Agentic Workflows",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Architectuurpatroon waarbij AI-agents afgebakende taken uitvoeren binnen een georkestreerd proces, met expliciete rechten, logging en menselijke escalatie.",
+      "standpoint": "De kern van onze visie op Trusted Autonomy: begin met gecontroleerde agents binnen heldere mandaten en bouw menselijke goedkeuring in voor elke actie met bedrijfs- of klantimpact.",
+      "units": ["ai", "software", "security"]
+    },
+    {
+      "label": "LLM Guardrails",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Beveiligings- en validatieschillen die zowel inkomende prompts als uitgaande modelantwoorden in real-time controleren op beleid, veiligheid en feitelijkheid.",
+      "standpoint": "Noodzakelijke beschermingslaag voor bedrijfskritische AI om prompt injection af te vangen, gevoelige data te maskeren en te borgen dat een systeem binnen zijn mandaat blijft.",
+      "units": ["ai", "security"]
+    },
+    {
+      "label": "GraphRAG & Knowledge Graphs",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Retrieval-architectuur die ongestructureerde tekst-embeddings verbindt met expliciete relaties en entiteiten in een kennisgraaf.",
+      "standpoint": "Strategische verkenning binnen Cognitive Architecture voor complexe domeinvraagstukken waarin gewone RAG tekortschiet omdat de samenhang tussen bedrijfsregels en dossiers bepalend is.",
+      "units": ["ai", "data"]
+    },
+    {
+      "label": "Small & Domain-Specific Language Models",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Compacte of op een specifiek vakgebied getrainde taalmodellen die met een fractie van de rekenkracht specifieke classificatie-, extractie- of redeneertaken uitvoeren.",
+      "standpoint": "Actief verkennen als antwoord op stijgende inference-kosten en eisen rond datasoevereiniteit: voor veel afgebakende productietaken is een zwaar frontier-model onnodig duur en traag.",
+      "units": ["ai", "cloud"]
     },
     {
       "label": "MCP by Default",
       "quadrant": "Techniques",
       "ring": "Hold",
-      "moved": 2,
-      "description": "Het Model Context Protocol (MCP) standaard inzetten voor alle AI-tool integraties introduceert onnodige complexiteit wanneer eenvoudigere oplossingen zoals function calling of directe API-integratie volstaan. MCP is waardevol voor specifieke use cases, maar niet als default architectuurkeuze. Thoughtworks Radar Vol 34 plaatst dit in Hold."
+      "moved": 0,
+      "description": "Het zonder voorafgaande afweging inzetten van het Model Context Protocol (MCP) voor elke koppeling tussen een taalmodel en achterliggende systemen.",
+      "standpoint": "MCP is waardevol voor herbruikbare multi-agent integraties, maar als blinde standaard introduceert het onnodige complexiteit én een nieuw aanvalsoppervlak waar een directe API-call of tool-functie volstaat.",
+      "units": ["ai", "software", "security"]
     },
     {
       "label": "Coding Agent Swarms",
       "quadrant": "Techniques",
       "ring": "Hold",
-      "moved": 2,
-      "description": "Het parallel inzetten van meerdere AI coding agents op dezelfde codebase leidt tot merge-conflicten, inconsistente architectuurkeuzes en moeilijk reviewbare output. De overhead van coordinatie weegt momenteel niet op tegen de potentiele snelheidswinst. Thoughtworks Radar Vol 34 plaatst dit in Hold."
+      "moved": 0,
+      "description": "Het gelijktijdig en onafhankelijk laten werken van meerdere autonome coding-agents op dezelfde codebase.",
+      "standpoint": "Leidt in de praktijk tot merge-conflicten, architectuurvervuiling en onbeheersbare reviewlast (cognitive debt); één goed aangestuurde agent onder regie van een ervaren engineer werkt aantoonbaar beter.",
+      "units": ["ai", "software"]
     },
     {
       "label": "Agent Instruction Bloat",
       "quadrant": "Techniques",
       "ring": "Hold",
+      "moved": 0,
+      "description": "Het ongecontroleerd laten uitdijen van systeempompts en agent-instructiebestanden met uitzonderingen en tegenstrijdige regels.",
+      "standpoint": "Veroorzaakt onvoorspelbaar agent-gedrag en verspilt kostbare contextruimte; behandel agent-instructies als productiecode die modulair wordt opgebouwd, getest en regelmatig gesnoeid.",
+      "units": ["ai", "software"]
+    },
+    {
+      "label": "Autonome Agents zonder Governance",
+      "quadrant": "Techniques",
+      "ring": "Hold",
       "moved": 2,
-      "description": "Het onbeheerst groeien van system prompts, CLAUDE.md files en agent instructions leidt tot context window verspilling, tegenstrijdige instructies en onvoorspelbaar agent-gedrag. Instructies moeten bewust gecureerd en regelmatig gesnoeid worden. Thoughtworks Radar Vol 34 plaatst dit in Hold."
+      "description": "Het in productie nemen van zelfstandig handelende AI-agents met schrijfrechten op bedrijfssystemen zonder mandaatgrenzen, onveranderbare logging of directe uitschakelmogelijkheid.",
+      "standpoint": "Autonomie zonder aantoonbare beheersing is een onaanvaardbaar bedrijfs- en compliancerisico; wij bouwen geen agentic systemen zonder containment governance, menselijke escalatie en kill switch.",
+      "units": ["ai", "security"]
     }
   ]
 }

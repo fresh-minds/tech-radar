@@ -8,22 +8,24 @@ Live at: https://earnest-cocada-04456b.netlify.app
 
 | Unit | Entries | Path |
 |------|---------|------|
-| Global | 16 | `/` |
-| Software Engineering | 49 | `/software/` |
-| AI | 17 | `/ai/` |
-| Cloud | 26 | `/cloud/` |
-| Data | 21 | `/data/` |
-| Security | scaffold | `/security/` |
+| Global | 22 | `/` |
+| Software Engineering | 54 | `/software/` |
+| AI | 25 | `/ai/` |
+| Cloud | 32 | `/cloud/` |
+| Data | 26 | `/data/` |
+| Security | 24 | `/security/` |
 | SAP | scaffold | `/sap/` |
 
 The global radar cuts across all units. The unit radars go deeper into specific technology choices.
 
 ## Rings
 
-- **Adopt** — proven in production, our default choice
-- **Trial** — actively pursuing, suitable for non-critical projects
-- **Assess** — worth exploring to understand potential
-- **Hold** — proceed with caution, not recommended for new projects
+Ring placement reflects what FreshMinds recommends for **new** projects and technical decisions, not simply how often a technology appears in existing client landscapes:
+
+- **Adopt** (*Standaardkeuze*) — proven in production at scale; our default recommendation for new projects in this domain
+- **Trial** (*Gericht inzetten*) — production-ready for specific contexts or use cases, or technology where we are actively broadening unit-wide experience
+- **Assess** (*Actief verkennen*) — promising technology or client trend we are actively exploring and validating before recommending broadly
+- **Hold** (*Niet voor nieuw werk*) — not recommended as a starting point for new (greenfield) work; existing client landscapes (e.g. Java, Angular) remain actively supported
 
 ## Making changes
 
@@ -82,7 +84,9 @@ Each entry in a `radar-data.json` file:
 | quadrant | yes | Languages & Frameworks, Platforms, Tools, or Techniques |
 | ring | yes | Adopt, Trial, Assess, or Hold |
 | moved | yes | -1 (moved down), 0 (no change), 1 (moved up), 2 (new) |
-| description | yes | Short rationale for the ring placement |
+| description | yes | Short explanation in Dutch of what the technology is |
+| standpoint | yes | FreshMinds' standpoint in Dutch (why it is in this ring and how we apply it) |
+| units | yes | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`) |
 | tags | no | Array of strings for discipline filtering (e.g. `jvm`, `frontend`) |
 | link | no | URL to more information |
 
