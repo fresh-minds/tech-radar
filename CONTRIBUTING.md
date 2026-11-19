@@ -2,7 +2,7 @@
 
 ## How to add or update an entry
 
-Radar data lives in per-unit files: `software/radar-data.json`, `ai/radar-data.json`, `cloud/radar-data.json`, `data/radar-data.json`, `security/radar-data.json`, `sap/radar-data.json`, and `global/radar-data.json`.
+Radar data lives in per-unit files: `software/radar-data.json`, `ai/radar-data.json`, `cloud/radar-data.json`, `data/radar-data.json`, `security/radar-data.json`, and `global/radar-data.json`.
 
 Edit the file for the unit you want to change.
 
@@ -32,7 +32,7 @@ Edit the file for the unit you want to change.
 | moved       | Yes      | `0` = no change, `1` = moved in/up, `-1` = moved out/down, `2` = new                               |
 | description | Yes      | Brief explanation in Dutch of *what* the technology is                                              |
 | standpoint  | Yes      | FreshMinds' standpoint in Dutch: rationale for the ring placement and recommendation                |
-| units       | Yes      | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`) |
+| units       | Yes      | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`) |
 | tags        | No       | Array of strings for discipline filtering (e.g. `jvm`, `frontend`)                                  |
 | link        | No       | URL to more information                                                                             |
 

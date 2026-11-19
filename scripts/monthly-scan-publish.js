@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 
-const UNITS = ['global', 'software', 'ai', 'cloud', 'data', 'security', 'sap'];
+const UNITS = ['global', 'software', 'ai', 'cloud', 'data', 'security'];
 const OUTPUT = '.scan-output';
 const readJSON = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const run = (cmd, args) => execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();

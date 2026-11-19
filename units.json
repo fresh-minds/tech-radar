@@ -34,11 +34,5 @@
     "label": "Security",
     "path": "/security/",
     "pitch": "Vertrouwen is geen sluitstuk achteraf, maar een ontwerpeis vanaf de eerste sprint. De Security-unit verankert security-by-design, AI-security, identity governance en aantoonbare herleidbaarheid (NIS2, DORA, CRA en EU AI Act) direct in software-, data- en cloudplatformen."
-  },
-  {
-    "id": "sap",
-    "label": "SAP",
-    "path": "/sap/",
-    "pitch": "Nieuwe digitale en AI-oplossingen bewijzen hun waarde pas als ze zorgvuldig gekoppeld zijn aan bestaande ERP- en kernsystemen. De SAP-radar wordt binnenkort gepubliceerd."
   }
 ]

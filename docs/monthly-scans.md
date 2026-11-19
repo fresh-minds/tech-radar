@@ -5,7 +5,7 @@ The **Bi-Weekly Tech Radar Scan** workflow runs on GitHub-hosted runners on the
 changes. It runs with the computer off and the Codex app closed. Each run covers
 the previous completed half-month (`YYYY-MM-01` for the 1st–14th, or `YYYY-MM-15`
 for the 15th through the end of the month) across Software Engineering, AI, Cloud,
-Data, Security, SAP, and Global.
+Data, Security, and Global.
 
 The workflow uses Microsoft Foundry's OpenAI-compatible Responses API with
 Bing-grounded web search. Azure searches indexed/cached web sources rather than
