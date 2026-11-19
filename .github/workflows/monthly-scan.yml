@@ -1,13 +1,13 @@
-name: Monthly Tech Radar Scan
+name: Bi-Weekly Tech Radar Scan
 
 on:
   schedule:
-    - cron: '0 9 1 * *'
+    - cron: '0 9 1,15 * *'
       timezone: Europe/Amsterdam
   workflow_dispatch:
     inputs:
       month:
-        description: 'Completed month to research (YYYY-MM); empty means previous month'
+        description: 'Completed scan period to research (YYYY-MM-01, YYYY-MM-15, or YYYY-MM); empty means previous half-month'
         type: string
         required: false
 

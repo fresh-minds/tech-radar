@@ -1,189 +1,300 @@
 {
   "title": "FreshMinds Cloud Tech Radar",
-  "date": "2026.09",
-  "quadrants": ["Languages & Frameworks", "Platforms", "Tools", "Techniques"],
+  "date": "2026.10",
+  "quadrants": [
+    "Languages & Frameworks",
+    "Platforms",
+    "Tools",
+    "Techniques"
+  ],
   "entries": [
-    {
-      "label": "Terraform",
-      "quadrant": "Tools",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Terraform is de facto standaard voor Infrastructure as Code in multi-cloud omgevingen. De brede provider-ondersteuning en het declaratieve model maken het geschikt voor zowel Azure als GCP workloads. Strawman: gezien de BSL-licentiewijziging evalueren we OpenTofu als alternatief."
-    },
-    {
-      "label": "Pulumi",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Pulumi biedt Infrastructure as Code in general-purpose talen zoals TypeScript en Python, wat de leercurve voor development teams verlaagt. Binnen TechNL wordt het al getriaald voor Kubernetes as a Service. Strawman: positionering ten opzichte van Terraform moet scherper worden afgebakend."
-    },
-    {
-      "label": "Crossplane",
-      "quadrant": "Tools",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Crossplane maakt cloud resource provisioning mogelijk via het Kubernetes control plane, wat past in een GitOps-model. Wordt bij klanten geassesst voor managed cloud resources naast Terraform. Strawman: de maturiteit van providers en het operationele model vereisen nadere evaluatie."
-    },
-    {
-      "label": "Ansible",
-      "quadrant": "Tools",
-      "ring": "Hold",
-      "moved": 2,
-      "description": "Ansible wordt nog breed ingezet voor configuration management en server provisioning, maar voor cloud-native IaC zijn declaratieve tools als Terraform en Pulumi beter geschikt. Strawman: Hold-positie voor nieuwe cloud workloads; bestaande inzet kan voorlopig blijven."
-    },
     {
       "label": "Azure",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Azure is de primaire cloud provider binnen het Ahold Delhaize ecosysteem en daarmee een strategisch platform voor FreshMinds-klanten. De enterprise-integratie met Microsoft 365 en Active Directory maakt het geschikt voor grote organisaties."
+      "moved": 0,
+      "description": "Het enterprise cloudplatform van Microsoft met diepe integratie in Microsoft Entra ID, Microsoft 365, datadiensten en Azure OpenAI.",
+      "standpoint": "Een primair strategisch platform voor veel van onze Nederlandse enterprise- en overheidsklanten; wij combineren diepe Azure-expertise met een bewuste blik op portabiliteit en kostenbeheersing.",
+      "units": ["cloud", "ai", "data", "security"]
     },
     {
       "label": "Google Cloud Platform",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "GCP is het strategische cloud platform bij bol.com en biedt sterke data- en AI-diensten zoals BigQuery en VertexAI. De managed Kubernetes-ervaring via GKE is marktleidend. Relevantie voor FreshMinds groeit door de data-engineering opdrachten."
+      "moved": 0,
+      "description": "Public cloudplatform met marktleidende managed Kubernetes (GKE) en sterke data- en AI-diensten zoals BigQuery en Vertex AI.",
+      "standpoint": "Breed ingezet en bewezen bij grote e-commerce- en datagedreven klanten van FreshMinds, waar schaalbare container- en dataworkloads samenkomen.",
+      "units": ["cloud", "data", "ai"]
     },
     {
       "label": "AWS",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "AWS is het meest volwassen en breedste cloud platform met de grootste marktadoptie. De diepte van het service-aanbod en het ecosysteem maken het onmisbaar in elke cloud-strategie. Strawman: de directe klantvraag bij FreshMinds is momenteel kleiner dan Azure en GCP."
+      "moved": 0,
+      "description": "Wereldwijd het breedste en meest volwassen public cloudplatform met een diep ecosysteem aan compute-, storage-, netwerk- en AI-diensten.",
+      "standpoint": "Onmisbaar onderdeel van ons cloud-agnostische vakmanschap: onze consultants helpen klanten AWS-landschappen moderniseren en veilig schalen zonder onnodige lock-in.",
+      "units": ["cloud", "software", "data"]
     },
     {
       "label": "Managed Kubernetes",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Managed Kubernetes (AKS, GKE, EKS) is de standaard voor container orchestratie in productieomgevingen. Het ontzorgt control plane management en integreert met cloud-native diensten voor networking, security en observability. Focus ligt op platform operations, niet applicatie-deployment."
-    },
-    {
-      "label": "OpenShift",
-      "quadrant": "Platforms",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "OpenShift biedt een enterprise Kubernetes-distributie met ingebouwde CI/CD, developer tooling en strikte security policies. Strawman: relevant voor klanten die een opinionated platform verkiezen boven vanilla Kubernetes, maar de meerkosten ten opzichte van managed K8s moeten gewogen worden."
+      "moved": 0,
+      "description": "Beheerde Kubernetes-diensten (AKS, GKE, EKS) waarbij de cloudprovider het control plane ontzorgt en integreert met native security en netwerken.",
+      "standpoint": "Onze standaard voor productie-containerorchestratie en een cruciaal fundament om applicatie- en AI-workloads portabel te houden over cloudaanbieders heen.",
+      "units": ["cloud", "software", "security"]
     },
     {
       "label": "Docker",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Docker is het standaard containerformaat en de basis voor alle container workloads in cloud omgevingen. De tooling voor lokale ontwikkeling en CI/CD image builds is onmisbaar. Aandachtspunt is het licentiemodelwijziging van Docker Desktop voor enterprise gebruik."
+      "moved": 0,
+      "description": "De industriestandaard voor het bouwen, verpakken en uitwisselen van OCI-conforme container-images in CI/CD en cloudomgevingen.",
+      "standpoint": "Standaard voor alle container-workloads en build-pipelines; voor lokale ontwikkelwerkplekken bij grote organisaties adviseren we licentievrije alternatieven zoals Podman.",
+      "units": ["cloud", "software", "data", "ai"]
     },
     {
-      "label": "Grafana",
-      "quadrant": "Tools",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Grafana is de standaard voor observability dashboards en wordt breed ingezet bij zowel Ahold als bol.com. Ondersteunt meerdere data sources waaronder Prometheus, Loki en CloudWatch. De Grafana Cloud variant maakt managed observability mogelijk zonder eigen infrastructuur."
-    },
-    {
-      "label": "Prometheus",
-      "quadrant": "Tools",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Prometheus is de CNCF-standaard voor metrics collection en alerting in Kubernetes-omgevingen. De PromQL query-taal en pull-based model zijn breed geadopteerd. In cloud-omgevingen wordt Prometheus vaak gecombineerd met Thanos of Grafana Mimir voor long-term storage en multi-cluster views."
-    },
-    {
-      "label": "OpenTelemetry",
-      "quadrant": "Tools",
+      "label": "Backstage",
+      "quadrant": "Platforms",
       "ring": "Trial",
       "moved": 2,
-      "description": "OpenTelemetry biedt een vendor-neutraal framework voor traces, metrics en logs, waarmee lock-in op specifieke observability backends wordt voorkomen. De convergentie van OpenTracing en OpenCensus maakt het de toekomstige standaard. Strawman: de maturiteit van de logs-component moet nog bewezen worden."
+      "description": "Open-source CNCF-framework (oorspronkelijk van Spotify) voor het bouwen van Internal Developer Portals met servicecatalogus, templates en TechDocs.",
+      "standpoint": "Zet dit gericht in als etalage en startpunt voor Platform Engineering: slaagt alleen wanneer het portaal echte golden paths ontsluit die ontwikkelaars en AI-teams dagelijks tijd besparen.",
+      "units": ["cloud", "software"]
     },
     {
-      "label": "Datadog",
-      "quadrant": "Tools",
+      "label": "OpenShift",
+      "quadrant": "Platforms",
       "ring": "Assess",
-      "moved": 2,
-      "description": "Datadog biedt een volledig geïntegreerd SaaS observability platform met sterke APM, log management en infrastructure monitoring. De snelle time-to-value is aantrekkelijk, maar de kosten schalen significant bij groei. Strawman: vergelijking met Grafana Cloud stack vereist verdere analyse."
-    },
-    {
-      "label": "GitHub Actions",
-      "quadrant": "Tools",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "GitHub Actions is breed geadopteerd voor CI/CD binnen het Ahold ecosysteem en sluit naadloos aan op de GitHub-workflow. De marketplace aan herbruikbare actions en native integratie met GHCR maken het de primaire CI/CD-keuze voor GitHub-gebaseerde repositories."
-    },
-    {
-      "label": "ArgoCD",
-      "quadrant": "Tools",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "ArgoCD is de standaard GitOps continuous delivery tool voor Kubernetes-omgevingen en wordt breed ingezet bij Ahold CTP en KaaS. Het declaratieve model met Git als single source of truth past bij cloud-native deployment strategieën."
-    },
-    {
-      "label": "GitLab CI",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "GitLab CI wordt door bol.com ingezet als primair CI/CD platform geïntegreerd in hun GitLab-omgeving. De all-in-one DevOps-aanpak met ingebouwde container scanning is een sterk punt. Strawman: de relevantie voor FreshMinds hangt af van klantvraag buiten het bol.com ecosysteem."
-    },
-    {
-      "label": "Checkov",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Checkov scant IaC-configuraties (Terraform, CloudFormation, Kubernetes) op security misconfigurations voordat ze worden gedeployed. Policy-as-code aanpak past goed in shift-left security strategieën. Wordt al getriaald binnen het Ahold ecosysteem."
-    },
-    {
-      "label": "Trivy",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Trivy is een breed inzetbare open-source vulnerability scanner voor container images, filesystems en IaC-configuraties. De integratie in CI/CD pipelines is eenvoudig en het wordt actief geëvalueerd bij Ahold. Strawman: positionering naast Checkov voor IaC scanning moet helder worden."
+      "moved": 0,
+      "description": "Enterprise Kubernetes-platform van Red Hat met ingebouwde ontwikkelaarstooling, strikte security-defaults en hybride/on-premise inzetbaarheid.",
+      "standpoint": "Relevant voor streng gereguleerde of hybride organisaties die ook voor datasoevereiniteit een geïntegreerd platform zoeken; weeg de licentie- en beheerkosten scherp af tegen managed Kubernetes.",
+      "units": ["cloud", "software", "security"]
     },
     {
       "label": "Cilium",
       "quadrant": "Platforms",
       "ring": "Assess",
-      "moved": 2,
-      "description": "Cilium biedt eBPF-based networking, security en observability voor Kubernetes workloads met significant betere performance dan traditionele iptables-gebaseerde oplossingen. Wordt geassesst als vervanging van Kubenet bij Ahold KaaS. Strawman: de operationele complexiteit versus de performance-winst moet gewogen worden."
+      "moved": 0,
+      "description": "Op eBPF gebaseerde netwerk-, observability- en beveiligingslaag voor Kubernetes-clusters met hoge performance en identiteitsgebaseerde netwerkpolicies.",
+      "standpoint": "Veelbelovende bouwsteen voor grootschalige Kubernetes-platformen en zero-trust netwerksegmentatie tussen microservices en AI-workloads.",
+      "units": ["cloud", "security"]
     },
     {
-      "label": "HashiCorp Vault",
+      "label": "Terraform",
       "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Vault biedt centraal secrets management, encryption as a service en identity-based access voor cloud-native omgevingen. De integratie met Kubernetes, Terraform en CI/CD pipelines maakt het een belangrijk onderdeel van een zero-trust architectuur. Strawman: evaluatie van cloud-native alternatieven (Azure Key Vault, GCP Secret Manager) is nodig."
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Declaratieve Infrastructure-as-Code standaard met het grootste ecosysteem aan cloud- en SaaS-providers.",
+      "standpoint": "Onze primaire standaard voor multi-cloud infrastructuurautomatisering bij bestaande en nieuwe enterprise-opdrachten.",
+      "units": ["cloud", "software", "data"]
+    },
+    {
+      "label": "Grafana",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Centraal observability- en visualisatieplatform voor het combineren van metrics, logs en traces uit uiteenlopende databronnen.",
+      "standpoint": "Standaardkeuze voor operationeel inzicht en SLO-dashboards bij onze klanten, zowel zelf-gehost (met Mimir, Loki en Tempo) als via Grafana Cloud.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Prometheus",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "CNCF-standaard voor het verzamelen en bevragen van tijdreeks-metrics en het aansturen van alerting in cloud-native omgevingen.",
+      "standpoint": "De bewezen ruggengraat voor infrastructuur- en Kubernetes-monitoring, in grotere omgevingen vaak aangevuld met Thanos of Grafana Mimir voor langetermijnopslag.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "OpenTelemetry",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "Door CNCF gegradueerd, vendor-neutraal instrumentatieframework voor het uniform genereren en versturen van traces, metrics en logs.",
+      "standpoint": "Gepromoveerd naar Adopt: voorkomt lock-in op één monitoring-leverancier en vormt het uniforme fundament voor zowel klassieke applicaties als LLM- en agent-observability.",
+      "units": ["cloud", "software", "ai"]
+    },
+    {
+      "label": "GitHub Actions",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Event-gedreven CI/CD- en automatiseringsplatform dat direct geïntegreerd is in GitHub-repositories.",
+      "standpoint": "Onze standaard CI/CD-keuze voor teams op GitHub: combineert snelle adoptie en herbruikbare workflows met ingebouwde security-scanning en provenance-attestaties.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "ArgoCD",
+      "quadrant": "Tools",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Declaratieve GitOps continuous-delivery tool voor Kubernetes die de gewenste clusterstatus continu synchroniseert met Git.",
+      "standpoint": "Onze standaard voor betrouwbare, herleidbare en zelfherstellende uitrol van Kubernetes-platformen en applicatieworkloads.",
+      "units": ["cloud", "software"]
     },
     {
       "label": "Helm",
       "quadrant": "Tools",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Standaard pakketbeheerder voor Kubernetes waarmee complexe applicaties en platformcomponenten via geparametriseerde charts worden beheerd.",
+      "standpoint": "Bewezen standaard in combinatie met ArgoCD voor het gestandaardiseerd uitrollen van zowel third-party componenten als interne platform-bouwblokken.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "OpenTofu",
+      "quadrant": "Tools",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Helm is de standaard package manager voor Kubernetes en maakt het eenvoudig om complexe applicaties te deployen en te beheren via herbruikbare charts. De combinatie met ArgoCD voor GitOps-workflows is breed geadopteerd in productieomgevingen."
+      "description": "Volledig open-source, onder de Linux Foundation ondergebrachte drop-in vervanger voor Terraform met extra functies zoals client-side state-encryptie.",
+      "standpoint": "Ons aanbevolen alternatief wanneer open-source governance, vermijden van BSL-licentierisico's en digitale soevereiniteit zwaar wegen in de cloudstrategie.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Pulumi",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Infrastructure-as-Code platform waarmee cloudresources worden gedefinieerd in reguliere programmeertalen zoals TypeScript, Python en Go.",
+      "standpoint": "Sterke keuze wanneer softwareteams zelf infrastructuur beheren in hun eigen programmeertaal en met vertrouwde unit-testing frameworks.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "GitLab CI",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Geïntegreerde CI/CD- en DevSecOps-pijplijnoplossing binnen het GitLab-platform.",
+      "standpoint": "Uitstekende en volwassen keuze voor organisaties die al op GitLab standaardiseren, inclusief sterke ondersteuning voor self-hosted/soevereine inzet.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Checkov",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Statische analysetool (policy-as-code) die Terraform-, Kubernetes- en cloudconfiguraties vóór uitrol controleert op beveiligings- en compliancefouten.",
+      "standpoint": "Brengt security-by-design naar de cloud-ontwikkelstraat door misconfiguraties al tijdens het pull-request te blokkeren.",
+      "units": ["cloud", "security"]
+    },
+    {
+      "label": "Trivy",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Veelzijdige open-source scanner voor kwetsbaarheden, secrets, IaC-misconfiguraties en het genereren van SBOM's voor container-images en repositories.",
+      "standpoint": "Laagdrempelig en breed inzetbaar in CI/CD-pipelines op het snijvlak van Cloud, Software Engineering en Security.",
+      "units": ["cloud", "security", "software"]
+    },
+    {
+      "label": "HashiCorp Vault",
+      "quadrant": "Tools",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Platform voor centraal secrets-management, dynamische kortlevende credentials en encryptie-als-een-dienst voor hybride en multi-cloud omgevingen.",
+      "standpoint": "Waardevol in complexe multi-cloud en zero-trust architecturen; in single-cloud omgevingen wegen we altijd eerst beheerde alternatieven zoals Azure Key Vault af.",
+      "units": ["cloud", "security"]
+    },
+    {
+      "label": "Crossplane",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Kubernetes-add-on die het control plane uitbreidt om ook externe cloudresources (zoals databases en queues) declaratief via Kubernetes-API's te beheren.",
+      "standpoint": "Interessante bouwsteen voor volwassen Platform Engineering-teams die applicatie én cloudinfrastructuur via één GitOps-model willen aanbieden.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Datadog",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Volledig beheerd SaaS-platform voor APM, infrastructuurmonitoring, loganalyse, security-monitoring en LLM-observability.",
+      "standpoint": "Biedt een zeer snelle time-to-value, maar vereist strikte FinOps-discipline en OpenTelemetry-ontkoppeling omdat de kosten bij groei van datavolumes sterk kunnen oplopen.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Ansible",
+      "quadrant": "Tools",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Agentless automatiseringstool voor configuratiebeheer en het provisionen van virtuele machines en servers.",
+      "standpoint": "Voor nieuwe cloud-native infrastructuur en containerplatformen geven wij de voorkeur aan declaratieve, onveranderbare (immutable) IaC met Terraform/OpenTofu en GitOps.",
+      "units": ["cloud"]
     },
     {
       "label": "GitOps",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "GitOps gebruikt Git als single source of truth voor declaratieve infrastructure en application delivery. Tooling als ArgoCD en Flux maakt dit patroon operationeel voor Kubernetes-omgevingen. De auditability en rollback-mogelijkheden zijn essentieel voor production-grade platforms."
+      "moved": 0,
+      "description": "Operationeel model waarbij Git de enige bron van waarheid is voor zowel declaratieve infrastructuur als applicatie-deployments, afgedwongen door geautomatiseerde controllers.",
+      "standpoint": "Onze standaard voor productieplatformen: garandeert volledige auditability, directe herstelbaarheid en uitsluiting van handmatige wijzigingen op productie.",
+      "units": ["cloud", "software"]
     },
     {
       "label": "Infrastructure as Code",
       "quadrant": "Techniques",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Het volledig in versiebeheerde, toetsbare code vastleggen en uitrollen van cloud- en netwerkinfrastructuur.",
+      "standpoint": "Een niet-onderhandelbaar fundament in elk FreshMinds-traject: handmatige aanpassingen in cloudconsoles (ClickOps) horen niet thuis in professionele omgevingen.",
+      "units": ["cloud", "software", "data", "security"]
+    },
+    {
+      "label": "Platform Engineering (Platform as a Product)",
+      "quadrant": "Techniques",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Infrastructure as Code is een fundamenteel principe voor reproduceerbare, versiebare en testbare cloud-infrastructuur. Alle cloud resources moeten via IaC worden beheerd, ongeacht de gekozen tooling (Terraform, Pulumi, Crossplane). Handmatige wijzigingen in cloud consoles zijn niet acceptabel voor productieomgevingen."
+      "description": "Het ontwerpen en doorontwikkelen van een intern ontwikkelplatform op basis van daadwerkelijke ontwikkelaarsbehoeften, self-service golden paths en meetbare adoptie.",
+      "standpoint": "De meeste platformteams falen op adoptie, niet op techniek: wij benaderen het platform als een product met interne klanten en maken het direct geschikt voor zowel software- als AI-teams.",
+      "units": ["cloud", "software", "security"]
     },
     {
       "label": "FinOps",
       "quadrant": "Techniques",
       "ring": "Trial",
-      "moved": 2,
-      "description": "FinOps brengt financiële verantwoordelijkheid naar cloud-uitgaven door samenwerking tussen engineering, finance en business teams. Cloud cost optimization en showback/chargeback modellen worden steeds relevanter bij groeiende cloud adoptie. Strawman: de organisatorische volwassenheid hiervoor verschilt sterk per klant."
+      "moved": 0,
+      "description": "Operationeel en financieel besturingsmodel dat engineering, finance en business verbindt om cloud- en AI-compute-uitgaven te koppelen aan geleverde bedrijfswaarde.",
+      "standpoint": "Extra urgent door de explosieve groei in AI-inference en tokenverbruik: wij sturen niet alleen op kostenreductie, maar op zichtbare kosten per interactie en productfeature.",
+      "units": ["cloud", "ai", "data"]
     },
     {
       "label": "SLO-based Alerting",
       "quadrant": "Techniques",
       "ring": "Trial",
+      "moved": 0,
+      "description": "Monitoringaanpak waarbij waarschuwingen worden gestuurd op basis van Service Level Objectives en het verbruik van error budgets in plaats van losse CPU- of geheugendrempels.",
+      "standpoint": "Vermindert alert-moeheid bij teams drastisch en legt de focus op verstoringen die de eindgebruiker of bedrijfskritische keten daadwerkelijk raken.",
+      "units": ["cloud", "software"]
+    },
+    {
+      "label": "Cloud Exit-strategie & Portabiliteit",
+      "quadrant": "Techniques",
+      "ring": "Trial",
       "moved": 2,
-      "description": "SLO-based alerting vervangt threshold-gebaseerde monitoring door alerts te koppelen aan error budgets en Service Level Objectives. Dit vermindert alert fatigue en richt de focus op daadwerkelijke gebruikersimpact. Wordt succesvol toegepast bij bol.com met hun SLOGenie tooling."
+      "description": "Architectuurontwerp en migratieplanning gericht op het beheersbaar kunnen wisselen van cloudprovider of het terugbrengen van kritieke workloads naar Europese/soevereine omgevingen.",
+      "standpoint": "Sinds het aangescherpte Rijkscloudbeleid (juli 2026), DORA en groeiende geopolitieke druk een concrete ontwerpeis die wij invullen met open standaarden en portabele bouwblokken.",
+      "units": ["cloud", "security", "software"]
+    },
+    {
+      "label": "Confidential Computing (Confidential AI)",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Beveiligingstechniek waarbij data en AI-modellen ook tijdens actieve verwerking in het geheugen hardwarematig versleuteld en geïsoleerd blijven (Trusted Execution Environments).",
+      "standpoint": "Strategische kans op het snijvlak van Cloud, Security en AI: maakt het mogelijk om AI toe te passen op zeer gevoelige medische, financiële of overheidsdata zonder inzage door de cloudprovider.",
+      "units": ["cloud", "security", "ai"]
+    },
+    {
+      "label": "GreenOps & Capaciteitsbewuste Architectuur",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Het meewegen van energieverbruik, CO2-voetafdruk en regionale stroombeschikbaarheid bij het ontwerpen en schalen van cloud- en AI-architecturen.",
+      "standpoint": "Door structurele netcongestie in Nederland en het hoge stroomverbruik van AI-workloads verschuift rekenkracht van een pure kostenvraag naar een strategische beschikbaarheidsvraag.",
+      "units": ["cloud", "ai"]
     }
   ]
 }

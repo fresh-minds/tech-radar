@@ -11,7 +11,8 @@ You are maintaining the FreshMinds Tech Radar. Your primary task is helping user
 - All changes go in `radar-data.json` — this is the only data file
 - Always run `npm run validate` after editing to catch errors before committing
 - Follow the entry format documented in `CONTRIBUTING.md`
-- Keep descriptions concise (1-2 sentences) explaining *why* the technology is in that ring
+- Write `description` and `standpoint` in Dutch (1-2 sentences each): `description` explains *what* the technology is, `standpoint` explains FreshMinds' view and *why* it is in that ring
+- Populate `units` with all applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`)
 
 ### Ring placement
 

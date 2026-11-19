@@ -1,6 +1,6 @@
 {
   "title": "FreshMinds Data Tech Radar",
-  "date": "2026.09",
+  "date": "2026.10",
   "quadrants": [
     "Languages & Frameworks",
     "Platforms",
@@ -12,148 +12,235 @@
       "label": "Python",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "De standaardtaal voor data engineering en data science. Breed geadopteerd bij zowel Ahold (GET, DDP) als bol.com. Het ecosysteem van libraries (pandas, PySpark, scikit-learn) is ongeëvenaard voor datawerk. Alle nieuwe data pipelines en analyses starten in Python."
+      "moved": 0,
+      "description": "Programmeertaal met een breed ecosysteem van libraries (zoals pandas, Polars, PySpark en scikit-learn) voor dataverwerking, orchestratie en analytics.",
+      "standpoint": "Onze onbetwiste standaardtaal voor nieuwe datapipelines, data-integraties en de brug naar AI-modellen bij al onze enterprise-klanten.",
+      "units": ["data", "ai", "software"]
     },
     {
       "label": "SQL",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "De lingua franca voor data-analyse en transformaties. Essentieel voor het werken met data warehouses, lakehouses en BI-tooling. In combinatie met DBT vormt SQL de basis van de analytische stack."
+      "moved": 0,
+      "description": "Declaratieve standaardtaal voor het bevragen, modelleren en transformeren van gestructureerde en semi-gestructureerde data.",
+      "standpoint": "De universele basis voor werken met lakehouses, datawarehouses en semantische lagen; in combinatie met DBT de kern van onze analytische engineeringstack.",
+      "units": ["data", "software"]
     },
     {
       "label": "DBT",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Het transformatie-framework voor analytics engineering, geadopteerd bij bol.com. DBT maakt SQL-transformaties testbaar, versioneerbaar en documenteerbaar. Brengt software engineering best practices naar de analytische laag en is de standaard voor ELT-transformaties."
+      "moved": 0,
+      "description": "Transformatieframework waarmee SQL- en Python-modellen modulair, versieerbaar, gedocumenteerd en geautomatiseerd testbaar worden opgebouwd.",
+      "standpoint": "Onze standaard voor analytics engineering: brengt software-engineeringdiscipline (CI/CD, tests, lineage en semantische definities) naar het dataplatform.",
+      "units": ["data", "software"]
     },
     {
       "label": "Apache Avro",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Het standaard serialization format voor streaming data pipelines, geadopteerd bij Ahold voor Kafka-berichten. Schema evolution support maakt Avro ideaal voor event-driven architecturen waar backward compatibility cruciaal is."
+      "moved": 0,
+      "description": "Compact binair serialisatieformaat met strikte schemadefinities en ingebouwde ondersteuning voor schema-evolutie.",
+      "standpoint": "Onze aanbevolen standaard voor event-streaming en Kafka-berichtenstromen bij grote klanten waar backward en forward compatibility cruciaal zijn.",
+      "units": ["data", "software"]
     },
     {
       "label": "PySpark",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "De Python API voor Apache Spark, essentieel voor gedistribueerde data processing op Databricks. Biedt de schaalbaarheid van Spark met de productiviteit van Python. De standaard voor batch processing op grote datasets."
-    },
-    {
-      "label": "Microsoft Fabric",
-      "quadrant": "Platforms",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Microsofts unified data platform met OneLake als centrale opslag. Combineert data engineering, warehousing, real-time analytics en BI in één SaaS-omgeving. Groeit snel bij enterprise klanten, vooral in Microsoft-georiënteerde omgevingen. Past bij onze Microsoft-partnership en is het directe alternatief voor Databricks."
-    },
-    {
-      "label": "Databricks",
-      "quadrant": "Platforms",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Het unified analytics platform gebaseerd op Apache Spark, geadopteerd bij Ahold als de standaardoplossing voor data processing en machine learning. Databricks Lakehouse combineert de flexibiliteit van een data lake met de betrouwbaarheid van een data warehouse."
-    },
-    {
-      "label": "Kafka (Confluent)",
-      "quadrant": "Platforms",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Het strategische streaming platform, geadopteerd bij Ahold als de standaard voor event streaming. Confluent biedt managed Kafka met Schema Registry, waardoor operationele complexiteit afneemt. Onmisbaar voor real-time data pipelines en event-driven architecturen."
-    },
-    {
-      "label": "BigQuery",
-      "quadrant": "Platforms",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Google's serverless data warehouse, geadopteerd bij bol.com voor analytische workloads. Sterk in ad-hoc analyse en BI dankzij het serverless model en de scheiding van storage en compute. In trial voor FreshMinds-context vanwege de GCP-afhankelijkheid."
-    },
-    {
-      "label": "Snowflake",
-      "quadrant": "Platforms",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Cloud-native data warehouse met sterke multi-cloud support en unieke architectuur voor het scheiden van storage en compute. Biedt data sharing en marketplace features die interessant zijn voor cross-organisatie samenwerking. Te evalueren als alternatief naast Databricks."
-    },
-    {
-      "label": "Apache Airflow",
-      "quadrant": "Platforms",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Het standaard workflow orchestration platform voor data pipelines, geadopteerd bij bol.com en in gebruik bij Ahold. Airflow biedt programmatische DAG-definities in Python, uitgebreide monitoring en een groot ecosysteem van operators voor integratie met cloud services."
-    },
-    {
-      "label": "Apache Flink",
-      "quadrant": "Platforms",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Open source stream processing framework met sterke exactly-once guarantees. Bij zowel Ahold als bol.com in gebruik of in evaluatie. Confluent investeert zwaar in Flink als opvolger van ksqlDB. Interessant voor complexe real-time verrijkingen en windowed aggregaties."
+      "moved": 0,
+      "description": "De Python-interface voor Apache Spark voor gedistribueerde batch- en streamingverwerking van grootschalige datasets.",
+      "standpoint": "Standaardkeuze voor zware dataverwerking op lakehouse-platformen zoals Databricks, waarbij schaalbaarheid en Python-productiviteit samenkomen.",
+      "units": ["data", "ai"]
     },
     {
       "label": "Kafka Streams",
       "quadrant": "Languages & Frameworks",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Lichtgewicht Java/Kotlin client library voor stream processing, geadopteerd bij Ahold. Geen apart cluster nodig — draait als embedded library in de applicatie. Geschikt voor eenvoudige stream processing use cases; voor complexere scenario's is Apache Flink het alternatief."
+      "moved": 0,
+      "description": "Lichtgewicht Java/Kotlin-clientlibrary voor real-time streamverwerking en stateful aggregaties direct binnen een applicatie zonder apart verwerkingscluster.",
+      "standpoint": "Zet dit gericht in op het snijvlak van Software Engineering en Data voor overzienbare streaming-use-cases; voor zware cross-domein streamprocessing verdient Apache Flink de voorkeur.",
+      "units": ["data", "software"]
+    },
+    {
+      "label": "Databricks",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Geünificeerd data- en AI-platform op basis van een lakehouse-architectuur voor data-engineering, analytics, governance en modelontwikkeling.",
+      "standpoint": "Onze primaire standaard voor grote enterprise-dataplatformen: combineert schaalbare dataverwerking met sterke governance en directe gereedheid voor Production AI.",
+      "units": ["data", "ai", "cloud"]
+    },
+    {
+      "label": "Kafka (Confluent)",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Beheerd enterprise event-streamingplatform gebaseerd op Apache Kafka, inclusief geïntegreerde governance-, schema- en connectordiensten.",
+      "standpoint": "Bewezen op schaal bij onze grootste klanten als real-time datafundament; verlaagt de operationele beheerlast zodat teams zich op dataproducten en integratie kunnen richten.",
+      "units": ["data", "software", "cloud"]
+    },
+    {
+      "label": "Apache Airflow",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Open-source workflow-orchestratieplatform voor het programmatisch in Python definiëren, plannen en monitoren van datapipelines.",
+      "standpoint": "Onze standaard voor complexe, platform-overstijgende data- en AI-orchestratie, breed bewezen in beheerde cloudvarianten bij enterprise-opdrachtgevers.",
+      "units": ["data", "ai", "cloud"]
+    },
+    {
+      "label": "Microsoft Fabric",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Geïntegreerd SaaS-dataplatform van Microsoft met OneLake als centrale opslag voor data-engineering, warehousing, real-time intelligence en Power BI.",
+      "standpoint": "Groeit sterk bij organisaties die op het Microsoft-ecosysteem standaardiseren; wij zetten Fabric gericht in en bewaken daarbij CI/CD-volwassenheid, governance en kostenbeheersing.",
+      "units": ["data", "cloud", "ai"]
+    },
+    {
+      "label": "BigQuery",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Serverless, schaalbaar enterprise datawarehouse van Google Cloud met strikte scheiding van opslag en rekenkracht.",
+      "standpoint": "Uitstekende en bewezen keuze voor klanten die op Google Cloud draaien, met hoge snelheid voor analytische workloads en directe koppeling met Vertex AI.",
+      "units": ["data", "cloud", "ai"]
     },
     {
       "label": "Delta Lake",
       "quadrant": "Platforms",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Open source storage layer die ACID-transacties toevoegt aan data lakes. Native geïntegreerd in Databricks en biedt time travel, schema enforcement en unified batch/streaming. De standaard table format binnen het Databricks lakehouse ecosysteem."
+      "moved": 0,
+      "description": "Open-source opslagformaat dat ACID-transacties, time-travel, schema-enforcement en gecombineerde batch/streaming toevoegt aan object storage.",
+      "standpoint": "De bewezen standaard binnen het Databricks- en Fabric-ecosysteem; via Delta UniForm steeds beter combineerbaar met Iceberg-georiënteerde afnemers.",
+      "units": ["data", "ai"]
     },
     {
-      "label": "Great Expectations",
-      "quadrant": "Tools",
+      "label": "Apache Iceberg",
+      "quadrant": "Platforms",
       "ring": "Trial",
       "moved": 2,
-      "description": "Open source data quality framework voor het valideren, documenteren en profileren van data. Maakt data quality checks integreerbaar in pipelines als geautomatiseerde tests. Helpt bij het vroegtijdig opsporen van data issues voordat ze downstream impact hebben."
+      "description": "Vendor-neutraal open tabelformaat voor grootschalige analytische datasets met ondersteuning voor verborgen partitionering, schema-evolutie en multi-engine toegang.",
+      "standpoint": "Cruciaal voor digitale soevereiniteit en het voorkomen van vendor lock-in op de opslaglaag: één open dataset kan zonder kopieën worden bevraagd door uiteenlopende compute-engines.",
+      "units": ["data", "cloud"]
+    },
+    {
+      "label": "Unity Catalog / Centrale Metadata Catalogs",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Centrale governance- en metadatalaag voor fijnmazige toegangscontrole, datalineage, auditing en het ontdekken van tabellen, volumes en AI-modellen.",
+      "standpoint": "Een kernbouwsteen voor Digital Trust en onze zesde pijler (Cognitive Architecture): maakt over data én AI heen controleerbaar wie toegang heeft en waar een uitkomst vandaan komt.",
+      "units": ["data", "ai", "security"]
+    },
+    {
+      "label": "Snowflake",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Cloud-native dataplatform met sterke multi-cloud ondersteuning, schaalbare compute-clusters en veilige cross-organisatie data-uitwisseling.",
+      "standpoint": "Een volwassen alternatief naast Databricks en BigQuery dat wij per klantcontext meewegen, met name wanneer multi-cloud data sharing en snelle analytische adoptie centraal staan.",
+      "units": ["data", "cloud"]
+    },
+    {
+      "label": "Apache Flink",
+      "quadrant": "Platforms",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Open-source framework voor gedistribueerde, stateful streamprocessing met lage latency en strikte exactly-once verwerkingsgaranties.",
+      "standpoint": "Actief verkennen voor veeleisende real-time verrijkingen en event-driven AI-context waar standaard micro-batching of eenvoudige client-libraries tekortschieten.",
+      "units": ["data", "software"]
     },
     {
       "label": "Schema Registry (Confluent)",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Centraal schema management voor streaming data, geadopteerd bij Ahold voor zowel Strimzi als Confluent clusters. Borgt compatibility van schema-evoluties en voorkomt breaking changes in event-driven architecturen. Essentieel onderdeel van een mature streaming platform."
+      "moved": 0,
+      "description": "Centrale opslag en validatieservice voor datamodellen en berichtschema's (Avro, Protobuf, JSON Schema) in streaming-architecturen.",
+      "standpoint": "Onze verplichte standaard bij event-streaming om technische datacontracten af te dwingen en breaking changes aan de bron te blokkeren.",
+      "units": ["data", "software"]
     },
     {
       "label": "uv",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Ultrasnelle Python package manager geschreven in Rust, vervangt Poetry bij Ahold. Combineert dependency resolution, virtual environment management en project tooling in één tool. Significant sneller dan pip en Poetry, wat de developer experience voor data teams verbetert."
+      "moved": 0,
+      "description": "Extreem snelle Python package- en projectmanager (geschreven in Rust) die dependency-resolutie, virtuele omgevingen en lockfiles verenigt.",
+      "standpoint": "Onze aanbevolen standaard voor nieuwe Python-data- en AI-projecten: vervangt losse tools als pip en Poetry en versnelt zowel lokale ontwikkeling als CI/CD-builds drastisch.",
+      "units": ["data", "ai", "software"]
     },
     {
-      "label": "Data Mesh",
-      "quadrant": "Techniques",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Gedecentraliseerd data-architectuurparadigma waarbij domeinteams eigenaarschap nemen over hun data als product. Vereist organisatorische volwassenheid en een self-serve data platform. Relevant voor grotere organisaties die worstelen met gecentraliseerde data teams als bottleneck."
-    },
-    {
-      "label": "Data Contracts",
-      "quadrant": "Techniques",
+      "label": "Great Expectations",
+      "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Formele afspraken tussen data producers en consumers over structuur, semantiek en SLA's van datasets. Vergelijkbaar met API contracts maar dan voor data. Cruciaal voor het schaalbaar maken van data-uitwisseling en het voorkomen van onverwachte breaking changes."
+      "moved": 0,
+      "description": "Open-source framework voor het declaratief vastleggen, geautomatiseerd toetsen en documenteren van datakwaliteitsregels in pipelines.",
+      "standpoint": "Zonder AI-ready data stranden AI-projecten: wij zetten geautomatiseerde datakwaliteitscontroles gericht in om vervuilde of afwijkende data te stoppen voordat zij dashboards of modellen bereikt.",
+      "units": ["data", "ai"]
     },
     {
       "label": "ELT over ETL",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Het patroon waarbij ruwe data eerst wordt geladen in het warehouse en daarna getransformeerd (Extract-Load-Transform). Maakt gebruik van de rekenkracht van moderne cloud warehouses. In combinatie met DBT de standaardaanpak voor analytische data pipelines."
+      "moved": 0,
+      "description": "Architectuurpatroon waarbij brondata eerst onbewerkt in het lakehouse of datawarehouse wordt geladen en pas daarna modulair wordt getransformeerd.",
+      "standpoint": "Onze standaardwerkwijze voor moderne dataplatformen: borgt herleidbaarheid naar de ruwe bron (ground truth) en benut de schaalbare rekenkracht van het platform optimaal.",
+      "units": ["data"]
+    },
+    {
+      "label": "Data Contracts",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Expliciete, machineleesbare overeenkomsten tussen bronteams en data-afnemers over structuur, betekenis, versheid en eigenaarschap van data.",
+      "standpoint": "Verschuift datakwaliteit van dweilen achteraf naar preventie aan de voorkant op het snijvlak tussen Software Engineering, Data en AI.",
+      "units": ["data", "software", "ai"]
     },
     {
       "label": "Data Lineage",
       "quadrant": "Techniques",
       "ring": "Trial",
+      "moved": 0,
+      "description": "Het end-to-end vastleggen en visualiseren van de herkomst, tussenstappen en transformaties van data van bronsysteem tot rapportage of AI-model.",
+      "standpoint": "Onmisbaar voor zowel impactanalyse bij wijzigingen als voor aantoonbare naleving van de EU AI Act, NIS2 en DORA (onderdeel van onze AI Chain of Custody).",
+      "units": ["data", "ai", "security"]
+    },
+    {
+      "label": "Data Products",
+      "quadrant": "Techniques",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Het traceren van de herkomst en transformaties van data door de gehele pipeline. Essentieel voor compliance, debugging en impact-analyse bij schemawijzigingen. Tools als DBT bieden dit deels out-of-the-box; voor end-to-end lineage zijn aanvullende oplossingen nodig."
+      "description": "Het ontwerpen en beheren van herbruikbare, gedocumenteerde datasets met een duidelijke eigenaar, kwaliteitsgaranties en een eigen levenscyclus.",
+      "standpoint": "Organisaties die succesvol AI schalen behandelen data als een product in plaats van een bijproduct; wij passen dit gericht toe zonder dat eerst een zware organisatiebrede reorganisatie nodig is.",
+      "units": ["data", "ai"]
+    },
+    {
+      "label": "Semantic Layers",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Gedeelde definitie- en abstractielaag (zoals dbt Semantic Layer of Cube) die bedrijfslogica en kernbegrippen één keer centraal vastlegt voor alle afnemers.",
+      "standpoint": "Het strijdtoneel van onze zesde pijler (Cognitive Architecture): geen betrouwbare AI-agents of self-service BI zonder één eenduidige betekenis van begrippen als 'klant' of 'omzet'.",
+      "units": ["data", "ai"]
+    },
+    {
+      "label": "Data Mesh",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Organisatorisch en technisch paradigma waarbij domeinteams zelf volledig eigenaar zijn van hun data op een gedeeld self-service platform onder gefedereerde governance.",
+      "standpoint": "De onderliggende principes (data als product, domeineigenaarschap) passen we volop toe, maar een volledige Data Mesh vraagt een organisatorische volwassenheid die alleen bij zeer grote organisaties past.",
+      "units": ["data"]
+    },
+    {
+      "label": "Enterprise Knowledge Graphs",
+      "quadrant": "Techniques",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "Semantisch netwerk dat vastlegt hoe bedrijfsentiteiten, documenten, processen en beleidsregels inhoudelijk met elkaar verbonden zijn.",
+      "standpoint": "Onze strategische bet binnen Cognitive Architecture: vormt de 'waarheidslaag' waarmee AI-agents complexe bedrijfscontext en afhankelijkheden daadwerkelijk kunnen beredeneren.",
+      "units": ["data", "ai"]
     }
   ]
 }

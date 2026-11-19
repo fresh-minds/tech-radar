@@ -15,8 +15,16 @@ const VALID_MOVED = [-1, 0, 1, 2];
 
 const rootDir = path.join(__dirname, "..");
 
+const unitsConfigPath = path.join(rootDir, "units.json");
+const VALID_UNITS = fs.existsSync(unitsConfigPath)
+  ? JSON.parse(fs.readFileSync(unitsConfigPath, "utf-8"))
+      .map((u) => u.id)
+      .filter((id) => id !== "global")
+  : ["software", "ai", "cloud", "data", "security", "sap"];
+
 function validateFile(filePath) {
   const relative = path.relative(rootDir, filePath);
+  const unitDir = path.basename(path.dirname(filePath));
   const raw = fs.readFileSync(filePath, "utf-8");
 
   let data;
@@ -72,8 +80,30 @@ function validateFile(filePath) {
         );
       }
 
-      if (!entry.description) {
+      if (!entry.description || typeof entry.description !== "string" || !entry.description.trim()) {
         errors.push(`${prefix}: missing 'description'`);
+      }
+
+      if (!entry.standpoint || typeof entry.standpoint !== "string" || !entry.standpoint.trim()) {
+        errors.push(`${prefix}: missing 'standpoint'`);
+      }
+
+      if (!Array.isArray(entry.units) || entry.units.length === 0) {
+        errors.push(`${prefix}: 'units' must be a non-empty array of unit IDs (${VALID_UNITS.join(", ")})`);
+      } else {
+        const seenUnits = new Set();
+        entry.units.forEach((u) => {
+          if (!VALID_UNITS.includes(u)) {
+            errors.push(`${prefix}: invalid unit "${u}" in 'units'. Must be one of: ${VALID_UNITS.join(", ")}`);
+          } else if (seenUnits.has(u)) {
+            errors.push(`${prefix}: duplicate unit "${u}" in 'units'`);
+          } else {
+            seenUnits.add(u);
+          }
+        });
+        if (VALID_UNITS.includes(unitDir) && !entry.units.includes(unitDir)) {
+          errors.push(`${prefix}: 'units' must include "${unitDir}" for entries in ${relative}`);
+        }
       }
 
       // Validate optional tags field
