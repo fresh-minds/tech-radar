@@ -35,8 +35,9 @@ All changes go through PRs. PRs require 1 approval and passing `validate` check.
 - Valid rings: Adopt, Trial, Assess, Hold
 - Valid moved values: -1 (moved out/down), 0 (no change), 1 (moved in/up), 2 (new)
 - No duplicate labels within a unit
-- All entries need: label, quadrant, ring, moved, description
-- Optional field: tags (array of strings, for discipline filtering)
+- All entries need: label, quadrant, ring, moved, description, standpoint, units
+- `description` and `standpoint` are written in Dutch; `units` is a non-empty array of valid business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`)
+- Optional fields: tags (array of strings, for discipline filtering), link (URL)
 - Scaffold files (empty entries array) are allowed for units not yet populated
 
 ## Directory structure

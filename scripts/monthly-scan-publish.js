@@ -10,15 +10,26 @@ const readJSON = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const run = (cmd, args) => execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 
 function monthNow(now = new Date()) {
-  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam', year: 'numeric', month: '2-digit' }).formatToParts(now);
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
   const year = Number(parts.find((p) => p.type === 'year').value);
   const month = Number(parts.find((p) => p.type === 'month').value);
-  return new Date(Date.UTC(year, month - 2, 1)).toISOString().slice(0, 7);
+  const day = Number(parts.find((p) => p.type === 'day').value);
+  if (day >= 15) return `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-01`;
+  return new Date(Date.UTC(year, month - 2, 15)).toISOString().slice(0, 10);
 }
 
 function validateMonth(month, now = new Date()) {
-  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month) || month > monthNow(now)) {
-    throw new Error('Scan month must be a completed calendar month in YYYY-MM format.');
+  if (!/^\d{4}-(0[1-9]|1[0-2])(?:-(01|15))?$/.test(month) || month < '2000-01') {
+    throw new Error('Scan period must be a completed period in YYYY-MM-01, YYYY-MM-15, or YYYY-MM format.');
+  }
+  const [year, number, half] = month.split('-').map(Number);
+  const lastDay = new Date(Date.UTC(year, number, 0)).getUTCDate();
+  const ym = `${String(year).padStart(4, '0')}-${String(number).padStart(2, '0')}`;
+  const end = half === 1 ? `${ym}-14` : `${ym}-${lastDay}`;
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
+  const today = `${parts.find((p) => p.type === 'year').value}-${parts.find((p) => p.type === 'month').value}-${parts.find((p) => p.type === 'day').value}`;
+  if (end >= today) {
+    throw new Error('Scan period must be a completed period in YYYY-MM-01, YYYY-MM-15, or YYYY-MM format.');
   }
   return month;
 }
@@ -127,7 +138,7 @@ function publish() {
     throw new Error('Refusing a report-only proposal.');
   }
   run('git', ['-c', 'user.name=github-actions[bot]', '-c', 'user.email=41898282+github-actions[bot]@users.noreply.github.com',
-    'commit', '-m', `Propose monthly tech radar updates for ${result.month}`]);
+    'commit', '-m', `Propose bi-weekly tech radar updates for ${result.month}`]);
   // gh reads the short-lived job token from its environment. No persisted git credentials.
   run('git', ['-c', 'credential.helper=', '-c', 'credential.helper=!gh auth git-credential',
     'push', 'origin', `HEAD:refs/heads/${result.branch}`]);
@@ -138,7 +149,7 @@ function publish() {
   }
   fs.writeFileSync(bodyFile, `${body}\n\nValidation: \`npm run validate\` passed in both research and publishing jobs.\n\nThis is a proposal for owner review. No automatic merge or publication.\n`);
   const url = run('gh', ['pr', 'create', '--repo', repo, '--base', base, '--head', result.branch,
-    '--title', `Monthly tech radar scan: ${result.month}`, '--body-file', bodyFile]);
+    '--title', `Bi-weekly tech radar scan: ${result.month}`, '--body-file', bodyFile]);
   summary(`Review proposed radar updates: ${url}`);
 }
 

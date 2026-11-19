@@ -1,6 +1,6 @@
 {
   "title": "FreshMinds Software Engineering Tech Radar",
-  "date": "2026.09",
+  "date": "2026.10",
   "quadrants": [
     "Languages & Frameworks",
     "Platforms",
@@ -13,490 +13,540 @@
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Our recommended language for new backend projects. Adopted at both Ahold and bol.com. Around 30% of the software unit is proficient today; the rest are upskilling. New projects should default to Kotlin unless there is a specific reason not to.",
-      "tags": [
-        "jvm"
-      ]
-    },
-    {
-      "label": "Java",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Hold",
-      "moved": 2,
-      "description": "Still widely used across client engagements, but Kotlin offers better defaults for new JVM projects. Existing Java codebases are maintained as-is; new backend work should start in Kotlin.",
-      "tags": [
-        "jvm"
-      ]
+      "description": "Moderne, expressieve en statisch getypeerde programmeertaal voor het JVM-platform met ingebouwde null-safety en coroutines.",
+      "standpoint": "Onze aanbevolen standaardtaal voor nieuwe JVM-backendprojecten, breed geadopteerd bij onze grote retail- en e-commerceklanten.",
+      "units": ["software"],
+      "tags": ["jvm"]
     },
     {
       "label": "Spring Boot",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
       "moved": 0,
-      "description": "The standard framework for backend services. Adopted at Ahold and bol.com. Deep expertise across the unit. Pair with Kotlin for new projects.",
-      "tags": [
-        "jvm"
-      ]
+      "description": "Het dominante enterprise-framework voor het bouwen van productieklare microservices en web-API's op het JVM-platform.",
+      "standpoint": "Onze standaard voor JVM-backendservices met diepe expertise door de hele unit; combineer voor nieuwbouw bij voorkeur met Kotlin en Spring AI waar AI-integratie nodig is.",
+      "units": ["software", "ai", "security"],
+      "tags": ["jvm"]
+    },
+    {
+      "label": "C# / .NET",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Moderne, sterk getypeerde en high-performance programmeertaal en runtime voor enterprise-backend, cloud-native services en systeemintegraties.",
+      "standpoint": "Naast Kotlin/Java en Python één van de drie strategische taal-pijlers van FreshMinds Software Engineering, breed ingezet bij enterprise-, financiële en overheidsklanten.",
+      "units": ["software", "security"],
+      "tags": ["dotnet"]
+    },
+    {
+      "label": "ASP.NET Core",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Cross-platform, high-performance webframework voor het bouwen van moderne cloud-API's, microservices en real-time applicaties op .NET.",
+      "standpoint": "Onze standaardkeuze voor alle nieuwe .NET-backends dankzij uitstekende performance, native OpenTelemetry-integratie en sterke security-defaults.",
+      "units": ["software", "security"],
+      "tags": ["dotnet"]
+    },
+    {
+      "label": "Python",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Adopt",
+      "moved": 2,
+      "description": "Veelzijdige programmeertaal met ongeëvenaarde ondersteuning voor AI-integraties, data-intensieve backends en moderne API-frameworks zoals FastAPI.",
+      "standpoint": "De onmisbare brugtaal op het snijvlak van Software Engineering, AI en Data om AI-experimenten om te bouwen naar robuuste, geteste productiesoftware.",
+      "units": ["software", "ai", "data"],
+      "tags": ["python"]
     },
     {
       "label": "TypeScript",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Default language for frontend and Node.js work. Adopted at Ahold for all frontend development. Type safety prevents entire classes of bugs at the boundary where most web application errors occur.",
-      "tags": [
-        "frontend"
-      ]
+      "description": "Statisch getypeerde superset van JavaScript voor schaalbare frontend- en Node.js-applicaties.",
+      "standpoint": "Onze verplichte standaard voor alle frontend- en Node.js-ontwikkeling: strikte typering voorkomt fouten precies op de grens waar webapplicaties en API's elkaar raken.",
+      "units": ["software"],
+      "tags": ["frontend"]
     },
     {
       "label": "React",
       "quadrant": "Languages & Frameworks",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Our recommended frontend library. Adopted at both Ahold and bol.com. Large ecosystem and strong community. Preferred over Angular for new projects.",
-      "tags": [
-        "frontend"
-      ]
-    },
-    {
-      "label": "Angular",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Hold",
-      "moved": 2,
-      "description": "Widely used by our consultants at client sites, but React has a larger ecosystem and more momentum for new frontend work. Broad Angular experience across the unit remains valuable for maintaining existing applications.",
-      "tags": [
-        "frontend"
-      ]
+      "description": "Component-gebaseerde UI-library voor het bouwen van interactieve webapplicaties en design systems.",
+      "standpoint": "Onze standaardkeuze voor nieuwe frontendprojecten vanwege het grote ecosysteem, sterke tooling en brede adoptie bij onze opdrachtgevers.",
+      "units": ["software"],
+      "tags": ["frontend"]
     },
     {
       "label": "Next.js",
       "quadrant": "Languages & Frameworks",
       "ring": "Trial",
       "moved": 0,
-      "description": "React meta-framework for full-stack web applications. Valuable for projects that need server-side rendering or static generation. Limited hands-on experience across the unit today, so we keep it at Trial while consultants build proficiency.",
-      "tags": [
-        "frontend"
-      ]
-    },
-    {
-      "label": "Scala",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Hold",
-      "moved": 0,
-      "description": "Limited adoption within FreshMinds and declining industry demand. Complexity and tooling gaps make it hard to staff and maintain. Not recommended for new projects.",
-      "tags": [
-        "jvm"
-      ]
+      "description": "Full-stack React-framework met ondersteuning voor server-side rendering (SSR), React Server Components en statische generatie.",
+      "standpoint": "Zet dit gericht in voor publieke webapplicaties waar SEO en initiële laadtijd doorslaggevend zijn; weeg bij zelf-gehoste enterprise-deployments de operationele complexiteit buiten Vercel mee.",
+      "units": ["software"],
+      "tags": ["frontend"]
     },
     {
       "label": "Rust",
       "quadrant": "Languages & Frameworks",
       "ring": "Trial",
-      "moved": 1,
-      "description": "Memory-safe systems language worth pursuing for performance-critical services or tooling where the learning curve is justified. Limited FreshMinds experience today, so Trial reflects where we are, not where the language is headed.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Go",
-      "quadrant": "Languages & Frameworks",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Simple, fast, and well-suited for CLI tools, networking, and infrastructure code. Worth exploring to understand where it fits alongside Kotlin, but not yet a FreshMinds focus area.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Systeemprogrammeertaal die zonder garbage collector maximale snelheid combineert met compile-time garanties voor geheugenveiligheid.",
+      "standpoint": "Waardevol voor performance- en security-kritieke services en ontwikkeltooling waar de steilere leercurve zich direct terugbetaalt in betrouwbaarheid en lage resourcekosten.",
+      "units": ["software", "security"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Flutter",
       "quadrant": "Languages & Frameworks",
       "ring": "Trial",
       "moved": 0,
-      "description": "Cross-platform mobile framework. No current production use within FreshMinds. Included because client demand for cross-platform mobile is growing. Evaluate before committing to native development for new mobile projects.",
-      "tags": [
-        "frontend"
-      ]
+      "description": "Cross-platform UI-toolkit voor het bouwen van native gecompileerde mobiele, web- en desktopapplicaties vanuit één codebase.",
+      "standpoint": "Overweeg Flutter serieus bij nieuwe mobiele klantvraagstukken voordat voor dubbele native ontwikkeling (iOS én Android) wordt gekozen.",
+      "units": ["software"],
+      "tags": ["frontend"]
+    },
+    {
+      "label": "Go",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Eenvoudige, snel compilerende programmeertaal met sterke concurrency-primitieven, veel gebruikt voor cloud-native infrastructuur en CLI-tools.",
+      "standpoint": "Relevante taal op het snijvlak met Cloud en Platform Engineering voor lichtgewicht platformservices en operators naast onze primaire backendtalen.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Java",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Klassieke objectgeoriënteerde programmeertaal voor het JVM-platform met een enorme geïnstalleerde basis in het bedrijfsleven en bij de overheid.",
+      "standpoint": "Voor puur greenfield JVM-werk adviseren we Kotlin vanwege betere defaults en null-safety; bestaande Java-landschappen blijven we volop moderniseren, uitbreiden en ondersteunen.",
+      "units": ["software"],
+      "tags": ["jvm"]
+    },
+    {
+      "label": "Angular",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Volledig uitgerust, opinionated TypeScript-framework voor grootschalige enterprise-webapplicaties.",
+      "standpoint": "Voor nieuwe frontendprojecten geven wij de voorkeur aan React vanwege het bredere ecosysteem; onze ruime Angular-expertise zetten we gericht in voor het doorontwikkelen en moderniseren van bestaande klantapplicaties.",
+      "units": ["software"],
+      "tags": ["frontend"]
+    },
+    {
+      "label": "Scala",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "JVM-programmeertaal die functioneel en objectgeoriënteerd programmeren combineert.",
+      "standpoint": "Niet aanbevolen voor nieuwe projecten vanwege afnemende marktvraag, hoge cognitieve complexiteit en lastige bemensbaarheid ten opzichte van Kotlin en Python.",
+      "units": ["software"],
+      "tags": ["jvm"]
     },
     {
       "label": "PostgreSQL",
       "quadrant": "Platforms",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Our default relational database. Adopted at Ahold (Azure Flexible Server) and widely used at bol.com (Cloud SQL). Skill matrix confirms deep expertise across the unit. Reliable, feature-rich, and well-supported everywhere.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Krachtige open-source relationele database met rijke ondersteuning voor JSON, full-text search en vector-opslag via pgvector.",
+      "standpoint": "Onze standaard relationele database voor vrijwel elk nieuw project: uiterst betrouwbaar, in elke cloud beheerd beschikbaar en met pgvector direct inzetbaar voor RAG.",
+      "units": ["software", "ai", "data"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Kafka",
       "quadrant": "Platforms",
       "ring": "Adopt",
-      "moved": 1,
-      "description": "Event streaming platform for event-driven architectures. Ahold runs Confluent Kafka as their strategic platform. Skill matrix shows broad experience ranging from basic consumers to topic and partition management. Proven at scale.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Gedistribueerd event-streamingplatform voor schaalbare, ontkoppelde communicatie en real-time dataverwerking.",
+      "standpoint": "Bewezen standaard bij grote enterprise-opdrachtgevers voor event-driven architecturen op de grens tussen operationele software en het dataplatform.",
+      "units": ["software", "data", "cloud"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Kubernetes",
       "quadrant": "Platforms",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Industry standard for container orchestration. Deep expertise across the unit and most production workloads at client engagements run on it. Essential knowledge for any backend or platform engineer.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "De industriestandaard voor containerorchestratie, automatische schaling en declaratief workloadbeheer.",
+      "standpoint": "Basiskennis voor elke moderne backend- en platformengineer bij FreshMinds, omdat het merendeel van onze productieworkloads op Kubernetes draait.",
+      "units": ["software", "cloud", "security"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "AWS",
       "quadrant": "Platforms",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Primary cloud provider for several client engagements. Skill matrix shows AWS as the most commonly listed cloud platform. Ahold runs Azure, bol.com runs GCP; our consultants should be cloud-literate, not cloud-locked.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Breed inzetbaar public cloudplatform voor compute, managed databases, serverless en container-infrastructuur.",
+      "standpoint": "Onze software-engineers zijn cloud-geletterd maar niet cloud-gebonden: wij bouwen oplossingen die net zo soepel landen op AWS als op Azure of GCP.",
+      "units": ["software", "cloud", "data"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "GitHub Actions",
       "quadrant": "Platforms",
       "ring": "Adopt",
       "moved": 0,
-      "description": "CI/CD platform tightly integrated with GitHub, which is our default source control. Broad experience across the unit. Used in our own internal projects and at most client engagements.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "CI/CD- en workflowplatform dat rechtstreeks geïntegreerd is met GitHub-broncodebeheer.",
+      "standpoint": "Onze standaard voor geautomatiseerd bouwen, testen, security-scanning en deployen in zowel klantprojecten als eigen FreshMinds-accelerators.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Docker",
       "quadrant": "Platforms",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Standard containerisation across all projects. Fundamental skill for any backend engineer working with modern deployment pipelines.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Standaardplatform voor het verpakken van applicaties en hun afhankelijkheden in draagbare container-images.",
+      "standpoint": "Fundamenteel onderdeel van elke moderne ontwikkel- en uitrolstraat voor consistente uitvoering van ontwikkelmachine tot productiecluster.",
+      "units": ["software", "cloud", "data", "ai"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "ArgoCD",
+      "quadrant": "Platforms",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Declaratieve GitOps continuous-delivery controller voor Kubernetes.",
+      "standpoint": "Sluit naadloos aan op trunk-based development en maakt elke wijziging in productie volledig herleidbaar tot een goedgekeurde commit in Git.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Crossplane",
+      "quadrant": "Platforms",
+      "ring": "Trial",
+      "moved": 0,
+      "description": "Kubernetes-native control plane waarmee teams naast containers ook cloudresources (zoals databases en buckets) via declaratieve manifesten aanvragen.",
+      "standpoint": "Waardevolle aanvulling op Terraform wanneer een intern platformteam applicatie- en infrastructuuruitrol via één uniforme Kubernetes-API wil aanbieden.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Azure DevOps",
+      "quadrant": "Platforms",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Oudere ALM- en CI/CD-suite van Microsoft voor repositories, pipelines en backlogbeheer.",
+      "standpoint": "Kies voor nieuwe projecten standaard voor GitHub en GitHub Actions, waar ook Microsofts eigen innovatie in AI-ondersteunde ontwikkeling en security plaatsvindt; bestaande omgevingen migreren we gefaseerd.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Grafana",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Our recommended visualisation layer for metrics and logs. The full stack (Loki, Mimir, Tempo) covers dashboarding, log aggregation, and tracing in one ecosystem. Wide usage across the unit.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Observability- en dashboardingplatform dat metrics (Mimir/Prometheus), logs (Loki) en traces (Tempo) samenbrengt.",
+      "standpoint": "Onze aanbevolen standaard om applicatiegedrag, performance en ketenafhankelijkheden real-time visueel en doorzoekbaar te maken.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Testcontainers",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Throwaway containers for integration testing. Eliminates mocked dependencies and catches issues that unit tests miss. Multiple consultants already use it; every project with external dependencies should include it.",
-      "tags": [
-        "jvm"
-      ]
+      "moved": 0,
+      "description": "Library waarmee tijdens geautomatiseerde integratietests echte, tijdelijke instanties van databases, message brokers en externe services in containers worden opgestart.",
+      "standpoint": "Verplichte standaard in onze projecten: vervangt broze mocks door realistische integratietests en vangt fouten af vóórdat code naar productie gaat.",
+      "units": ["software"],
+      "tags": ["jvm", "dotnet", "python"]
     },
     {
       "label": "Flyway",
       "quadrant": "Tools",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Database schema migration tool. Every project with a relational database should version its schema, and Flyway is our pick over Liquibase for its simplicity. Straightforward migration model that works well with CI pipelines.",
-      "tags": [
-        "jvm"
-      ]
+      "moved": 0,
+      "description": "Tool voor versiebeheer en geautomatiseerde uitvoering van relationele databaseschema-migraties.",
+      "standpoint": "Elk project met een relationele database hoort zijn schema in versiebeheer te beheren; Flyway is onze standaardkeuze vanwege de eenvoud en betrouwbare CI/CD-integratie.",
+      "units": ["software"],
+      "tags": ["jvm"]
     },
     {
       "label": "Terraform",
       "quadrant": "Tools",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Infrastructure as code. Adopted at Ahold and used across FreshMinds projects. Skill matrix shows broad IaC experience. Multi-cloud support makes it valuable for a consultancy that works across AWS, Azure, and GCP.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Podman",
-      "quadrant": "Tools",
-      "ring": "Assess",
-      "moved": 2,
-      "description": "Daemonless, rootless container engine. Drop-in replacement for Docker Desktop without per-seat licensing. Backed by Red Hat, used by several consultants at OpenShift-based clients including Ahold. Worth pursuing as the default local container runtime at enterprise clients where Docker Desktop licensing is a concern.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Docker Desktop",
-      "quadrant": "Tools",
-      "ring": "Hold",
-      "moved": 2,
-      "description": "Licensing costs make Docker Desktop problematic at enterprise clients. Ahold is actively moving away from it. Alternatives like Podman, Colima, or Rancher Desktop provide the same functionality without per-seat licensing. Be aware of this when advising clients on local development setups.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "ArgoCD",
-      "quadrant": "Platforms",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Declarative GitOps continuous delivery for Kubernetes. Uses Git as the single source of truth for deployments, which fits naturally with trunk-based development. The standard approach for Kubernetes workload delivery.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Crossplane",
-      "quadrant": "Platforms",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Kubernetes-native infrastructure as code that lets you manage cloud resources through the Kubernetes control plane. Worth pursuing as a complement to Terraform for teams already invested in Kubernetes. Early days for FreshMinds adoption.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Azure DevOps",
-      "quadrant": "Platforms",
-      "ring": "Hold",
-      "moved": 2,
-      "description": "GitHub provides a more integrated experience for source control, CI/CD, and project management. If you encounter Azure DevOps at a client, recommend migrating to GitHub Actions and GitHub-native tooling. Not recommended for new projects.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Declaratieve tool voor het in code vastleggen en beheren van cloudinfrastructuur.",
+      "standpoint": "Breed beheerst door onze software- en cloud-engineers om infrastructuur net zo reproduceerbaar en reviewbaar te beheren als applicatiecode.",
+      "units": ["software", "cloud", "data"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Sentry",
       "quadrant": "Tools",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Error tracking and performance monitoring. One of several observability options alongside the Grafana stack. Useful when a dedicated error-tracking tool is needed on top of metrics and logs.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Platform voor real-time foutdetectie, crash-rapportage en performance-analyse in frontend-, mobiele en backendapplicaties.",
+      "standpoint": "Uitstekende aanvulling op de algemene observability-stack wanneer directe groepering van stacktraces en release-regressies centraal staat.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Claude Code",
       "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 0,
-      "description": "AI-powered coding assistant for agentic development workflows. Skill matrix shows growing adoption across the unit, from chat-based usage to full agentic coding of features. Evaluating alongside GitHub Copilot.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "Agentic CLI-ontwikkeltool die zelfstandig codebases doorgrondt, wijzigingen over meerdere bestanden doorvoert en tests uitvoert.",
+      "standpoint": "Gepromoveerd naar Adopt: levert grote versnelling bij analyse, refactoring en testopbouw wanneer het wordt aangestuurd door een engineer die architectuur en kwaliteit bewaakt.",
+      "units": ["software", "ai"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "GitHub Copilot",
       "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "AI-powered code completion and chat. Complements Claude Code: Copilot is strongest at inline completions, while Claude Code handles multi-file agentic workflows. Evaluating both to understand where each fits.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "ring": "Adopt",
+      "moved": 1,
+      "description": "AI-codeerassistent geïntegreerd in de IDE en GitHub voor inline code-aanvulling, chat en pull-request ondersteuning.",
+      "standpoint": "Gepromoveerd naar Adopt: vormt samen met Claude Code onze standaard gereedschapskist voor AI-ondersteunde softwareontwikkeling bij klanten.",
+      "units": ["software", "ai"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "SonarQube",
       "quadrant": "Tools",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Tool voor continue statische codeanalyse op bugs, code smells, testdekking en beveiligingskwetsbaarheden.",
+      "standpoint": "Hoort thuis in elke CI-pipeline als geautomatiseerde kwaliteitsgate, zeker nu AI-gegenereerde code het volume aan wijzigingen verhoogt.",
+      "units": ["software", "security"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "OpenTelemetry",
+      "quadrant": "Tools",
+      "ring": "Adopt",
       "moved": 1,
-      "description": "Static code analysis and quality gates. Should be part of every CI pipeline to enforce code quality standards and catch issues early. Consultants regularly encounter it at client sites, so familiarity is high.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Vendor-neutrale CNCF-standaard voor het instrumenteren en exporteren van traces, metrics en logs.",
+      "standpoint": "Gepromoveerd naar Adopt: ontkoppelt applicatiecode volledig van de gekozen monitoring-backend en is onze standaard voor elk nieuw systeem.",
+      "units": ["software", "cloud", "ai"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Datadog",
       "quadrant": "Tools",
       "ring": "Trial",
       "moved": 0,
-      "description": "Unified observability platform. Skill matrix shows some consultants use it at clients. Competes with the Grafana stack; evaluate based on client context and whether a managed SaaS solution is preferred over self-hosted.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "OpenTelemetry",
-      "quadrant": "Tools",
-      "ring": "Trial",
-      "moved": 2,
-      "description": "Vendor-neutral observability standard for traces, metrics, and logs. Decouples instrumentation from backend choice, which matters for a consultancy working across different observability stacks. Growing familiarity across the unit.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Geïntegreerd SaaS-observabilityplatform voor APM, logs, infrastructuur en gebruikersmonitoring.",
+      "standpoint": "Sterke developer experience bij klanten die een volledig beheerde SaaS-oplossing verkiezen boven een zelfbeheerde Grafana-stack; let wel scherp op de kostenontwikkeling.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Dev Containers",
       "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Standardized, reproducible development environments defined as code. Eliminates 'works on my machine' problems and speeds up onboarding. Particularly useful for consultants who switch between client projects frequently.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Specificatie voor het als code definiëren van volledig voorgeconfigureerde, gecontaineriseerde ontwikkelomgevingen.",
+      "standpoint": "Rekent af met 'werkt op mijn machine'-problemen en verkort de inwerktijd van nieuwe consultants en teamleden tot enkele minuten.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Storybook",
       "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Develop and test UI components in isolation. Speeds up frontend development by decoupling component work from application state. Useful for building and documenting component libraries on React projects.",
-      "tags": [
-        "frontend"
-      ]
+      "moved": 0,
+      "description": "Ontwikkel- en documentatieomgeving om UI-componenten geïsoleerd van de hoofdapplicatie te bouwen en visueel te testen.",
+      "standpoint": "Zet dit gericht in bij grotere frontendprojecten en design systems om UI-consistentie en samenwerking tussen design en development te versnellen.",
+      "units": ["software"],
+      "tags": ["frontend"]
     },
     {
       "label": "Playwright",
       "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "End-to-end testing framework with cross-browser support and more reliable test execution than Cypress. Worth pursuing for projects that need browser-based testing. Growing adoption at major clients confirms the direction.",
-      "tags": [
-        "frontend"
-      ]
+      "moved": 0,
+      "description": "Modern framework voor snelle, betrouwbare end-to-end browser- en API-tests over alle gangbare browser-engines heen.",
+      "standpoint": "Onze voorkeurskeuze boven oudere tools als Cypress of Selenium voor geautomatiseerde end-to-end tests dankzij snelheid, auto-waiting en lage flakiness.",
+      "units": ["software"],
+      "tags": ["frontend"]
     },
     {
       "label": "Prometheus",
       "quadrant": "Tools",
       "ring": "Trial",
-      "moved": 2,
-      "description": "Metrics collection and alerting that pairs naturally with Grafana for a self-hosted observability stack. Consultant experience exists across the unit. Trial reflects that managed alternatives (Grafana Mimir, Datadog) may be a better fit depending on context.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Open-source monitoring- en tijdreeksdatabase voor het scrapen van applicatie- en infrastructuurmetrics.",
+      "standpoint": "Natuurlijke partner van Grafana in Kubernetes-omgevingen; weeg per klant af of zelfbeheerde Prometheus of een managed variant (zoals Grafana Mimir) beter past.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Podman",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 0,
+      "description": "Daemonless en rootless container-engine die compatibel is met de Docker-CLI zonder per-seat licentieverplichtingen.",
+      "standpoint": "Sterk alternatief voor lokale containerontwikkeling bij enterprise-klanten die afstappen van betaalde Docker Desktop-licenties.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Docker Desktop",
+      "quadrant": "Tools",
+      "ring": "Hold",
+      "moved": 0,
+      "description": "Commerciële desktopapplicatie voor het lokaal bouwen en draaien van containers op macOS en Windows.",
+      "standpoint": "Door de licentiekosten voor grotere ondernemingen stappen veel enterprise-klanten hier actief vanaf; adviseer voor lokale ontwikkelomgevingen Podman, OrbStack, Colima of Rancher Desktop.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Trunk-Based Development",
       "quadrant": "Techniques",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Short-lived feature branches merged frequently. Reduces integration pain and enables continuous delivery. Our recommended branching strategy for all projects.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Versiebeheerstrategie waarbij ontwikkelaars wijzigingen via zeer kortlevende branches (of direct) minstens dagelijks integreren in de hoofdbranch (main/trunk).",
+      "standpoint": "Onze standaard werkwijze voor elk softwareproject: voorkomt pijnlijke merge-conflicten en vormt de basis voor echte Continuous Delivery.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "API-First Design",
       "quadrant": "Techniques",
       "ring": "Adopt",
       "moved": 0,
-      "description": "Design APIs before implementation using OpenAPI specs. Adopted at Ahold (REST and GraphQL as service interfaces). Enables parallel frontend and backend work and produces better contracts.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Ontwikkelmethodiek waarbij het API-contract (OpenAPI, AsyncAPI of GraphQL) als eerste wordt ontworpen en gevalideerd voordat de code wordt geschreven.",
+      "standpoint": "Cruciaal om frontend-, backend-, data- en AI-teams parallel te laten werken en bestaande kernsystemen strak en voorspelbaar te ontsluiten.",
+      "units": ["software", "data", "ai"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "GraphQL",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Query language for APIs. Adopted at both Ahold and bol.com. Lets clients request exactly the data they need. Particularly valuable for BFF patterns and applications with complex data requirements.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Querytaal en runtime voor API's waarmee clients exact de benodigde data uit één of meerdere onderliggende services kunnen opvragen.",
+      "standpoint": "Bewezen standaard bij onze grote e-commerce- en retailklanten, met name voor Backend-for-Frontend (BFF) patronen en samengestelde klantdomeinen.",
+      "units": ["software"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "DORA Metrics",
       "quadrant": "Techniques",
       "ring": "Adopt",
-      "moved": 2,
-      "description": "Four metrics for measuring software delivery performance: deployment frequency, lead time for changes, change failure rate, and time to restore service. Gives teams and leadership a shared language for improvement. Recommend to every client as the starting point for engineering effectiveness.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Standaardset van vier indicatoren (Deployment Frequency, Lead Time for Changes, Change Failure Rate en Time to Restore) om softwarelevering te meten.",
+      "standpoint": "Ons vaste meetinstrument om de effectiviteit van ontwikkelteams én de daadwerkelijke impact van AI-adoptie objectief en zonder onderbuikgevoel te sturen.",
+      "units": ["software", "cloud"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Structured Logging",
       "quadrant": "Techniques",
       "ring": "Adopt",
+      "moved": 0,
+      "description": "Het vastleggen van applicatielogs in een vast, machineleesbaar structuurformaat (zoals JSON met correlatie-ID's) in plaats van vrije tekstregels.",
+      "standpoint": "Verplichte basis voor iedere nieuwe service én AI-agent zodat gebeurtenissen in gedistribueerde systemen snel doorzoekbaar en herleidbaar zijn.",
+      "units": ["software", "cloud", "security"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Passkeys",
+      "quadrant": "Techniques",
+      "ring": "Adopt",
+      "moved": 0,
+      "description": "Wachtwoordloze authenticatie op basis van de FIDO2/WebAuthn-standaard.",
+      "standpoint": "Onze standaardaanbeveling voor gebruikersauthenticatie in nieuwe web- en mobiele applicaties: phishingbestendig en gebruiksvriendelijk.",
+      "units": ["software", "security"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Agentic SDLC & AI-codevalidatie",
+      "quadrant": "Techniques",
+      "ring": "Trial",
       "moved": 2,
-      "description": "Log as structured data (JSON), not plain text. Adopted at Ahold. Makes logs queryable, parseable, and useful for debugging in distributed systems. Should be the default for any new service.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Ontwikkelaanpak waarbij engineers vanuit scherpe specificaties AI-agents aansturen en de gegenereerde code onderwerpen aan strikte geautomatiseerde tests en architectuurcontroles.",
+      "standpoint": "De engineer verschuift van coder naar logic architect: zonder stevige engineering-fundamenten en kritische review leidt AI-codegeneratie tot stijgende faalkansen en cognitive debt.",
+      "units": ["software", "ai", "security"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "CycloneDX SBOM",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 2,
+      "description": "Het automatisch tijdens elke build genereren en publiceren van een machineleesbare Software Bill of Materials in CycloneDX-formaat.",
+      "standpoint": "Maakt software supply chain security en naleving van de EU Cyber Resilience Act (december 2027) een geautomatiseerd onderdeel van de CI/CD-pipeline.",
+      "units": ["software", "security", "cloud"],
+      "tags": ["cross-cutting"]
+    },
+    {
+      "label": "Platform Engineering",
+      "quadrant": "Techniques",
+      "ring": "Trial",
+      "moved": 1,
+      "description": "Het bouwen en beheren van interne developer platforms en gestandaardiseerde golden paths om de cognitieve belasting van productteams te verlagen.",
+      "standpoint": "Gepromoveerd naar Trial: wij helpen klanten platformen bouwen die ontwikkelaars en AI-teams daadwerkelijk adopteren omdat ze als intern product worden ontworpen.",
+      "units": ["software", "cloud", "security"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Event Sourcing",
       "quadrant": "Techniques",
       "ring": "Trial",
-      "moved": 1,
-      "description": "Persist state changes as an immutable sequence of events. Powerful for audit-heavy and event-driven domains, but adds significant complexity. Evaluate per use case; don't apply by default.",
-      "tags": [
-        "jvm"
-      ]
+      "moved": 0,
+      "description": "Architectuurpatroon waarbij elke toestandsverandering wordt opgeslagen als een onveranderbare reeks van domein-events.",
+      "standpoint": "Bijzonder krachtig voor domeinen waar een sluitende audit-trail en reconstructie van het verleden wettelijk of bedrijfsmatig vereist zijn; niet als blinde standaard inzetten wegens extra complexiteit.",
+      "units": ["software", "data"],
+      "tags": ["jvm", "dotnet"]
     },
     {
       "label": "Architecture Decision Records",
       "quadrant": "Techniques",
       "ring": "Trial",
       "moved": 0,
-      "description": "Lightweight documentation of significant technical decisions. Captures the context and reasoning behind choices. Low effort, high value for teams that rotate members or hand off projects.",
-      "tags": [
-        "cross-cutting"
-      ]
-    },
-    {
-      "label": "Platform Engineering",
-      "quadrant": "Techniques",
-      "ring": "Assess",
-      "moved": 0,
-      "description": "Internal developer platforms to reduce cognitive load on product teams. Many organisations have platform teams, but few do it well. Worth understanding as a consulting offering since clients increasingly ask for help building or adopting these platforms.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "description": "Korte, gestructureerde markdown-documenten direct in de code-repository die vastleggen welke architectuurkeuze is gemaakt, in welke context en met welke afwegingen.",
+      "standpoint": "Kleine moeite met grote waarde om gedeeld begrip vast te houden, kennisoverdracht aan de klant te borgen en cognitive debt in teams te bestrijden.",
+      "units": ["software", "cloud", "ai"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "CQRS",
       "quadrant": "Techniques",
       "ring": "Assess",
-      "moved": 2,
-      "description": "Separate read and write models. Often paired with Event Sourcing but can be used independently. Adds architectural complexity; assess whether the read/write asymmetry in your domain justifies it.",
-      "tags": [
-        "jvm"
-      ]
-    },
-    {
-      "label": "Passkeys",
-      "quadrant": "Techniques",
-      "ring": "Adopt",
-      "moved": 2,
-      "description": "Passwordless authentication using FIDO2/WebAuthn. Phishing-resistant, eliminates password leaks, and supported by all major platforms and browsers. Recommend to clients as the default authentication method for new user-facing applications.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Command Query Responsibility Segregation: het architectorisch scheiden van het datamodel voor schrijven (commands) en het model voor lezen (queries).",
+      "standpoint": "Verken dit gericht bij zwaar asymmetrische lees-/schrijfbelastingen of in combinatie met Event Sourcing; vermijd het bij standaard CRUD-services.",
+      "units": ["software"],
+      "tags": ["jvm", "dotnet"]
     },
     {
       "label": "MCP by Default",
       "quadrant": "Techniques",
       "ring": "Hold",
-      "moved": 2,
-      "description": "Model Context Protocol adds integration complexity that is not always justified. Evaluate whether a simpler approach (direct API call, function calling) meets the need before reaching for MCP. The protocol is valuable when you genuinely need tool discovery and multi-provider interop.",
-      "tags": [
-        "cross-cutting"
-      ]
+      "moved": 0,
+      "description": "Het standaard tussenschakelen van het Model Context Protocol voor iedere integratie tussen AI-componenten en bestaande applicatie-API's.",
+      "standpoint": "Gebruik MCP pas wanneer dynamische tool-discovery over meerdere agents of aanbieders echt nodig is; voor de meeste applicaties is een directe, getypeerde API- of functie-aanroep eenvoudiger en veiliger.",
+      "units": ["software", "ai", "security"],
+      "tags": ["cross-cutting"]
     },
     {
       "label": "Reactive Programming",
       "quadrant": "Techniques",
       "ring": "Hold",
-      "moved": 2,
-      "description": "Asynchronous stream-based programming (Project Reactor, RxJava). Debugging complexity and steep learning curve outweigh benefits for most use cases. Virtual threads (Project Loom) offer a simpler concurrency model for the same problems.",
-      "tags": [
-        "jvm"
-      ]
+      "moved": 0,
+      "description": "Asynchroon, niet-blokkerend programmeermodel op basis van reactieve streams (zoals Project Reactor / Spring WebFlux en RxJava).",
+      "standpoint": "Sinds de komst van Virtual Threads (Project Loom) in moderne JVM-versies en Kotlin coroutines weegt de hoge complexiteit in debugging en leesbaarheid vrijwel nooit meer op tegen de voordelen.",
+      "units": ["software"],
+      "tags": ["jvm"]
     },
     {
       "label": "Micro Frontends",
       "quadrant": "Techniques",
       "ring": "Hold",
       "moved": 0,
-      "description": "Independently deployable frontend applications composed into a whole. Ahold adopts a specific multi-zone variant for their large-scale consumer apps. For most FreshMinds client contexts, the operational overhead is too high. Consider only for very large frontend teams with independent release cycles.",
-      "tags": [
-        "frontend"
-      ]
+      "description": "Architectuurstijl waarbij één webapplicatie in de browser wordt samengesteld uit onafhankelijk gebouwde en gedeployde frontend-modules van verschillende teams.",
+      "standpoint": "Voor vrijwel alle klantcontexten is de operationele en UX-overhead te hoog en werkt een goed gemodulariseerde monorepo met gedeelde componenten veel efficiënter.",
+      "units": ["software"],
+      "tags": ["frontend"]
     }
   ]
 }

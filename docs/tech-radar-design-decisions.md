@@ -18,10 +18,10 @@ Semi-annual. Pull requests are welcome anytime, but changes are batched and rele
 
 ## Rings
 
-- **Adopt**: proven in production, our default choice for this domain
-- **Trial**: actively pursuing, suitable for non-critical projects
-- **Assess**: worth exploring and understanding
-- **Hold**: proceed with caution, not recommended for new projects
+- **Adopt** (*Standaardkeuze*): proven in production at scale at clients, our default choice for new projects in this domain and the core stack our consultants upskill in
+- **Trial** (*Gericht inzetten*): production-ready for specific contexts/use cases rather than a blanket default, or technology where we are actively broadening hands-on experience across the unit
+- **Assess** (*Actief verkennen*): promising technology or emerging client trend worth exploring and validating (via R&D, spikes, or PoCs) before making a broad consulting recommendation
+- **Hold** (*Niet voor nieuw werk*): not recommended as a starting point for new (greenfield) projects where a better alternative exists; existing client landscapes (such as Java or Angular) remain actively supported and maintained
 
 ## Content principles
 

@@ -14,7 +14,9 @@ Edit the file for the unit you want to change.
   "quadrant": "Languages & Frameworks",
   "ring": "Trial",
   "moved": 1,
-  "description": "Why this is in this ring. 1-2 sentences.",
+  "description": "Korte uitleg wat deze technologie, tool of techniek is (1-2 zinnen in het Nederlands).",
+  "standpoint": "Het FreshMinds-standpunt: waarom dit in deze ring staat en hoe we dit bij klanten toepassen (1-2 zinnen in het Nederlands).",
+  "units": ["software", "cloud"],
   "tags": ["jvm"],
   "link": "https://optional-link.com"
 }
@@ -22,24 +24,28 @@ Edit the file for the unit you want to change.
 
 ### Fields
 
-| Field       | Required | Values                                                                 |
-|-------------|----------|------------------------------------------------------------------------|
-| label       | Yes      | Name of the technology                                                 |
-| quadrant    | Yes      | `Languages & Frameworks`, `Platforms`, `Tools`, `Techniques`           |
-| ring        | Yes      | `Adopt`, `Trial`, `Assess`, `Hold`                                     |
-| moved       | Yes      | `0` = no change, `1` = moved in/up, `-1` = moved out/down, `2` = new  |
-| description | Yes      | Brief rationale for the ring placement                                 |
-| tags        | No       | Array of strings for discipline filtering (e.g. `jvm`, `frontend`)     |
-| link        | No       | URL to more information                                                |
+| Field       | Required | Values                                                                                              |
+|-------------|----------|-----------------------------------------------------------------------------------------------------|
+| label       | Yes      | Name of the technology                                                                              |
+| quadrant    | Yes      | `Languages & Frameworks`, `Platforms`, `Tools`, `Techniques`                                        |
+| ring        | Yes      | `Adopt`, `Trial`, `Assess`, `Hold`                                                                  |
+| moved       | Yes      | `0` = no change, `1` = moved in/up, `-1` = moved out/down, `2` = new                               |
+| description | Yes      | Brief explanation in Dutch of *what* the technology is                                              |
+| standpoint  | Yes      | FreshMinds' standpoint in Dutch: rationale for the ring placement and recommendation                |
+| units       | Yes      | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`) |
+| tags        | No       | Array of strings for discipline filtering (e.g. `jvm`, `frontend`)                                  |
+| link        | No       | URL to more information                                                                             |
 
 ### Ring definitions
 
-| Ring    | Meaning                                                                         |
-|---------|---------------------------------------------------------------------------------|
-| Adopt   | Proven in production at scale. Recommended as the default choice.               |
-| Trial   | Worth pursuing actively. Use in non-critical projects to build experience.       |
-| Assess  | Worth exploring to understand potential benefits. Not yet ready for project use. |
-| Hold    | Proceed with caution. Not recommended for new projects.                         |
+Ring placement reflects what FreshMinds recommends for **new** choices and projects—not simply how many existing client codebases use a technology.
+
+| Ring    | Role                   | Meaning                                                                                                                                                              |
+|---------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Adopt   | Default choice         | Proven in production at scale at clients and backed by strong unit expertise. Recommended as our default starting point for new projects in this domain.             |
+| Trial   | Apply selectively      | Production-ready, but a deliberate choice per context (or a technology where we are actively broadening hands-on experience across the unit) rather than a default.  |
+| Assess  | Explore actively       | Promising technology or emerging client trend worth exploring via R&D, spikes, and proofs-of-concept before making a broad consulting recommendation.                |
+| Hold    | Not for new work       | Do not choose as the starting point for new (greenfield) work; prefer a modern alternative on the radar. Existing client systems (e.g. Java, Angular) remain supported. |
 
 ### Quadrant definitions
 

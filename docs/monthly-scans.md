@@ -1,9 +1,10 @@
-# Monthly technology research
+# Bi-weekly technology research
 
-The **Monthly Tech Radar Scan** workflow runs on GitHub-hosted runners on the
-first day of every month at **09:00 Europe/Amsterdam**, including daylight saving
+The **Bi-Weekly Tech Radar Scan** workflow runs on GitHub-hosted runners on the
+1st and 15th of every month at **09:00 Europe/Amsterdam**, including daylight saving
 changes. It runs with the computer off and the Codex app closed. Each run covers
-the previous completed calendar month across Software Engineering, AI, Cloud,
+the previous completed half-month (`YYYY-MM-01` for the 1st–14th, or `YYYY-MM-15`
+for the 15th through the end of the month) across Software Engineering, AI, Cloud,
 Data, Security, SAP, and Global.
 
 The workflow uses Microsoft Foundry's OpenAI-compatible Responses API with
@@ -23,10 +24,10 @@ GitHub credentials nor shell tools.
    GitHub Actions to create and approve pull requests**. This permits PR creation;
    the workflow does not approve or merge PRs. Organization policy may also need
    to allow this setting.
-4. Open **Actions → Monthly Tech Radar Scan → Run workflow** and run on the
+4. Open **Actions → Bi-Weekly Tech Radar Scan → Run workflow** and run on the
    default branch to verify credentials. An optional `month` input accepts a
-   completed month in `YYYY-MM` format, allowing backfills. Empty means the
-   previous completed month.
+   completed scan period in `YYYY-MM-01`, `YYYY-MM-15`, or `YYYY-MM` format,
+   allowing backfills. Empty means the previous completed half-month.
 5. Confirm the former Codex automation named **Monthly FreshMinds tech radar scan**
    is disabled so there is only one scheduler. Its status is managed in Codex,
    separately from the repository.
@@ -62,14 +63,14 @@ and evidence-backed moves to **Hold**. Trial/Adopt promotions and removals remai
 owner questions, because public research cannot establish FreshMinds production
 experience. The automation preserves the edition dates, unchanged movement
 flags, and any draft/scaffold status. Global is considered separately from the
-unit radars. Monthly research does not change the semi-annual publication policy.
+unit radars. Bi-weekly research does not change the semi-annual publication policy.
 
 With material supported changes, the publishing job checks that the default
 branch has not changed during research, validates all radar files again, and
-creates a PR from `codex/tech-radar-scan-YYYY-MM`. The PR includes a dated report
+creates a PR from `codex/tech-radar-scan-<period>` (e.g. `codex/tech-radar-scan-2026-11-01`). The PR includes a dated report
 in `docs/research/`, source links, reasoning, and owner questions. It never merges
 or publishes automatically. If the default branch moved, rerun against the latest
-data. A repeat run for a month with an existing open, closed, or merged PR skips
+data. A repeat run for a period with an existing open, closed, or merged PR skips
 research and preserves that PR's review history and any reviewer edits.
 
 When nothing material is warranted, the run retains its research artifacts and
