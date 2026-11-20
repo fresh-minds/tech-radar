@@ -232,6 +232,15 @@
       "description": "Het in productie nemen van zelfstandig handelende AI-agents met schrijfrechten op bedrijfssystemen zonder mandaatgrenzen, onveranderbare logging of directe uitschakelmogelijkheid.",
       "standpoint": "Autonomie zonder aantoonbare beheersing is een onaanvaardbaar bedrijfs- en compliancerisico; wij bouwen geen agentic systemen zonder containment governance, menselijke escalatie en kill switch.",
       "units": ["ai", "security"]
+    },
+    {
+      "label": "GitHub Copilot Fusion",
+      "quadrant": "Tools",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "GitHub Copilot Fusion routeert prompts tijdens runtime naar modellen en uitvoeringspatronen zoals single, cascade en critique.",
+      "standpoint": "TODO: unit owner moet standpunt formuleren over bestuurbaarheid, transparantie en kosten naast de bestaande GitHub Copilot-entry.",
+      "units": ["ai", "software"]
     }
   ]
 }

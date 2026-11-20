@@ -547,6 +547,15 @@
       "standpoint": "Voor vrijwel alle klantcontexten is de operationele en UX-overhead te hoog en werkt een goed gemodulariseerde monorepo met gedeelde componenten veel efficiënter.",
       "units": ["software"],
       "tags": ["frontend"]
+    },
+    {
+      "label": "Node.js",
+      "quadrant": "Languages & Frameworks",
+      "ring": "Assess",
+      "moved": 2,
+      "description": "JavaScript-runtime voor server-side applicaties en tooling, met een eigen releasekalender en beveiligingspatches.",
+      "standpoint": "TODO: unit owner moet bepalen of een aparte blip voldoende onderscheid biedt naast de bestaande TypeScript-entry.",
+      "units": ["software"]
     }
   ]
 }
