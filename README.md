@@ -14,7 +14,6 @@ Live at: https://earnest-cocada-04456b.netlify.app
 | Cloud | 32 | `/cloud/` |
 | Data | 26 | `/data/` |
 | Security | 24 | `/security/` |
-| SAP | scaffold | `/sap/` |
 
 The global radar cuts across all units. The unit radars go deeper into specific technology choices.
 
@@ -57,7 +56,6 @@ ai/radar-data.json           # AI radar
 cloud/radar-data.json        # Cloud radar
 data/radar-data.json         # Data radar
 security/radar-data.json     # Security radar (scaffold)
-sap/radar-data.json          # SAP radar (scaffold)
 global/radar-data.json       # Global radar
 index.html                   # Visualization with client-side routing
 scripts/validate.js          # Validates all radar-data.json files
@@ -86,7 +84,7 @@ Each entry in a `radar-data.json` file:
 | moved | yes | -1 (moved down), 0 (no change), 1 (moved up), 2 (new) |
 | description | yes | Short explanation in Dutch of what the technology is |
 | standpoint | yes | FreshMinds' standpoint in Dutch (why it is in this ring and how we apply it) |
-| units | yes | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`) |
+| units | yes | Non-empty array of applicable business unit IDs (`software`, `ai`, `cloud`, `data`, `security`) |
 | tags | no | Array of strings for discipline filtering (e.g. `jvm`, `frontend`) |
 | link | no | URL to more information |
 

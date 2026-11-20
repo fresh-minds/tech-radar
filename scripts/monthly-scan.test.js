@@ -137,12 +137,12 @@ test('only known unit paths are allowlisted and symlinks are rejected', t => {
   assert.throws(() => scan.radarPath(root, 'software'), /symbolic links/);
 });
 
-test('all unique units including SAP are mandatory even for no changes; duplicate labels are rejected', () => {
+test('all unique units are mandatory even for no changes; duplicate labels are rejected', () => {
   const noChange = validate(proposal());
   assert.deepEqual(noChange.modifiedFiles, []);
   assert.deepEqual(noChange.applied, []);
   const missing = proposal();
-  missing.unitReviews = missing.unitReviews.filter(review => review.unitId !== 'sap');
+  missing.unitReviews = missing.unitReviews.filter(review => review.unitId !== 'security');
   assert.throws(() => validate(missing), new RegExp(`All ${scan.UNIT_IDS.length} units`));
   const duplicate = proposal();
   duplicate.unitReviews.at(-1).unitId = 'global';
@@ -152,16 +152,16 @@ test('all unique units including SAP are mandatory even for no changes; duplicat
   assert.throws(() => validate(proposal([update({ label: 'Unknown tool' })])), /unknown label/);
 });
 
-test('SAP radar paths, repository context and Assess proposals are accepted', t => {
+test('radar paths, repository context and Assess proposals are accepted', t => {
   const { root, data } = tempRepo(t);
   const canonicalRoot = fs.realpathSync(root);
-  assert.equal(scan.radarPath(canonicalRoot, 'sap'), path.join(canonicalRoot, 'sap', 'radar-data.json'));
-  assert.deepEqual(scan.loadContext(root).radars.sap, data.sap);
+  assert.equal(scan.radarPath(canonicalRoot, 'security'), path.join(canonicalRoot, 'security', 'radar-data.json'));
+  assert.deepEqual(scan.loadContext(root).radars.security, data.security);
   assert.equal(scan.PROPOSAL_SCHEMA.properties.unitReviews.minItems, scan.UNIT_IDS.length);
   assert.equal(scan.PROPOSAL_SCHEMA.properties.unitReviews.maxItems, scan.UNIT_IDS.length);
-  const plan = validate(proposal([addition({ unitId: 'sap' })]), data);
-  assert.deepEqual(plan.modifiedFiles, ['sap/radar-data.json']);
-  assert.equal(plan.radars.sap.entries[1].ring, 'Assess');
+  const plan = validate(proposal([addition({ unitId: 'security' })]), data);
+  assert.deepEqual(plan.modifiedFiles, ['security/radar-data.json']);
+  assert.equal(plan.radars.security.entries[1].ring, 'Assess');
 });
 
 test('valid deterministic plan preserves dates, unrelated entries and metadata; moved is calculated', () => {

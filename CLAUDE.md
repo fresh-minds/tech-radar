@@ -4,7 +4,7 @@
 
 FreshMinds Tech Radar — a multi-unit static site that visualizes technology choices across the company. Based on the Zalando Tech Radar. Hosted on Netlify with auto-deploy from GitHub.
 
-The site has a global landing page and per-unit radars: software, ai, cloud, data, security, sap.
+The site has a global landing page and per-unit radars: software, ai, cloud, data, security.
 
 ## Key files
 
@@ -36,7 +36,7 @@ All changes go through PRs. PRs require 1 approval and passing `validate` check.
 - Valid moved values: -1 (moved out/down), 0 (no change), 1 (moved in/up), 2 (new)
 - No duplicate labels within a unit
 - All entries need: label, quadrant, ring, moved, description, standpoint, units
-- `description` and `standpoint` are written in Dutch; `units` is a non-empty array of valid business unit IDs (`software`, `ai`, `cloud`, `data`, `security`, `sap`)
+- `description` and `standpoint` are written in Dutch; `units` is a non-empty array of valid business unit IDs (`software`, `ai`, `cloud`, `data`, `security`)
 - Optional fields: tags (array of strings, for discipline filtering), link (URL)
 - Scaffold files (empty entries array) are allowed for units not yet populated
 
@@ -48,7 +48,6 @@ ai/radar-data.json           # AI unit
 cloud/radar-data.json        # Cloud unit
 data/radar-data.json         # Data unit
 security/radar-data.json     # Security unit (scaffold)
-sap/radar-data.json          # SAP unit (scaffold)
 global/radar-data.json       # Global cross-cutting radar
 ```
 

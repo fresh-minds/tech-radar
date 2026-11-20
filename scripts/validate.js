@@ -20,7 +20,7 @@ const VALID_UNITS = fs.existsSync(unitsConfigPath)
   ? JSON.parse(fs.readFileSync(unitsConfigPath, "utf-8"))
       .map((u) => u.id)
       .filter((id) => id !== "global")
-  : ["software", "ai", "cloud", "data", "security", "sap"];
+  : ["software", "ai", "cloud", "data", "security"];
 
 function validateFile(filePath) {
   const relative = path.relative(rootDir, filePath);

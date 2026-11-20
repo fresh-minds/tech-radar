@@ -25,7 +25,7 @@ test('bi-weekly period calculation uses Amsterdam calendar boundaries, half-mont
 
 test('publisher permits only actual radar data plus its dated research report', () => {
   assert.deepEqual(scanPaths(validResult()), ['software/radar-data.json', 'docs/research/2026-09-15.md']);
-  assert.deepEqual(scanPaths({ ...validResult(), modifiedFiles: ['sap/radar-data.json'] }), ['sap/radar-data.json', 'docs/research/2026-09-15.md']);
+  assert.deepEqual(scanPaths({ ...validResult(), modifiedFiles: ['security/radar-data.json'] }), ['security/radar-data.json', 'docs/research/2026-09-15.md']);
   for (const file of ['.github/workflows/validate.yml', '../radar-data.json', 'software/../../package.json']) {
     assert.throws(() => scanPaths({ ...validResult(), modifiedFiles: [file] }), /allowlist/);
   }
